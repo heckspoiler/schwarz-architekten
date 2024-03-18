@@ -51,6 +51,14 @@
             }
           }
         }
+      },
+      "schwarz_architekten_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Schwarz Architekten Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }

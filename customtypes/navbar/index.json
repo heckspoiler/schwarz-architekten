@@ -25,6 +25,7 @@
               "config": {
                 "label": "Projekte",
                 "placeholder": "",
+                "allowTargetBlank": false,
                 "select": null
               }
             }
