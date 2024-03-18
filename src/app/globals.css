@@ -5,6 +5,8 @@
   --subtitle: 1.25em;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
+  --rowgapdesktop: 5.625em;
+  --lightgrey: #A7A7A7;
 }
 
 
@@ -37,11 +39,11 @@ h3 {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: var(--title);
 }
 
 h2 {
-  font-size: 1.25em;
+  font-size: var(--subtitle);
 }
 
 h3 {
@@ -49,13 +51,17 @@ h3 {
 }
 
 h4,
-p {
+p,
+a,
+button {
   font-size: 1em;
 }
 
 button {
   border: none;
   outline: none;
+  background-color: white;
+  color: black;
 }
 
 a {
