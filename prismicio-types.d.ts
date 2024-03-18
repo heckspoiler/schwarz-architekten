@@ -66,6 +66,64 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
+ * Item in *Header → Navbar*
+ */
+export interface NavbarDocumentDataNavbarItem {
+  /**
+   * Projekte field in *Header → Navbar*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navbar[].projekte
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  projekte: prismic.LinkField;
+}
+
+/**
+ * Content for Header documents
+ */
+interface NavbarDocumentData {
+  /**
+   * Logo field in *Header*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Navbar field in *Header*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navbar[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  navbar: prismic.GroupField<Simplify<NavbarDocumentDataNavbarItem>>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavbarDocumentData>,
+    "navbar",
+    Lang
+  >;
+
+/**
  * Item in *Settings → Navigation*
  */
 export interface SettingsDocumentDataNavigationItem {
@@ -155,7 +213,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomeDocument | SettingsDocument;
+export type AllDocumentTypes = HomeDocument | NavbarDocument | SettingsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -170,6 +228,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      NavbarDocument,
+      NavbarDocumentData,
+      NavbarDocumentDataNavbarItem,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,

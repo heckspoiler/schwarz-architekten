@@ -1,0 +1,36 @@
+{
+  "format": "custom",
+  "id": "navbar",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "navbar": {
+        "type": "Group",
+        "config": {
+          "label": "Navbar",
+          "repeat": true,
+          "fields": {
+            "projekte": {
+              "type": "Link",
+              "config": {
+                "label": "Projekte",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
