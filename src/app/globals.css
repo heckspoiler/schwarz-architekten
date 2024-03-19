@@ -7,6 +7,7 @@
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
   --rowgapdesktop: 5.625em;
   --lightgrey: #A7A7A7;
+  --headerheight: 3.5em;
 }
 
 
@@ -18,7 +19,10 @@
 }
 
 
-body {}
+body {
+  margin-top: var(--headerheight);
+  min-height: calc(100vh - var(--headerheight))
+}
 
 html,
 body {
