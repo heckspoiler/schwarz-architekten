@@ -22,7 +22,7 @@
 
 body {
   margin-top: var(--headerheight);
-  min-height: calc(100vh - var(--headerheight))
+  min-height: calc(100vh - var(--headerheight));
 }
 
 html,
