@@ -1,0 +1,122 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "address": {
+        "type": "Group",
+        "config": {
+          "label": "Address",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "street": {
+              "type": "Text",
+              "config": {
+                "label": "Street",
+                "placeholder": ""
+              }
+            },
+            "city": {
+              "type": "Text",
+              "config": {
+                "label": "City",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "contact": {
+        "type": "Group",
+        "config": {
+          "label": "Contact",
+          "repeat": true,
+          "fields": {
+            "mail": {
+              "type": "Link",
+              "config": {
+                "label": "Mail",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "social": {
+        "type": "Group",
+        "config": {
+          "label": "Social",
+          "repeat": true,
+          "fields": {
+            "linkedin": {
+              "type": "Image",
+              "config": {
+                "label": "LinkedIn",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "instagram": {
+              "type": "Image",
+              "config": {
+                "label": "Instagram",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "internal_nav": {
+        "type": "Group",
+        "config": {
+          "label": "Internal Nav",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

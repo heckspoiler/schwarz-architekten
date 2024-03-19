@@ -6,19 +6,15 @@ import Link from 'next/link';
 export async function Header() {
   const client = createClient();
 
-  const settingsMeta = await client.getSingle('settings');
-
+  const navbar = await client.getSingle('navbar');
   return (
     <header>
-      <Link href="https://www.google.com">
-        <PrismicNextImage
-          field={settingsMeta.data.schwarz_architekten_logo}
-        ></PrismicNextImage>
+      <Link href="/">
+        <PrismicNextImage field={navbar.data.logo} />
       </Link>
-
       <nav>
         <ul>
-          {settingsMeta.data.navigation.map(({ link, label }) => (
+          {navbar.data.navbar.map(({ link, label }) => (
             <li key={label}>
               <PrismicNextLink field={link}>{label}</PrismicNextLink>
             </li>

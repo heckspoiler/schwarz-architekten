@@ -9,7 +9,7 @@
       "logo": {
         "type": "Image",
         "config": {
-          "label": "Logo",
+          "label": "logo",
           "constraint": {},
           "thumbnails": []
         }
@@ -17,16 +17,22 @@
       "navbar": {
         "type": "Group",
         "config": {
-          "label": "Navbar",
+          "label": "navbar",
           "repeat": true,
           "fields": {
-            "projekte": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "Projekte",
+                "label": "link",
                 "placeholder": "",
-                "allowTargetBlank": false,
                 "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
               }
             }
           }

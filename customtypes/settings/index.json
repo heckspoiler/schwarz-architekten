@@ -1,18 +1,11 @@
 {
   "format": "custom",
   "id": "settings",
-  "label": "Settings",
+  "label": "Metatag",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "projekte": {
-        "type": "Text",
-        "config": {
-          "label": "Projekte",
-          "placeholder": ""
-        }
-      },
       "meta_description": {
         "type": "Text",
         "config": {
@@ -28,36 +21,11 @@
           "thumbnails": []
         }
       },
-      "navigation": {
-        "type": "Group",
+      "technologies": {
+        "type": "Text",
         "config": {
-          "label": "Navigation",
-          "repeat": true,
-          "fields": {
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "placeholder": "",
-                "select": null
-              }
-            },
-            "label": {
-              "type": "Text",
-              "config": {
-                "label": "Label",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
-      "schwarz_architekten_logo": {
-        "type": "Image",
-        "config": {
-          "label": "Schwarz Architekten Logo",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Technologies",
+          "placeholder": ""
         }
       }
     }

@@ -3,6 +3,7 @@ import './globals.css';
 import { createClient } from '@/prismicio';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 const opensans = Open_Sans({ subsets: ['latin'], variable: '--font-main' });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body className={opensans.className}>
         <Header />
         {children}
-        <footer>HUSO</footer>
+        <Footer />
       </body>
     </html>
   );
