@@ -1,0 +1,111 @@
+.Footer {
+  bottom: 0;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  padding: 1em 0 1em 1em;
+}
+
+.Main {
+  width: 100%;
+  display: flex;
+
+}
+
+.SubcontainerUpper {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+}
+
+.SubcontainerUpper:nth-of-type(1) {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.LogoContianer {}
+
+.Logo {
+  width: 13em;
+  height: auto;
+}
+
+.AddressContainer {
+  padding-left: 2em;
+}
+
+.AddressData p:nth-of-type(1) {
+  font-weight: var(--semibold);
+}
+
+.InternalContainer ul,
+.ExternalContainer ul,
+.AddressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+}
+
+.InternalContainer .Listobject {
+  padding-left: 6em;
+}
+
+.ExternalContainer .Listobject {
+  padding-left: 3em;
+}
+
+.Listobject {
+  width: 100%;
+  list-style-type: none;
+}
+
+.ExternalContainer {}
+
+.MapContainer {
+  background-color: red;
+  height: 18em;
+  width: auto;
+}
+
+.MapContainer img {}
+
+.Link {
+  display: flex;
+  max-width: 8em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Linkspan {
+  transition: transform 0.2s var(--bezier)
+}
+
+.Linkspan:hover {
+  transform: translateX(5px);
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .card:hover span {
+    transform: translateX(4px);
+  }
+}
+
+
+
+/* Mobile */
+@media (max-width: 700px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

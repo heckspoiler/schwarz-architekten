@@ -9,34 +9,24 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
  */
 export interface FooterDocumentDataAddressItem {
   /**
-   * Name field in *Footer → Address*
+   * label field in *Footer → Address*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.address[].name
+   * - **API ID Path**: footer.address[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  name: prismic.KeyTextField;
+  label: prismic.KeyTextField;
 
   /**
-   * Street field in *Footer → Address*
+   * value field in *Footer → Address*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.address[].street
+   * - **API ID Path**: footer.address[].value
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  street: prismic.KeyTextField;
-
-  /**
-   * City field in *Footer → Address*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.address[].city
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  city: prismic.KeyTextField;
+  value: prismic.KeyTextField;
 }
 
 /**
@@ -44,24 +34,24 @@ export interface FooterDocumentDataAddressItem {
  */
 export interface FooterDocumentDataContactItem {
   /**
-   * Mail field in *Footer → Contact*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.contact[].mail
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  mail: prismic.LinkField;
-
-  /**
-   * Phone field in *Footer → Contact*
+   * label field in *Footer → Contact*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.contact[].phone
+   * - **API ID Path**: footer.contact[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  phone: prismic.KeyTextField;
+  label: prismic.KeyTextField;
+
+  /**
+   * value field in *Footer → Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.contact[].value
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  value: prismic.KeyTextField;
 }
 
 /**
@@ -69,24 +59,14 @@ export interface FooterDocumentDataContactItem {
  */
 export interface FooterDocumentDataSocialItem {
   /**
-   * LinkedIn field in *Footer → Social*
+   * social field in *Footer → Social*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].linkedin
+   * - **API ID Path**: footer.social[].social
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  linkedin: prismic.ImageField<never>;
-
-  /**
-   * Instagram field in *Footer → Social*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].instagram
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  instagram: prismic.ImageField<never>;
+  social: prismic.ImageField<never>;
 }
 
 /**
@@ -104,7 +84,7 @@ export interface FooterDocumentDataInternalNavItem {
   label: prismic.KeyTextField;
 
   /**
-   * Link field in *Footer → Internal Nav*
+   * link field in *Footer → Internal Nav*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -112,6 +92,31 @@ export interface FooterDocumentDataInternalNavItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → External Nav*
+ */
+export interface FooterDocumentDataExternalNavItem {
+  /**
+   * Label field in *Footer → External Nav*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.external_nav[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * link field in *Footer → External Nav*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.external_nav[].link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link: prismic.KeyTextField;
 }
 
 /**
@@ -172,6 +177,28 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   internal_nav: prismic.GroupField<Simplify<FooterDocumentDataInternalNavItem>>;
+
+  /**
+   * External Nav field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.external_nav[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  external_nav: prismic.GroupField<Simplify<FooterDocumentDataExternalNavItem>>;
+
+  /**
+   * Map field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.map
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  map: prismic.ImageField<never>;
 }
 
 /**
@@ -333,6 +360,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataContactItem,
       FooterDocumentDataSocialItem,
       FooterDocumentDataInternalNavItem,
+      FooterDocumentDataExternalNavItem,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,

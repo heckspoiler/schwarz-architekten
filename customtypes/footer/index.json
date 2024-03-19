@@ -20,24 +20,17 @@
           "label": "Address",
           "repeat": true,
           "fields": {
-            "name": {
+            "label": {
               "type": "Text",
               "config": {
-                "label": "Name",
+                "label": "label",
                 "placeholder": ""
               }
             },
-            "street": {
+            "value": {
               "type": "Text",
               "config": {
-                "label": "Street",
-                "placeholder": ""
-              }
-            },
-            "city": {
-              "type": "Text",
-              "config": {
-                "label": "City",
+                "label": "value",
                 "placeholder": ""
               }
             }
@@ -50,18 +43,17 @@
           "label": "Contact",
           "repeat": true,
           "fields": {
-            "mail": {
-              "type": "Link",
-              "config": {
-                "label": "Mail",
-                "placeholder": "",
-                "select": null
-              }
-            },
-            "phone": {
+            "label": {
               "type": "Text",
               "config": {
-                "label": "Phone",
+                "label": "label",
+                "placeholder": ""
+              }
+            },
+            "value": {
+              "type": "Text",
+              "config": {
+                "label": "value",
                 "placeholder": ""
               }
             }
@@ -74,18 +66,10 @@
           "label": "Social",
           "repeat": true,
           "fields": {
-            "linkedin": {
+            "social": {
               "type": "Image",
               "config": {
-                "label": "LinkedIn",
-                "constraint": {},
-                "thumbnails": []
-              }
-            },
-            "instagram": {
-              "type": "Image",
-              "config": {
-                "label": "Instagram",
+                "label": "social",
                 "constraint": {},
                 "thumbnails": []
               }
@@ -109,12 +93,43 @@
             "link": {
               "type": "Link",
               "config": {
-                "label": "Link",
+                "label": "link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
+        }
+      },
+      "external_nav": {
+        "type": "Group",
+        "config": {
+          "label": "External Nav",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Text",
+              "config": {
+                "label": "link",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "map": {
+        "type": "Image",
+        "config": {
+          "label": "Map",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     }
