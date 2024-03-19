@@ -42,7 +42,7 @@ export async function Footer() {
           <section className={styles.Social}>
             {footer.data.social.map(({ icon, link }) => (
               <a
-                key={icon ?? `key for ${icon}`}
+                key={icon?.url ?? `key-${Math.random()}`}
                 href={link ?? ''}
                 target="_blank"
                 className={styles.SocialLink}
