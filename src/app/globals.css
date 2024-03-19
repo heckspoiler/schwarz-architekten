@@ -1,6 +1,7 @@
 :root {
   font-size: 16px;
   --semibold: 600;
+  --bold: 800;
   --title: 1.5em;
   --subtitle: 1.25em;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);

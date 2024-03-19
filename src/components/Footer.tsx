@@ -99,6 +99,7 @@ export async function Footer() {
           <PrismicNextImage field={footer.data.map} />
         </a>
       </section>
+      <p className={styles.Copyright}>© {new Date().getFullYear()}</p>
     </footer>
   );
 }

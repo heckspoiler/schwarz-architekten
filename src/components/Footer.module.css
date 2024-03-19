@@ -31,7 +31,7 @@
 .Logo {
   width: 13em;
   height: auto;
-  padding-top: 5px;
+  padding-top: 0.4em;
 }
 
 .AddressContainer {
@@ -63,7 +63,7 @@
 }
 
 .InternalContainer .Listobject {
-  padding-left: 8em;
+  padding-left: 7em;
 }
 
 .ExternalContainer .Listobject {
@@ -100,6 +100,14 @@
 
 .Linkspan:hover {
   transform: translateX(8px);
+}
+
+.Copyright {
+  position: absolute;
+  top: calc(100% - 2em);
+  left: 2em;
+  font-size: 1em;
+  font-weight: var(--bold);
 }
 
 
