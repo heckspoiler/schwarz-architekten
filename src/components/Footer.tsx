@@ -25,31 +25,34 @@ export async function Footer() {
         <section
           className={`${styles.SubcontainerUpper} ${styles.AddressContainer}`}
         >
-          <section className={styles.AddressData}>
-            {footer.data.address.map(({ label, value }) => (
-              <p key={label} className={styles.AddressData}>
-                {value}
-              </p>
-            ))}
-          </section>
-          <section className={styles.ContactData}>
-            {footer.data.contact.map(({ label, value }) => (
-              <p key={label} className={styles.ContactData}>
-                {value}
-              </p>
-            ))}
-          </section>
-          <section className={styles.Social}>
-            {footer.data.social.map(({ icon, link }) => (
-              <a
-                key={icon?.url ?? `key-${icon}`}
-                href={link ?? ''}
-                target="_blank"
-                className={styles.SocialLink}
-              >
-                <PrismicNextImage field={icon} />
-              </a>
-            ))}
+          <section className={styles.AddressOutter}>
+            <section className={styles.AddressData}>
+              {footer.data.address.map(({ label, value }) => (
+                <p key={label} className={styles.AddressData}>
+                  {value}
+                </p>
+              ))}
+            </section>
+            <section className={styles.ContactData}>
+              {footer.data.contact.map(({ label, value }) => (
+                <p key={label} className={styles.ContactData}>
+                  {value}
+                </p>
+              ))}
+            </section>
+
+            <section className={styles.Social}>
+              {footer.data.social.map(({ icon, link }) => (
+                <a
+                  key={icon?.url ?? `key-${icon}`}
+                  href={link ?? ''}
+                  target="_blank"
+                  className={styles.SocialLink}
+                >
+                  <PrismicNextImage field={icon} />
+                </a>
+              ))}
+            </section>
           </section>
         </section>
         <section
