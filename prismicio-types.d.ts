@@ -59,14 +59,24 @@ export interface FooterDocumentDataContactItem {
  */
 export interface FooterDocumentDataSocialItem {
   /**
-   * social field in *Footer → Social*
+   * Icon field in *Footer → Social*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].social
+   * - **API ID Path**: footer.social[].icon
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  social: prismic.ImageField<never>;
+  icon: prismic.ImageField<never>;
+
+  /**
+   * link field in *Footer → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social[].link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link: prismic.KeyTextField;
 }
 
 /**

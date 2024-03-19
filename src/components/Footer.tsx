@@ -40,10 +40,15 @@ export async function Footer() {
             ))}
           </section>
           <section className={styles.Social}>
-            {footer.data.contact.map(({ label, value }) => (
-              <p key={label} className={styles.ContactData}>
-                {value}
-              </p>
+            {footer.data.social.map(({ icon, link }) => (
+              <a
+                key={icon ?? `key for ${icon}`}
+                href={link ?? ''}
+                target="_blank"
+                className={styles.SocialLink}
+              >
+                <PrismicNextImage field={icon} />
+              </a>
             ))}
           </section>
         </section>

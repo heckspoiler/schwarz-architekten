@@ -66,12 +66,19 @@
           "label": "Social",
           "repeat": true,
           "fields": {
-            "social": {
+            "icon": {
               "type": "Image",
               "config": {
-                "label": "social",
+                "label": "Icon",
                 "constraint": {},
                 "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Text",
+              "config": {
+                "label": "link",
+                "placeholder": ""
               }
             }
           }
