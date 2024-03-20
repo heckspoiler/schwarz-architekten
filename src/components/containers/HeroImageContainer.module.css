@@ -1,7 +1,14 @@
-.Main {}
+.Container {
+    max-width: 100vw;
+    height: 80%;
+    padding-top: 2em;
+}
 
+.Container img {
 
-
+    height: 100%;
+    width: 100%;
+}
 
 
 /* Enable hover only on non-touch devices */

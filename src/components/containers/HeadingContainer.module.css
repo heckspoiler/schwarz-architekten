@@ -1,6 +1,10 @@
-.Main {}
-
-
+.Container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.4rem;
+    justify-content: left;
+    width: auto;
+}
 
 
 

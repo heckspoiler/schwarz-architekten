@@ -1,22 +1,3 @@
-.TextContainer {
-    padding-left: 3rem;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    align-items: flex-start;
-}
-
-.HeadingContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 0.4rem;
-
-    justify-content: left;
-    width: auto;
-}
-
-.Heading {}
-
 .Description {
     padding-left: 1.3em;
 }
@@ -26,17 +7,7 @@
     font-weight: var(--semibold);
 }
 
-.ImageContainer {
-    max-width: 100vw;
-    height: 80%;
-    padding-top: 2em;
-}
 
-.ImageContainer img {
-
-    height: 100%;
-    width: 100%;
-}
 
 .AnchorContainer {
     padding-left: 1.7em;

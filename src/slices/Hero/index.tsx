@@ -3,7 +3,10 @@ import Image from 'next/image';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import styles from './Hero.module.css';
-import Bounded from '@/components/Bounded';
+import Bounded from '@/components/containers/Bounded';
+import HeroTextContainer from '@/components/containers/HeroTextContainer';
+import HeroImageContainer from '@/components/containers/HeroImageContainer';
+import HeadingContainer from '@/components/containers/HeadingContainer';
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -13,8 +16,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className={styles.TextContainer}>
-        <div className={styles.HeadingContainer}>
+      <HeroTextContainer>
+        <HeadingContainer>
           <PrismicRichText
             field={slice.primary.heading}
             components={{
@@ -31,7 +34,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               ),
             }}
           />
-        </div>
+        </HeadingContainer>
         <PrismicRichText
           field={slice.primary.description}
           components={{
@@ -49,10 +52,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <Image src="/icons/arrow.svg" alt="Arrow" width={10} height={10} />
           </div>
         </PrismicNextLink>
-      </div>
-      <div className={styles.ImageContainer}>
+      </HeroTextContainer>
+      <HeroImageContainer>
         <PrismicNextImage field={slice.primary.hero_image} />
-      </div>
+      </HeroImageContainer>
     </Bounded>
   );
 };

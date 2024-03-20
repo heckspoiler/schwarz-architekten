@@ -1,7 +1,10 @@
-.TextContainer {
+.Container {
     padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
 }
-
 
 
 /* Enable hover only on non-touch devices */
