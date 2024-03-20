@@ -67,11 +67,11 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-
 }
 
 .InternalContainer .Listobject {
   padding-left: 7em;
+
 }
 
 .ExternalContainer .Listobject {
@@ -81,6 +81,7 @@
 .Listobject {
   width: 100%;
   list-style-type: none;
+  font-size: 0.9em;
 }
 
 .ExternalContainer {}

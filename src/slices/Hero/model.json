@@ -75,15 +75,6 @@
             "multi": "heading1"
           }
         },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
-            "allowTargetBlank": true,
-            "multi": "heading4"
-          }
-        },
         "index": {
           "type": "StructuredText",
           "config": {
@@ -91,6 +82,15 @@
             "placeholder": "01",
             "allowTargetBlank": true,
             "multi": "paragraph"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
+            "allowTargetBlank": true,
+            "multi": "heading4"
           }
         },
         "project_link": {

@@ -521,16 +521,6 @@ export interface HeroSliceProjectsPrimary {
   heading: prismic.RichTextField;
 
   /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
    * Index field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -539,6 +529,16 @@ export interface HeroSliceProjectsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   index: prismic.RichTextField;
+
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * Project Link field in *Hero → Primary*
