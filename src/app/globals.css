@@ -2,8 +2,8 @@
   font-size: 16px;
   --semibold: 600;
   --bold: 700;
-  --title: 1.5rem;
-  --subtitle: 1.25em;
+  --title: 1.3rem;
+  --subtitle: 1.2em;
   --fontsize-footer: 0.85em;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
@@ -24,7 +24,7 @@
 
 body {
   margin-top: var(--headerheight);
-  min-height: calc(100vh - var(--headerheight));
+  min-height: calc(100svh - var(--headerheight));
 }
 
 html,
@@ -66,7 +66,7 @@ button {
 
 h5 {
   font-weight: 400;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 button {

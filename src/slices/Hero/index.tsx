@@ -1,13 +1,25 @@
 import { Content } from '@prismicio/client';
 import Image from 'next/image';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from '@prismicio/react';
 import styles from './Hero.module.css';
 import Bounded from '@/components/containers/Bounded';
 import HeroTextContainer from '@/components/containers/HeroTextContainer';
 import HeroImageContainer from '@/components/containers/HeroImageContainer';
 import HeadingContainer from '@/components/containers/HeadingContainer';
 import Link from '@/components/Link';
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => <h1 className={styles.Heading}>{children}</h1>,
+  paragraph: ({ children }) => <p className={styles.Index}>{children}</p>,
+  heading5: ({ children }) => (
+    <h5 className={styles.Description}>{children}</h5>
+  ),
+};
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -21,28 +33,16 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <HeadingContainer>
           <PrismicRichText
             field={slice.primary.heading}
-            components={{
-              heading1: ({ children }) => (
-                <h1 className={styles.Heading}>{children}</h1>
-              ),
-            }}
+            components={components}
           />
           <PrismicRichText
             field={slice.primary.index}
-            components={{
-              paragraph: ({ children }) => (
-                <p className={styles.Index}>{children}</p>
-              ),
-            }}
+            components={components}
           />
         </HeadingContainer>
         <PrismicRichText
           field={slice.primary.description}
-          components={{
-            heading5: ({ children }) => (
-              <h5 className={styles.Description}>{children}</h5>
-            ),
-          }}
+          components={components}
         />
 
         <Link field={slice.primary.project_link} data-testid="hero-link" />

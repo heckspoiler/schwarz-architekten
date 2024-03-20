@@ -119,24 +119,24 @@
 			},
 			"hero_image": {
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-					"width": 3212,
-					"height": 3880
+					"id": "eaOjEz8746k",
+					"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzEwOTUwNTEyfDA&ixlib=rb-4.0.3&q=85",
+					"width": 5688,
+					"height": 3792
 				},
-				"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-				"width": 3212,
-				"height": 3880,
+				"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzEwOTUwNTEyfDA&ixlib=rb-4.0.3&q=85",
+				"width": 5688,
+				"height": 3792,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
 				"credits": null,
-				"alt": null,
+				"alt": "orange fruits under blue sky during daytime",
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}

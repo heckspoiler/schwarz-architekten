@@ -8,9 +8,7 @@ type TextContainerProps = {
 
 export default function HeroTextContainer({
   as: Container = 'div',
-  className,
   children,
-  ...restProps
 }: TextContainerProps) {
   return <Container className={styles.Container}>{children}</Container>;
 }
