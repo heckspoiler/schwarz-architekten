@@ -2,7 +2,7 @@
   font-size: 16px;
   --semibold: 600;
   --bold: 700;
-  --title: 1.5em;
+  --title: 1.5rem;
   --subtitle: 1.25em;
   --fontsize-footer: 0.85em;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);

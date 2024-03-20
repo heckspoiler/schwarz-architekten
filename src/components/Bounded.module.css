@@ -1,0 +1,28 @@
+.Main {
+    padding-top: 9em;
+    padding-bottom: 2em;
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.Content {}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        background: rgba(var(--card-rgb), 0.1);
+        border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+
+    .card:hover span {
+        transform: translateX(4px);
+    }
+}
+
+
+
+/* Mobile */
+@media (max-width: 700px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
