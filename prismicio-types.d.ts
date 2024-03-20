@@ -428,6 +428,61 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Heading field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Projekttitel
+   * - **API ID Path**: hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Index field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: hero.primary.index
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  index: prismic.RichTextField;
+
+  /**
+   * Project Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Mehr sehen
+   * - **API ID Path**: hero.primary.project_link
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_link: prismic.RichTextField;
+
+  /**
+   * Arrow field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.arrow
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  arrow: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
@@ -436,7 +491,7 @@ export type AllDocumentTypes =
  */
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<HeroSliceDefaultPrimary>,
   never
 >;
 
@@ -481,6 +536,7 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       HeroSlice,
+      HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
     };
