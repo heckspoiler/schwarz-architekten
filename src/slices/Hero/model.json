@@ -6,7 +6,61 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "Hero",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Projekttitel",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "project_link": {
+          "type": "Link",
+          "config": {
+            "label": "Project Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "projects",
+      "name": "Projects",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -27,7 +81,7 @@
             "label": "Description",
             "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
             "allowTargetBlank": true,
-            "multi": "heading3"
+            "multi": "heading4"
           }
         },
         "index": {
@@ -40,18 +94,17 @@
           }
         },
         "project_link": {
-          "type": "StructuredText",
+          "type": "Link",
           "config": {
             "label": "Project Link",
-            "placeholder": "Mehr sehen",
-            "allowTargetBlank": true,
-            "multi": "hyperlink"
+            "placeholder": "",
+            "select": null
           }
         },
-        "arrow": {
+        "hero_image": {
           "type": "Image",
           "config": {
-            "label": "Arrow",
+            "label": "Hero Image",
             "constraint": {},
             "thumbnails": []
           }

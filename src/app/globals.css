@@ -4,6 +4,7 @@
   --bold: 700;
   --title: 1.5em;
   --subtitle: 1.25em;
+  --fontsize-footer: 0.85em;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
   --rowgapdesktop: 5.625em;
@@ -52,14 +53,18 @@ h2 {
   font-size: var(--subtitle);
 }
 
-h3 {
-  font-size: 1em;
-}
 
+h3,
 h4,
+h5,
 p,
 a,
 button {
+  font-size: 1em;
+}
+
+h5 {
+  font-weight: 400;
   font-size: 1em;
 }
 

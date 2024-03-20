@@ -1,0 +1,46 @@
+.Main {
+    padding-top: 10em;
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.TextContainer {
+    padding-left: 3em;
+}
+
+.HeadingContainer {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 0.4em;
+}
+
+.Heading {}
+
+.Description {}
+
+.Index {
+    font-size: 0.75em;
+    font-weight: var(--semibold)
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        background: rgba(var(--card-rgb), 0.1);
+        border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+
+    .card:hover span {
+        transform: translateX(4px);
+    }
+}
+
+
+
+/* Mobile */
+@media (max-width: 700px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

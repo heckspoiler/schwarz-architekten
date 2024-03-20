@@ -13,11 +13,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const settingsMeta = await client.getSingle('settings');
 
   return {
-    // name: settingsMeta.data || 'Dietrich Schwarz Architekten AG',
+    title: settingsMeta.data.title || 'Dietrich Schwarz Architekten AG',
     description:
-      settingsMeta.data.meta_description || 'Nachhaltiges Bauen und Planen',
+      settingsMeta.data?.meta_description || 'Nachhaltiges Bauen und Planen',
     openGraph: {
-      images: [settingsMeta.data.og_image.url || ''],
+      images: [settingsMeta.data?.og_image?.url || ''],
     },
   };
 }

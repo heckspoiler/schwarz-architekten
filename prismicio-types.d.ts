@@ -372,6 +372,17 @@ export type NavbarDocument<Lang extends string = string> =
  */
 interface SettingsDocumentData {
   /**
+   * Title field in *Metatag*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Metatag*
    *
    * - **Field Type**: Text
@@ -442,6 +453,74 @@ export interface HeroSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
+   * Index field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: hero.primary.index
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  index: prismic.RichTextField;
+
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Project Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField;
+
+  /**
+   * Hero Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+}
+
+/**
+ * Hero variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceProjectsPrimary {
+  /**
+   * Heading field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Projekttitel
+   * - **API ID Path**: hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
    * Description field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -464,41 +543,41 @@ export interface HeroSliceDefaultPrimary {
   /**
    * Project Link field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Mehr sehen
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
    * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  project_link: prismic.RichTextField;
+  project_link: prismic.LinkField;
 
   /**
-   * Arrow field in *Hero → Primary*
+   * Hero Image field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.arrow
+   * - **API ID Path**: hero.primary.hero_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  arrow: prismic.ImageField<never>;
+  hero_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Hero Slice
+ * Projects variation for Hero Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `projects`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroSliceDefaultPrimary>,
+export type HeroSliceProjects = prismic.SharedSliceVariation<
+  "projects",
+  Simplify<HeroSliceProjectsPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceProjects;
 
 /**
  * Hero Shared Slice
@@ -537,8 +616,10 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
+      HeroSliceProjectsPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroSliceProjects,
     };
   }
 }

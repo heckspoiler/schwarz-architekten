@@ -3,9 +3,12 @@
   width: 100vw;
   top: 100vh;
   display: flex;
-  padding-left: 2em;
+  padding: 1em 0 0 3em;
   background-color: white;
+  font-size: var(--fontsize-footer);
 }
+
+.Footer * {}
 
 .Main {
   width: 100%;
@@ -29,7 +32,7 @@
 .LogoContianer {}
 
 .Logo {
-  width: 13em;
+  width: 15em;
   height: auto;
   padding-top: 0.4em;
 }
@@ -108,7 +111,7 @@
 .Copyright {
   position: absolute;
   top: calc(100% - 2em);
-  left: 2em;
+  left: 3em;
   font-size: 1em;
   font-weight: var(--bold);
 }
