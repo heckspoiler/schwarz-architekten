@@ -1,17 +1,4 @@
-.Description {
-    padding-left: 1.3em;
-}
-
-.Index {
-    font-size: 0.75rem;
-    font-weight: var(--semibold);
-}
-
-
-
-
-
-
+.Arrow {}
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {}

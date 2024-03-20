@@ -7,6 +7,7 @@ import Bounded from '@/components/containers/Bounded';
 import HeroTextContainer from '@/components/containers/HeroTextContainer';
 import HeroImageContainer from '@/components/containers/HeroImageContainer';
 import HeadingContainer from '@/components/containers/HeadingContainer';
+import Link from '@/components/Link';
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -43,15 +44,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             ),
           }}
         />
-        <PrismicNextLink
-          field={slice.primary.project_link}
-          className={styles.Anchor}
-        >
-          <div className={styles.AnchorContainer}>
-            Mehr sehen
-            <Image src="/icons/arrow.svg" alt="Arrow" width={10} height={10} />
-          </div>
-        </PrismicNextLink>
+
+        <Link field={slice.primary.project_link} data-testid="hero-link" />
       </HeroTextContainer>
       <HeroImageContainer>
         <PrismicNextImage field={slice.primary.hero_image} />
