@@ -1,11 +1,18 @@
 .TextContainer {
     padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
 }
 
 .HeadingContainer {
-    display: inline-flex;
+    display: flex;
     flex-direction: row-reverse;
     gap: 0.4rem;
+
+    justify-content: left;
+    width: auto;
 }
 
 .Heading {}
@@ -37,6 +44,11 @@
     display: inline-flex;
     gap: 1.5em;
     align-items: center;
+    transition: transform 0.2s var(--bezier)
+}
+
+.AnchorContainer:hover {
+    transform: translateX(var(--linkTranslateX))
 }
 
 .Anchor {
@@ -46,16 +58,7 @@
 
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-    .card:hover {
-        background: rgba(var(--card-rgb), 0.1);
-        border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    }
-
-    .card:hover span {
-        transform: translateX(4px);
-    }
-}
+@media (hover: hover) and (pointer: fine) {}
 
 
 
