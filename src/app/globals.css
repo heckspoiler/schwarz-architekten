@@ -26,8 +26,7 @@
 
 body {
   margin-top: var(--headerheight);
-  min-height: calc(100svh - var(--headerheight));
-  overflow-x: hidden;
+  min-height: calc(100vh - var(--headerheight));
 }
 
 html,
