@@ -3,16 +3,16 @@
   --semibold: 600;
   --bold: 700;
   --title: 1.3rem;
-  --subtitle: 1.2em;
-  --fontsize-footer: 0.85em;
+  --subtitle: 1.2rem;
+  --fontsize-footer: 0.85rem;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
   --rowgapdesktop: 5.625em;
   --lightgrey: #A7A7A7;
-  --headerheight: 3.5em;
-  --linkTranslateX: 0.5em;
-  --title_mobile: 1.05em;
-  --subtitle_mobile: 1em
+  --headerheight: 3.5rem;
+  --linkTranslateX: 0.5rem;
+  --title_mobile: 1rem;
+  --subtitle_mobile: 0.9rem
 }
 
 
@@ -108,12 +108,12 @@ a:hover {}
   p,
   a,
   button {
-    font-size: 0.6em;
+    font-size: 0.65rem;
   }
 
   h5 {
     font-weight: 400;
-    font-size: 0.8em;
+    font-size: 0.8rem;
   }
 }
 
