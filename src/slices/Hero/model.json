@@ -126,6 +126,41 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "heading_lower": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Lower",
+            "placeholder": "Heading",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "index_lower": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Index Lower",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description_lower": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description Lower",
+            "placeholder": "Description",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "project_link_lower": {
+          "type": "Link",
+          "config": {
+            "label": "Project Link Lower",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

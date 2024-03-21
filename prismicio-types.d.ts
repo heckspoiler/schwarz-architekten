@@ -367,6 +367,71 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
+type ProjectsDocumentDataSlicesSlice = HeroSlice;
+
+/**
+ * Content for Projects documents
+ */
+interface ProjectsDocumentData {
+  /**
+   * Slice Zone field in *Projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: projects.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: projects.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Projects document from Prismic
+ *
+ * - **API ID**: `projects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ProjectsDocumentData>,
+    "projects",
+    Lang
+  >;
+
 /**
  * Content for Metatag documents
  */
@@ -436,6 +501,7 @@ export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | NavbarDocument
+  | ProjectsDocument
   | SettingsDocument;
 
 /**
@@ -579,6 +645,46 @@ export interface HeroSliceProjectsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hero_image_mobile: prismic.ImageField<never>;
+
+  /**
+   * Heading Lower field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Heading
+   * - **API ID Path**: hero.primary.heading_lower
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_lower: prismic.RichTextField;
+
+  /**
+   * Index Lower field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: hero.primary.index_lower
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  index_lower: prismic.RichTextField;
+
+  /**
+   * Description Lower field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Description
+   * - **API ID Path**: hero.primary.description_lower
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_lower: prismic.RichTextField;
+
+  /**
+   * Project Link Lower field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.project_link_lower
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link_lower: prismic.LinkField;
 }
 
 /**
@@ -631,6 +737,9 @@ declare module "@prismicio/client" {
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,
+      ProjectsDocument,
+      ProjectsDocumentData,
+      ProjectsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,

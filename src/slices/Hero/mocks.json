@@ -168,7 +168,6 @@
 				"thumbnails": {}
 			},
 			"hero_image_mobile": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
@@ -186,7 +185,50 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"heading_lower": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Continued"
+						}
+					}
+				]
+			},
+			"index_lower": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna est adipisicing commodo id cillum aliquip anim irure sunt laborum amet et. Pariatur et incididunt voluptate aliqua cillum enim do ipsum est culpa qui. Culpa consequat sunt velit adipisicing qui aute ullamco in exercitation dolor."
+						}
+					}
+				]
+			},
+			"description_lower": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading5",
+						"content": {
+							"text": "Happen"
+						}
+					}
+				]
+			},
+			"project_link_lower": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
 			}
 		},
 		"items": [

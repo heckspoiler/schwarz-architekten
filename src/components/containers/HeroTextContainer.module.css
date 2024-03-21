@@ -4,7 +4,7 @@
     flex-direction: column;
     width: fit-content;
     align-items: flex-start;
-    background-color: white;
+    height: 5.5em;
 }
 
 .ProjectsContainer {
@@ -17,7 +17,8 @@
     z-index: 10;
     bottom: 0;
     right: 0;
-    padding: 2em
+    padding: 2em;
+    height: 5.5em;
 }
 
 /* Enable hover only on non-touch devices */
@@ -28,6 +29,7 @@
 
     .Container {
         padding-left: 1em;
+        height: 4em;
 
     }
 
