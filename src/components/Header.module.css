@@ -50,10 +50,15 @@
 }
 
 
-
 .Active {
   border-left: 1.5px solid black;
 }
+
+
+.NavListMobile {
+  display: none;
+}
+
 
 
 .HamburgerContainer {
