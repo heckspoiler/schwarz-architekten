@@ -64,6 +64,13 @@
 				"alt": "orange fruits under blue sky during daytime",
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"project_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": []
@@ -87,9 +94,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "heading5",
 						"content": {
-							"text": "Observe"
+							"text": "Shape"
 						}
 					}
 				]
@@ -100,8 +107,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ex sunt deserunt ut veniam aliqua deserunt eu."
-						}
+							"text": "01",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -109,7 +118,7 @@
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
+					"url": "https://prismic.io"
 				}
 			},
 			"hero_image": {

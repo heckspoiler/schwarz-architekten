@@ -3,12 +3,16 @@
     height: 80vh;
     padding-top: 2em;
     overflow: hidden;
+    bottom: calc(0 - var(--headerheight));
+    right: 0;
 }
 
 .Container img {
     height: auto;
     width: 100%;
     scale: 1.07;
+    position: absolute;
+    bottom: 0;
 }
 
 /* Enable hover only on non-touch devices */

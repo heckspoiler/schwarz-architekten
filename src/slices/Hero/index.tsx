@@ -25,32 +25,85 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <Bounded //is sort of a container that will be used on every page
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <HeroTextContainer>
-        <HeadingContainer>
-          <PrismicRichText
-            field={slice.primary.heading}
-            components={components}
-          />
-          <PrismicRichText
-            field={slice.primary.index}
-            components={components}
-          />
-        </HeadingContainer>
-        <PrismicRichText
-          field={slice.primary.description}
-          components={components}
-        />
+    <>
+      {slice.variation === 'default' && (
+        <Bounded //is sort of a container that will be used on every page
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+        >
+          <div className={styles.Content}>
+            <HeroTextContainer
+              slice={slice}
+              data-slice-type={slice.slice_type}
+              data-slice-variation={slice.variation}
+            >
+              <HeadingContainer>
+                <PrismicRichText
+                  field={slice.primary.heading}
+                  components={components}
+                />
+                <PrismicRichText
+                  field={slice.primary.index}
+                  components={components}
+                />
+              </HeadingContainer>
+              <PrismicRichText
+                field={slice.primary.description}
+                components={components}
+              />
 
-        <Link field={slice.primary.project_link} data-testid="hero-link" />
-      </HeroTextContainer>
-      <HeroImageContainer>
-        <PrismicNextImage field={slice.primary.hero_image} />
-      </HeroImageContainer>
-    </Bounded>
+              <Link
+                field={slice.primary.project_link}
+                data-testid="hero-link"
+              />
+            </HeroTextContainer>
+
+            <HeroImageContainer>
+              <PrismicNextImage field={slice.primary.hero_image} />
+            </HeroImageContainer>
+          </div>
+        </Bounded>
+      )}
+
+      {slice.variation === 'projects' && (
+        <Bounded //is sort of a container that will be used on every page
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+        >
+          <div className={styles.Content}>
+            <HeroTextContainer
+              slice={slice}
+              data-slice-type={slice.slice_type}
+              data-slice-variation={slice.variation}
+            >
+              <HeadingContainer>
+                <PrismicRichText
+                  field={slice.primary.heading}
+                  components={components}
+                />
+                <PrismicRichText
+                  field={slice.primary.index}
+                  components={components}
+                />
+              </HeadingContainer>
+              <PrismicRichText
+                field={slice.primary.description}
+                components={components}
+              />
+
+              <Link
+                field={slice.primary.project_link}
+                data-testid="hero-link"
+              />
+            </HeroTextContainer>
+
+            <HeroImageContainer>
+              <PrismicNextImage field={slice.primary.hero_image} />
+            </HeroImageContainer>
+          </div>
+        </Bounded>
+      )}
+    </>
   );
 };
 

@@ -44,6 +44,7 @@
           "config": {
             "label": "Project Link",
             "placeholder": "",
+            "allowTargetBlank": false,
             "select": null
           }
         },
@@ -90,7 +91,7 @@
             "label": "Description",
             "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
             "allowTargetBlank": true,
-            "multi": "heading4"
+            "multi": "heading5"
           }
         },
         "project_link": {
@@ -98,6 +99,7 @@
           "config": {
             "label": "Project Link",
             "placeholder": "",
+            "allowTargetBlank": false,
             "select": null
           }
         },
