@@ -55,44 +55,46 @@ export async function Footer() {
             </section>
           </section>
         </section>
-        <section
-          className={`${styles.SubcontainerUpper} ${styles.InternalContainer}`}
-        >
-          <ul>
-            {footer.data.internal_nav.map(({ link, label }) => (
-              <li key={label} className={styles.Listobject}>
-                <PrismicNextLink field={link} className={styles.Link}>
-                  <span className={styles.Linkspan}>{label}</span>
-                  <Image
-                    src="/icons/arrow.svg"
-                    alt="Arrow"
-                    width="10"
-                    height="10"
-                  />
-                </PrismicNextLink>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section
-          className={`${styles.SubcontainerUpper} ${styles.ExternalContainer}`}
-        >
-          <ul>
-            {footer.data.external_nav.map(({ label, link }) => (
-              <li key={label} className={styles.Listobject}>
-                <a href={link ?? ''} target="_blank" className={styles.Link}>
-                  <span className={styles.Linkspan}>{label}</span>
-                  <Image
-                    src="/icons/arrow.svg"
-                    alt="Arrow"
-                    width="10"
-                    height="10"
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <div className={styles.LinkContainer}>
+          <section
+            className={`${styles.SubcontainerUpper} ${styles.InternalContainer}`}
+          >
+            <ul>
+              {footer.data.internal_nav.map(({ link, label }) => (
+                <li key={label} className={styles.Listobject}>
+                  <PrismicNextLink field={link} className={styles.Link}>
+                    <span className={styles.Linkspan}>{label}</span>
+                    <Image
+                      src="/icons/arrow.svg"
+                      alt="Arrow"
+                      width="10"
+                      height="10"
+                    />
+                  </PrismicNextLink>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section
+            className={`${styles.SubcontainerUpper} ${styles.ExternalContainer}`}
+          >
+            <ul>
+              {footer.data.external_nav.map(({ label, link }) => (
+                <li key={label} className={styles.Listobject}>
+                  <a href={link ?? ''} target="_blank" className={styles.Link}>
+                    <span className={styles.Linkspan}>{label}</span>
+                    <Image
+                      src="/icons/arrow.svg"
+                      alt="Arrow"
+                      width="10"
+                      height="10"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </section>
       <section className={`${styles.SubcontainerUpper} ${styles.MapContainer}`}>
         <a
