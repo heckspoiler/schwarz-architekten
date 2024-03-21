@@ -1,18 +1,22 @@
 .Container {
     width: 100vw;
-    height: 80vh;
+    position: relative;
+    max-height: 80vh;
+    height: 73vh;
     padding-top: 0em;
     overflow: hidden;
     bottom: calc(0 - var(--headerheight));
     right: 0;
+
 }
 
 .Container img {
     height: auto;
     width: 100%;
-    scale: 1.07;
+    scale: 1.05;
     position: absolute;
     bottom: 0;
+    padding-top: 2rem;
 }
 
 /* Enable hover only on non-touch devices */
@@ -22,15 +26,15 @@
 @media (max-width: 768px) {
     .Container {
         width: 100vw;
-        height: 80vh;
+        height: 72vh;
         overflow: hidden;
-        overflow-x: hidden;
-        padding-top: 1em;
+        padding-top: 0em;
         position: relative;
+
     }
 
     .Container img {
-        height: 90%;
+        height: 100%;
         width: auto;
         scale: 1;
     }
@@ -38,3 +42,25 @@
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}
+
+
+@media (min-width: 1840px) {
+
+
+    .Container {
+        width: 100vw;
+        max-height: 73vh;
+        padding-top: 0em;
+        overflow: hidden;
+        bottom: calc(0 - var(--headerheight));
+        left: 0;
+    }
+
+    .Container img {
+        height: auto;
+        width: 100%;
+        scale: 1;
+        position: absolute;
+        bottom: 0;
+    }
+}
