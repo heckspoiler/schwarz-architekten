@@ -1,6 +1,6 @@
 .Container {
     width: 100vw;
-    max-height: 72vh;
+    height: 80vh;
     padding-top: 2em;
     overflow: hidden;
 }
@@ -8,7 +8,7 @@
 .Container img {
     height: auto;
     width: 100%;
-    scale: 1;
+    scale: 1.07;
 }
 
 /* Enable hover only on non-touch devices */
