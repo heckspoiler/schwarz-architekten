@@ -26,7 +26,24 @@ export async function Header() {
             </li>
           ))}
         </ul>
+
+        <ul className={styles.NavListMobile}>
+          {navbar.data.navbar.map(({ link, label }) => (
+            <li key={label} className={styles.Item}>
+              <PrismicNextLink field={link} className={styles.Link}>
+                {label}
+              </PrismicNextLink>
+            </li>
+          ))}
+        </ul>
       </nav>
+      <div className={styles.HamburgerContainer}>
+        <button className={styles.Hamburger}>
+          <span className={styles.HamburgerLine}></span>
+          <span className={styles.HamburgerLine}></span>
+          <span className={styles.HamburgerLine}></span>
+        </button>
+      </div>
     </header>
   );
 }
