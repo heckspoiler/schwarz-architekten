@@ -491,6 +491,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hero_image: prismic.ImageField<never>;
+
+  /**
+   * Hero Image Mobile field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.hero_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image_mobile: prismic.ImageField<never>;
 }
 
 /**
@@ -559,6 +569,16 @@ export interface HeroSliceProjectsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hero_image: prismic.ImageField<never>;
+
+  /**
+   * Hero Image Mobile field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.hero_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image_mobile: prismic.ImageField<never>;
 }
 
 /**

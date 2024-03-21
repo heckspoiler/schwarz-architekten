@@ -16,7 +16,11 @@
 @media (hover: hover) and (pointer: fine) {}
 
 /* Mobile */
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
+    .Description {
+        padding-left: 1.5em;
+    }
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}

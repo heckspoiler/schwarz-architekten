@@ -1,7 +1,7 @@
 .Container {
     width: 100vw;
     height: 80vh;
-    padding-top: 2em;
+    padding-top: 0em;
     overflow: hidden;
     bottom: calc(0 - var(--headerheight));
     right: 0;
@@ -19,7 +19,22 @@
 @media (hover: hover) and (pointer: fine) {}
 
 /* Mobile */
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
+    .Container {
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
+        overflow-x: hidden;
+        padding-top: 1em;
+        position: relative;
+    }
+
+    .Container img {
+        height: 90%;
+        width: auto;
+        scale: 1;
+    }
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}

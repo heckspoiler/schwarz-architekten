@@ -55,6 +55,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "hero_image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image Mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
@@ -107,6 +115,14 @@
           "type": "Image",
           "config": {
             "label": "Hero Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "hero_image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image Mobile",
             "constraint": {},
             "thumbnails": []
           }

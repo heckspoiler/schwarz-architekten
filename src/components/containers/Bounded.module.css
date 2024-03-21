@@ -11,7 +11,13 @@
 
 
 /* Mobile */
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
+    .Main {
+        padding-top: 4em;
+        min-height: calc(100svh - var(--headerheight));
+        overflow-y: hidden;
+    }
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}

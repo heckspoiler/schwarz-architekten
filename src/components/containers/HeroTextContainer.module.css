@@ -23,7 +23,17 @@
 @media (hover: hover) and (pointer: fine) {}
 
 /* Mobile */
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
+
+    .Container {
+        padding-left: 1em;
+
+    }
+
+    .ProjectsContainer {
+        padding: 1em
+    }
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}
