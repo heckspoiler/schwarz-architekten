@@ -43,7 +43,6 @@ const Project = ({ slice }: ProjectProps): JSX.Element => {
             ))}
         </div>
       </section>
-      hurensohn
     </section>
   );
 };
