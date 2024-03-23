@@ -66,54 +66,30 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
-        }
-      }
-    },
-    {
-      "id": "projectDescription",
-      "name": "Project Description",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {},
-      "items": {
-        "project_subtitle": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Project Subtitle",
-            "placeholder": "Subtitle",
-            "allowTargetBlank": true,
-            "multi": "heading2"
-          }
         },
-        "paragraph": {
+        "project_information_title": {
           "type": "StructuredText",
           "config": {
-            "label": "Paragraph",
+            "label": "Project Information Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        }
-      }
-    },
-    {
-      "id": "projectImages",
-      "name": "Project Images",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {},
-      "items": {
-        "image_gallery": {
+        },
+        "project_information_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Information Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "grid_image": {
           "type": "Image",
           "config": {
-            "label": "Image Gallery",
-            "constraint": {
-              "width": 500
-            },
+            "label": "Grid Image",
+            "constraint": {},
             "thumbnails": []
           }
         }

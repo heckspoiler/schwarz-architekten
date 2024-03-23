@@ -638,6 +638,36 @@ export interface ProjectSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   legend_description: prismic.RichTextField;
+
+  /**
+   * Project Information Title field in *Project → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].project_information_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_information_title: prismic.RichTextField;
+
+  /**
+   * Project Information Description field in *Project → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].project_information_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_information_description: prismic.RichTextField;
+
+  /**
+   * Grid Image field in *Project → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].grid_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  grid_image: prismic.ImageField<never>;
 }
 
 /**
@@ -654,78 +684,9 @@ export type ProjectSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Project → Items*
- */
-export interface ProjectSliceProjectDescriptionItem {
-  /**
-   * Project Subtitle field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Subtitle
-   * - **API ID Path**: project.items[].project_subtitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_subtitle: prismic.RichTextField;
-
-  /**
-   * Paragraph field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].paragraph
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  paragraph: prismic.RichTextField;
-}
-
-/**
- * Project Description variation for Project Slice
- *
- * - **API ID**: `projectDescription`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceProjectDescription = prismic.SharedSliceVariation<
-  "projectDescription",
-  Record<string, never>,
-  Simplify<ProjectSliceProjectDescriptionItem>
->;
-
-/**
- * Primary content in *Project → Items*
- */
-export interface ProjectSliceProjectImagesItem {
-  /**
-   * Image Gallery field in *Project → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].image_gallery
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image_gallery: prismic.ImageField<never>;
-}
-
-/**
- * Project Images variation for Project Slice
- *
- * - **API ID**: `projectImages`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceProjectImages = prismic.SharedSliceVariation<
-  "projectImages",
-  Record<string, never>,
-  Simplify<ProjectSliceProjectImagesItem>
->;
-
-/**
  * Slice variation for *Project*
  */
-type ProjectSliceVariation =
-  | ProjectSliceDefault
-  | ProjectSliceProjectDescription
-  | ProjectSliceProjectImages;
+type ProjectSliceVariation = ProjectSliceDefault;
 
 /**
  * Project Shared Slice
@@ -774,12 +735,8 @@ declare module "@prismicio/client" {
       ProjectSlice,
       ProjectSliceDefaultPrimary,
       ProjectSliceDefaultItem,
-      ProjectSliceProjectDescriptionItem,
-      ProjectSliceProjectImagesItem,
       ProjectSliceVariation,
       ProjectSliceDefault,
-      ProjectSliceProjectDescription,
-      ProjectSliceProjectImages,
     };
   }
 }

@@ -32,6 +32,8 @@
 .ProjectInformation p {
     line-height: 2;
     width: 80%;
+    hyphens: auto;
+
 }
 
 
@@ -75,8 +77,9 @@
 
 
     .ProjectInformation p {
-        line-height: 2;
+        line-height: 1.7;
         width: 100%;
+        text-align: justify;
     }
 
 }

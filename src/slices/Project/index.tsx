@@ -9,6 +9,7 @@ import styles from './Project.module.css';
 import HeroContainer from '@/components/containers/project/HeroContainer';
 import HeroTextContainer from '@/components/containers/HeroTextContainer';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
+import ImageGridContainer from '@/components/containers/project/ImageGridContainer';
 
 export type ProjectProps = SliceComponentProps<Content.ProjectSlice>;
 
@@ -44,19 +45,8 @@ const Project = ({ slice }: ProjectProps): JSX.Element => {
           </div>
         </section>
       </HeroContainer>
-      <TextblockContainer>
-        {slice.items &&
-          Array.isArray(slice.items) &&
-          slice.items.map((item, index) => (
-            <div
-              key={`description-${index}`}
-              className={styles.ProjectInformation}
-            >
-              <PrismicRichText field={item.project_subtitle} />
-              <PrismicRichText field={item.paragraph} />
-            </div>
-          ))}
-      </TextblockContainer>
+      <h1>hllo</h1>
+      hurensohn
     </section>
   );
 };

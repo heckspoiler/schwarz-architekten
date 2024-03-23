@@ -93,71 +93,47 @@
 								}
 							]
 						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "projectDescription",
-		"primary": {},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"project_subtitle",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading2",
-									"content": {
-										"text": "Package"
-									}
-								}
-							]
-						}
 					],
 					[
-						"paragraph",
+						"project_information_title",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Consectetur ad eiusmod laborum pariatur duis. Magna Lorem culpa veniam ex dolore deserunt duis."
+										"text": "Cillum ipsum officia consequat amet laborum eiusmod ex nostrud fugiat sunt. Minim nulla velit occaecat exercitation ad ut dolor sunt deserunt quis. Sunt laborum duis do voluptate pariatur consectetur sunt id sint ex."
 									}
 								}
 							]
 						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "projectImages",
-		"primary": {},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
+					],
 					[
-						"image_gallery",
+						"project_information_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Amet ut ullamco officia dolore pariatur ullamco exercitation Lorem pariatur. Enim excepteur et in laboris minim est id culpa occaecat nisi sit aliquip reprehenderit in."
+									}
+								}
+							]
+						}
+					],
+					[
+						"grid_image",
 						{
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
-								"width": 4024,
-								"height": 4024
+								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+								"width": 4380,
+								"height": 2895
 							},
-							"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?rect=0%2C0%2C4024%2C4024&w=500&h=500",
-							"width": 500,
-							"height": 500,
+							"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+							"width": 4380,
+							"height": 2895,
 							"edit": {
 								"zoom": 1,
 								"crop": {
