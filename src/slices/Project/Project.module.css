@@ -1,0 +1,20 @@
+.HeroContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.TitleIndex {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    height: auto;
+    gap: 0.5em;
+    padding-left: 3em;
+}
+
+.ImageContainer {
+    padding-top: 3em;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid black;
+}

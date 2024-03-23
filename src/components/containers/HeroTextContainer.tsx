@@ -14,18 +14,5 @@ export default function HeroTextContainer({
   children,
   slice,
 }: TextContainerProps) {
-  return (
-    <>
-      {slice.variation === 'default' && (
-        <Container className={styles.Container}>{children}</Container>
-      )}
-
-      {slice.variation === 'projects' && (
-        <>
-          <Container className={styles.Container}>{children}</Container>
-          <Container className={styles.ProjectsContainer}>{children}</Container>
-        </>
-      )}
-    </>
-  );
+  return <Container className={styles.Container}>{children}</Container>;
 }
