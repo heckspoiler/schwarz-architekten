@@ -227,7 +227,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = HeroSlice;
+type HomeDocumentDataSlicesSlice = never;
 
 /**
  * Content for Home documents
@@ -299,6 +299,40 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type HomeSliderDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Home Slider documents
+ */
+interface HomeSliderDocumentData {
+  /**
+   * Slice Zone field in *Home Slider*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_slider.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeSliderDocumentDataSlicesSlice>;
+}
+
+/**
+ * Home Slider document from Prismic
+ *
+ * - **API ID**: `home_slider`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeSliderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<HomeSliderDocumentData>,
+    "home_slider",
+    Lang
+  >;
+
 /**
  * Item in *Header → navbar*
  */
@@ -367,7 +401,7 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-type ProjectsDocumentDataSlicesSlice = HeroSlice;
+type ProjectsDocumentDataSlicesSlice = never;
 
 /**
  * Content for Projects documents
@@ -500,280 +534,10 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
+  | HomeSliderDocument
   | NavbarDocument
   | ProjectsDocument
   | SettingsDocument;
-
-/**
- * Primary content in *Hero → Primary*
- */
-export interface HeroSliceDefaultPrimary {
-  /**
-   * Heading field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Index field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index: prismic.RichTextField;
-
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link: prismic.LinkField;
-
-  /**
-   * Hero Image field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image: prismic.ImageField<never>;
-
-  /**
-   * Hero Image Mobile field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image_mobile
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image_mobile: prismic.ImageField<never>;
-}
-
-/**
- * Hero variation for Hero Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *Hero → Primary*
- */
-export interface HeroSliceProjectsPrimary {
-  /**
-   * Heading field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Index field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index: prismic.RichTextField;
-
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link: prismic.LinkField;
-
-  /**
-   * Hero Image field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image: prismic.ImageField<never>;
-
-  /**
-   * Hero Image Mobile field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image_mobile
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image_mobile: prismic.ImageField<never>;
-
-  /**
-   * Heading Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Heading
-   * - **API ID Path**: hero.primary.heading_lower
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading_lower: prismic.RichTextField;
-
-  /**
-   * Index Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index_lower
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index_lower: prismic.RichTextField;
-
-  /**
-   * Description Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description
-   * - **API ID Path**: hero.primary.description_lower
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description_lower: prismic.RichTextField;
-
-  /**
-   * Project Link Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link_lower
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link_lower: prismic.LinkField;
-}
-
-/**
- * Projects variation for Hero Slice
- *
- * - **API ID**: `projects`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceProjects = prismic.SharedSliceVariation<
-  "projects",
-  Simplify<HeroSliceProjectsPrimary>,
-  never
->;
-
-/**
- * Primary content in *Hero → Primary*
- */
-export interface HeroSliceTitleContentPrimary {
-  /**
-   * Heading field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Index field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index: prismic.RichTextField;
-
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link: prismic.LinkField;
-}
-
-/**
- * title_content variation for Hero Slice
- *
- * - **API ID**: `titleContent`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceTitleContent = prismic.SharedSliceVariation<
-  "titleContent",
-  Simplify<HeroSliceTitleContentPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Hero*
- */
-type HeroSliceVariation =
-  | HeroSliceDefault
-  | HeroSliceProjects
-  | HeroSliceTitleContent;
-
-/**
- * Hero Shared Slice
- *
- * - **API ID**: `hero`
- * - **Description**: Hero
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -795,6 +559,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      HomeSliderDocument,
+      HomeSliderDocumentData,
+      HomeSliderDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,
@@ -804,14 +571,6 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
-      HeroSlice,
-      HeroSliceDefaultPrimary,
-      HeroSliceProjectsPrimary,
-      HeroSliceTitleContentPrimary,
-      HeroSliceVariation,
-      HeroSliceDefault,
-      HeroSliceProjects,
-      HeroSliceTitleContent,
     };
   }
 }

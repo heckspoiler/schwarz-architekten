@@ -1,0 +1,24 @@
+{
+  "format": "custom",
+  "id": "home_slider",
+  "label": "Home Slider",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}
