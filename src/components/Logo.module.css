@@ -1,0 +1,39 @@
+.LogoContainer {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.Logo {
+    padding-top: 10px;
+    width: 15em;
+    height: auto;
+
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .LogoContainer {
+        width: fit-content;
+    }
+
+    .Logo {
+        padding-top: 10px;
+        width: 17em;
+    }
+
+
+
+
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

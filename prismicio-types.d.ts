@@ -426,7 +426,7 @@ interface ProjectsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<ProjectsDocumentData>,
     "projects",
     Lang
@@ -701,9 +701,70 @@ export type HeroSliceProjects = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceTitleContentPrimary {
+  /**
+   * Heading field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Projekttitel
+   * - **API ID Path**: hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Index field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: hero.primary.index
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  index: prismic.RichTextField;
+
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Project Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField;
+}
+
+/**
+ * title_content variation for Hero Slice
+ *
+ * - **API ID**: `titleContent`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceTitleContent = prismic.SharedSliceVariation<
+  "titleContent",
+  Simplify<HeroSliceTitleContentPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceProjects;
+type HeroSliceVariation =
+  | HeroSliceDefault
+  | HeroSliceProjects
+  | HeroSliceTitleContent;
 
 /**
  * Hero Shared Slice
@@ -746,9 +807,11 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceProjectsPrimary,
+      HeroSliceTitleContentPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceProjects,
+      HeroSliceTitleContent,
     };
   }
 }

@@ -164,6 +164,53 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "titleContent",
+      "name": "title_content",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Projekttitel",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Kurzbeschrieb Projekt (max. 45 Zeichen)",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "project_link": {
+          "type": "Link",
+          "config": {
+            "label": "Project Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

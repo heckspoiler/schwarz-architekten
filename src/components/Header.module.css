@@ -12,18 +12,6 @@
   height: var(--headerheight);
 }
 
-.LogoContainer {
-  display: flex;
-  align-items: center;
-  width: 50%;
-}
-
-.Logo {
-  padding-top: 10px;
-  width: 15em;
-  height: auto;
-
-}
 
 .Navbar {
   width: 50%;
