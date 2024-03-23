@@ -100,46 +100,6 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "projectLegend",
-		"primary": {},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"legend_title",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Typical"
-									}
-								}
-							]
-						}
-					],
-					[
-						"legend_description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Laborum qui amet amet irure laborum commodo culpa velit eu cillum nulla. Lorem qui id quis proident elit mollit consectetur id sunt elit ad. Do ad consectetur incididunt exercitation id sint."
-									}
-								}
-							]
-						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
 		"variation": "projectDescription",
 		"primary": {},
 		"items": [

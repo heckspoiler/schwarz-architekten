@@ -8,6 +8,7 @@ import {
 import styles from './Project.module.css';
 import HeroContainer from '@/components/containers/project/HeroContainer';
 import HeroTextContainer from '@/components/containers/HeroTextContainer';
+import TextblockContainer from '@/components/containers/project/TextblockContainer';
 
 export type ProjectProps = SliceComponentProps<Content.ProjectSlice>;
 
@@ -36,21 +37,26 @@ const Project = ({ slice }: ProjectProps): JSX.Element => {
               Array.isArray(slice.items) &&
               slice.items.map((item, index) => (
                 <div key={`legend-${index}`} className={styles.Legend}>
-                  <PrismicRichText
-                    field={item.legend_title}
-                    className={styles.LegendTitle}
-                  />
-                  <PrismicRichText
-                    field={item.legend_description}
-                    className={styles.LegendDescription}
-                  />
+                  <PrismicRichText field={item.legend_title} />
+                  <PrismicRichText field={item.legend_description} />
                 </div>
               ))}
           </div>
         </section>
       </HeroContainer>
-
-      <section></section>
+      <TextblockContainer>
+        {slice.items &&
+          Array.isArray(slice.items) &&
+          slice.items.map((item, index) => (
+            <div
+              key={`description-${index}`}
+              className={styles.ProjectInformation}
+            >
+              <PrismicRichText field={item.project_subtitle} />
+              <PrismicRichText field={item.paragraph} />
+            </div>
+          ))}
+      </TextblockContainer>
     </section>
   );
 };

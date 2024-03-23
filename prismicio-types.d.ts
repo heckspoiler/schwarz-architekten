@@ -656,44 +656,6 @@ export type ProjectSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *Project → Items*
  */
-export interface ProjectSliceProjectLegendItem {
-  /**
-   * Legend Title field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].legend_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  legend_title: prismic.RichTextField;
-
-  /**
-   * Legend Description field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].legend_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  legend_description: prismic.RichTextField;
-}
-
-/**
- * Project Legend variation for Project Slice
- *
- * - **API ID**: `projectLegend`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceProjectLegend = prismic.SharedSliceVariation<
-  "projectLegend",
-  Record<string, never>,
-  Simplify<ProjectSliceProjectLegendItem>
->;
-
-/**
- * Primary content in *Project → Items*
- */
 export interface ProjectSliceProjectDescriptionItem {
   /**
    * Project Subtitle field in *Project → Items*
@@ -762,7 +724,6 @@ export type ProjectSliceProjectImages = prismic.SharedSliceVariation<
  */
 type ProjectSliceVariation =
   | ProjectSliceDefault
-  | ProjectSliceProjectLegend
   | ProjectSliceProjectDescription
   | ProjectSliceProjectImages;
 
@@ -813,12 +774,10 @@ declare module "@prismicio/client" {
       ProjectSlice,
       ProjectSliceDefaultPrimary,
       ProjectSliceDefaultItem,
-      ProjectSliceProjectLegendItem,
       ProjectSliceProjectDescriptionItem,
       ProjectSliceProjectImagesItem,
       ProjectSliceVariation,
       ProjectSliceDefault,
-      ProjectSliceProjectLegend,
       ProjectSliceProjectDescription,
       ProjectSliceProjectImages,
     };

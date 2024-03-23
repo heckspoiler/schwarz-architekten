@@ -70,35 +70,6 @@
       }
     },
     {
-      "id": "projectLegend",
-      "name": "Project Legend",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {},
-      "items": {
-        "legend_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Legend Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading3"
-          }
-        },
-        "legend_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Legend Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          }
-        }
-      }
-    },
-    {
       "id": "projectDescription",
       "name": "Project Description",
       "docURL": "...",

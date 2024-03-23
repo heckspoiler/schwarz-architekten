@@ -1,8 +1,9 @@
 .Container {
     display: flex;
     flex-direction: column;
+    max-height: fit-content;
+    padding: 2em 6em;
 }
-
 
 
 /* Enable hover only on non-touch devices */
@@ -11,7 +12,16 @@
 
 
 /* Mobile */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+    .Container {
+        display: flex;
+        flex-direction: column;
+        max-height: fit-content;
+        padding: 0em 1.5em;
+    }
+
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}
