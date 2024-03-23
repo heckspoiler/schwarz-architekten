@@ -1,20 +1,38 @@
-.HeroContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.TitleIndex {
-    display: flex;
-    width: fit-content;
-    flex-direction: row;
-    height: auto;
-    gap: 0.5em;
-    padding-left: 3em;
-}
-
 .ImageContainer {
     padding-top: 3em;
     height: 100%;
     overflow: hidden;
-    border: 1px solid black;
 }
+
+.Hero {
+    display: flex;
+    align-items: center;
+}
+
+.Hero img {}
+
+.LegendsContainer {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    margin-left: 2em;
+    gap: 3em;
+
+}
+
+.LegendsContainer p {
+    font-size: 0.8em;
+
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

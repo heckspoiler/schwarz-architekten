@@ -1,11 +1,15 @@
 .Container {
     display: flex;
-    flex-direction: row-reverse;
-    gap: 0.4rem;
-    justify-content: left;
-    width: auto;
+    flex-direction: column;
 }
 
+.Container h5 {
+    font-size: 1em;
+}
+
+.Container .Index {
+    font-size: 0.65em;
+}
 
 
 /* Enable hover only on non-touch devices */

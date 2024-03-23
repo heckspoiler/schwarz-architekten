@@ -1,4 +1,4 @@
-import styles from './HeroTextContainer.module.css';
+import styles from './HeroContainer.module.css';
 
 type TextContainerProps = {
   as?: React.ElementType;
@@ -6,8 +6,8 @@ type TextContainerProps = {
   className?: string;
 };
 
-export default function HeroTextContainer({
-  as: Container = 'div',
+export default function HeroContainer({
+  as: Container = 'section',
   children,
 }: TextContainerProps) {
   return <Container className={styles.Container}>{children}</Container>;

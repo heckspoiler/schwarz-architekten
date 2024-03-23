@@ -36,7 +36,7 @@
             "label": "Project Brief",
             "placeholder": "Beschreibung",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading5"
+            "multi": "heading5"
           }
         },
         "hero_image": {
@@ -48,7 +48,26 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "legend_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Legend Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "legend_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Legend Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      }
     },
     {
       "id": "projectLegend",

@@ -1,25 +1,13 @@
 .Container {
-    padding-left: 3em;
     display: flex;
-    flex-direction: column;
     width: fit-content;
-    align-items: flex-start;
-    height: 5.5em;
+    flex-direction: row;
+    height: auto;
+    gap: 0.5em;
+    padding-left: 3em;
 }
 
-.ProjectsContainer {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    align-items: flex-start;
-    background-color: white;
-    position: absolute;
-    z-index: 10;
-    bottom: 0;
-    right: 0;
-    padding: 2em;
-    height: 5.5em;
-}
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {}

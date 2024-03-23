@@ -616,6 +616,31 @@ export interface ProjectSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *Project → Items*
+ */
+export interface ProjectSliceDefaultItem {
+  /**
+   * Legend Title field in *Project → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].legend_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  legend_title: prismic.RichTextField;
+
+  /**
+   * Legend Description field in *Project → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].legend_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  legend_description: prismic.RichTextField;
+}
+
+/**
  * project upper variation for Project Slice
  *
  * - **API ID**: `default`
@@ -625,7 +650,7 @@ export interface ProjectSliceDefaultPrimary {
 export type ProjectSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ProjectSliceDefaultPrimary>,
-  never
+  Simplify<ProjectSliceDefaultItem>
 >;
 
 /**
@@ -787,6 +812,7 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       ProjectSlice,
       ProjectSliceDefaultPrimary,
+      ProjectSliceDefaultItem,
       ProjectSliceProjectLegendItem,
       ProjectSliceProjectDescriptionItem,
       ProjectSliceProjectImagesItem,
