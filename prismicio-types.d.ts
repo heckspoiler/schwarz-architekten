@@ -227,7 +227,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = HeroSlice;
+type HomeDocumentDataSlicesSlice = never;
 
 /**
  * Content for Home documents
@@ -367,7 +367,72 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-type ProjectsDocumentDataSlicesSlice = HeroSlice;
+type ProjectDocumentDataSlicesSlice = ProjectSlice;
+
+/**
+ * Content for Project documents
+ */
+interface ProjectDocumentData {
+  /**
+   * Slice Zone field in *Project*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectDocumentDataSlicesSlice> /**
+   * Meta Description field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: project.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: project.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectDocumentData>,
+    "project",
+    Lang
+  >;
+
+type ProjectsDocumentDataSlicesSlice = never;
 
 /**
  * Content for Projects documents
@@ -501,279 +566,192 @@ export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | NavbarDocument
+  | ProjectDocument
   | ProjectsDocument
   | SettingsDocument;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Project → Primary*
  */
-export interface HeroSliceDefaultPrimary {
+export interface ProjectSliceDefaultPrimary {
   /**
-   * Heading field in *Hero → Primary*
+   * Project Title field in *Project → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
+   * - **API ID Path**: project.primary.project_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.RichTextField;
+  project_title: prismic.RichTextField;
 
   /**
-   * Index field in *Hero → Primary*
+   * Project Index field in *Project → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
+   * - **API ID Path**: project.primary.project_index
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  index: prismic.RichTextField;
+  project_index: prismic.RichTextField;
 
   /**
-   * Description field in *Hero → Primary*
+   * Project Brief field in *Project → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
+   * - **Placeholder**: Beschreibung
+   * - **API ID Path**: project.primary.project_brief
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField;
+  project_brief: prismic.RichTextField;
 
   /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link: prismic.LinkField;
-
-  /**
-   * Hero Image field in *Hero → Primary*
+   * Hero Image field in *Project → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image
+   * - **API ID Path**: project.primary.hero_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hero_image: prismic.ImageField<never>;
-
-  /**
-   * Hero Image Mobile field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image_mobile
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image_mobile: prismic.ImageField<never>;
 }
 
 /**
- * Hero variation for Hero Slice
+ * project upper variation for Project Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
+export type ProjectSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<HeroSliceDefaultPrimary>,
+  Simplify<ProjectSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Project → Items*
  */
-export interface HeroSliceProjectsPrimary {
+export interface ProjectSliceProjectLegendItem {
   /**
-   * Heading field in *Hero → Primary*
+   * Legend Title field in *Project → Items*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Index field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index: prismic.RichTextField;
-
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project_link: prismic.LinkField;
-
-  /**
-   * Hero Image field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image: prismic.ImageField<never>;
-
-  /**
-   * Hero Image Mobile field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero_image_mobile
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image_mobile: prismic.ImageField<never>;
-
-  /**
-   * Heading Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Heading
-   * - **API ID Path**: hero.primary.heading_lower
+   * - **API ID Path**: project.items[].legend_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_lower: prismic.RichTextField;
+  legend_title: prismic.RichTextField;
 
   /**
-   * Index Lower field in *Hero → Primary*
+   * Legend Description field in *Project → Items*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index_lower
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index_lower: prismic.RichTextField;
-
-  /**
-   * Description Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description
-   * - **API ID Path**: hero.primary.description_lower
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description_lower: prismic.RichTextField;
-
-  /**
-   * Project Link Lower field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link_lower
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: project.items[].legend_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  project_link_lower: prismic.LinkField;
+  legend_description: prismic.RichTextField;
 }
 
 /**
- * Projects variation for Hero Slice
+ * Project Legend variation for Project Slice
  *
- * - **API ID**: `projects`
+ * - **API ID**: `projectLegend`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceProjects = prismic.SharedSliceVariation<
-  "projects",
-  Simplify<HeroSliceProjectsPrimary>,
-  never
+export type ProjectSliceProjectLegend = prismic.SharedSliceVariation<
+  "projectLegend",
+  Record<string, never>,
+  Simplify<ProjectSliceProjectLegendItem>
 >;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Project → Items*
  */
-export interface HeroSliceTitleContentPrimary {
+export interface ProjectSliceProjectDescriptionItem {
   /**
-   * Heading field in *Hero → Primary*
+   * Project Subtitle field in *Project → Items*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: hero.primary.heading
+   * - **Placeholder**: Subtitle
+   * - **API ID Path**: project.items[].project_subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.RichTextField;
+  project_subtitle: prismic.RichTextField;
 
   /**
-   * Index field in *Hero → Primary*
+   * Paragraph field in *Project → Items*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: hero.primary.index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  index: prismic.RichTextField;
-
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Kurzbeschrieb Projekt (max. 45 Zeichen)
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.project_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: project.items[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  project_link: prismic.LinkField;
+  paragraph: prismic.RichTextField;
 }
 
 /**
- * title_content variation for Hero Slice
+ * Project Description variation for Project Slice
  *
- * - **API ID**: `titleContent`
+ * - **API ID**: `projectDescription`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceTitleContent = prismic.SharedSliceVariation<
-  "titleContent",
-  Simplify<HeroSliceTitleContentPrimary>,
-  never
+export type ProjectSliceProjectDescription = prismic.SharedSliceVariation<
+  "projectDescription",
+  Record<string, never>,
+  Simplify<ProjectSliceProjectDescriptionItem>
 >;
 
 /**
- * Slice variation for *Hero*
+ * Primary content in *Project → Items*
  */
-type HeroSliceVariation =
-  | HeroSliceDefault
-  | HeroSliceProjects
-  | HeroSliceTitleContent;
+export interface ProjectSliceProjectImagesItem {
+  /**
+   * Image Gallery field in *Project → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.items[].image_gallery
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_gallery: prismic.ImageField<never>;
+}
 
 /**
- * Hero Shared Slice
+ * Project Images variation for Project Slice
  *
- * - **API ID**: `hero`
- * - **Description**: Hero
+ * - **API ID**: `projectImages`
+ * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+export type ProjectSliceProjectImages = prismic.SharedSliceVariation<
+  "projectImages",
+  Record<string, never>,
+  Simplify<ProjectSliceProjectImagesItem>
+>;
+
+/**
+ * Slice variation for *Project*
+ */
+type ProjectSliceVariation =
+  | ProjectSliceDefault
+  | ProjectSliceProjectLegend
+  | ProjectSliceProjectDescription
+  | ProjectSliceProjectImages;
+
+/**
+ * Project Shared Slice
+ *
+ * - **API ID**: `project`
+ * - **Description**: Project
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSlice = prismic.SharedSlice<
+  "project",
+  ProjectSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -798,20 +776,25 @@ declare module "@prismicio/client" {
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,
+      ProjectDocument,
+      ProjectDocumentData,
+      ProjectDocumentDataSlicesSlice,
       ProjectsDocument,
       ProjectsDocumentData,
       ProjectsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
-      HeroSlice,
-      HeroSliceDefaultPrimary,
-      HeroSliceProjectsPrimary,
-      HeroSliceTitleContentPrimary,
-      HeroSliceVariation,
-      HeroSliceDefault,
-      HeroSliceProjects,
-      HeroSliceTitleContent,
+      ProjectSlice,
+      ProjectSliceDefaultPrimary,
+      ProjectSliceProjectLegendItem,
+      ProjectSliceProjectDescriptionItem,
+      ProjectSliceProjectImagesItem,
+      ProjectSliceVariation,
+      ProjectSliceDefault,
+      ProjectSliceProjectLegend,
+      ProjectSliceProjectDescription,
+      ProjectSliceProjectImages,
     };
   }
 }
