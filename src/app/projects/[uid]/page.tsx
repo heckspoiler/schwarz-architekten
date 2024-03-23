@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SliceZone } from '@prismicio/react';
-import Bounded from '@/components/containers/Bounded';
+
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
+import Bounded from '@/components/containers/Bounded';
 
 type Params = { uid: string };
 

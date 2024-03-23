@@ -19,33 +19,30 @@ const Project = ({ slice }: ProjectProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <HeroContainer>
-        <HeroTextContainer>
-          <div className={styles.Index}>
-            <PrismicRichText field={slice.primary.project_index} />
-          </div>
-          <section className={styles.HeadingContainer}>
-            <PrismicRichText field={slice.primary.project_title} />
-            <PrismicRichText field={slice.primary.project_brief} />
-          </section>
-        </HeroTextContainer>
-        <section className={styles.Hero}>
-          <div className={styles.ImageContainer}>
-            <PrismicImage field={slice.primary.hero_image} />
-          </div>
-          <div className={styles.LegendsContainer}>
-            {slice.items &&
-              Array.isArray(slice.items) &&
-              slice.items.map((item, index) => (
-                <div key={`legend-${index}`} className={styles.Legend}>
-                  <PrismicRichText field={item.legend_title} />
-                  <PrismicRichText field={item.legend_description} />
-                </div>
-              ))}
-          </div>
+      <HeroTextContainer>
+        <div className={styles.Index}>
+          <PrismicRichText field={slice.primary.project_index} />
+        </div>
+        <section className={styles.HeadingContainer}>
+          <PrismicRichText field={slice.primary.project_title} />
+          <PrismicRichText field={slice.primary.project_brief} />
         </section>
-      </HeroContainer>
-      <h1>hllo</h1>
+      </HeroTextContainer>
+      <section className={styles.Hero}>
+        <div className={styles.ImageContainer}>
+          <PrismicImage field={slice.primary.hero_image} />
+        </div>
+        <div className={styles.LegendsContainer}>
+          {slice.items &&
+            Array.isArray(slice.items) &&
+            slice.items.map((item, index) => (
+              <div key={`legend-${index}`} className={styles.Legend}>
+                <PrismicRichText field={item.legend_title} />
+                <PrismicRichText field={item.legend_description} />
+              </div>
+            ))}
+        </div>
+      </section>
       hurensohn
     </section>
   );

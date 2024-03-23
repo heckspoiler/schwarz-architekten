@@ -13,10 +13,8 @@ export default function Bounded({
   ...restProps
 }: BoundedProps) {
   return (
-    <Comp className={styles.Main}>
-      <div className={styles.Content} {...restProps}>
-        {children}
-      </div>
+    <Comp className={styles.Main} {...restProps}>
+      {children}
     </Comp>
   );
 }

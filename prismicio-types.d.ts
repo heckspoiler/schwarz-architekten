@@ -638,40 +638,10 @@ export interface ProjectSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   legend_description: prismic.RichTextField;
-
-  /**
-   * Project Information Title field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].project_information_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_information_title: prismic.RichTextField;
-
-  /**
-   * Project Information Description field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].project_information_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_information_description: prismic.RichTextField;
-
-  /**
-   * Grid Image field in *Project → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].grid_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  grid_image: prismic.ImageField<never>;
 }
 
 /**
- * project upper variation for Project Slice
+ * project variation for Project Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default

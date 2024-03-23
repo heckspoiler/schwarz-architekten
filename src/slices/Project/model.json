@@ -6,7 +6,7 @@
   "variations": [
     {
       "id": "default",
-      "name": "project upper",
+      "name": "project",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -65,32 +65,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph"
-          }
-        },
-        "project_information_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Project Information Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "project_information_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Project Information Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "grid_image": {
-          "type": "Image",
-          "config": {
-            "label": "Grid Image",
-            "constraint": {},
-            "thumbnails": []
           }
         }
       }
