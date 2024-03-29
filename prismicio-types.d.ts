@@ -367,7 +367,7 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-type ProjectDocumentDataSlicesSlice = ProjectSlice;
+type ProjectDocumentDataSlicesSlice = never;
 
 /**
  * Content for Project documents
@@ -562,113 +562,79 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Slide Home documents
+ */
+interface SlideHomeDocumentData {
+  /**
+   * Title home field in *Slide Home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Titel Slide
+   * - **API ID Path**: slide_home.title_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_home: prismic.RichTextField;
+
+  /**
+   * Index Home field in *Slide Home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: slide_home.index_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  index_home: prismic.RichTextField;
+
+  /**
+   * Description Home field in *Slide Home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide_home.description_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_home: prismic.RichTextField;
+
+  /**
+   * Heroimage Home field in *Slide Home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide_home.heroimage_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  heroimage_home: prismic.ImageField<never>;
+}
+
+/**
+ * Slide Home document from Prismic
+ *
+ * - **API ID**: `slide_home`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SlideHomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SlideHomeDocumentData>,
+    "slide_home",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | NavbarDocument
   | ProjectDocument
   | ProjectsDocument
-  | SettingsDocument;
-
-/**
- * Primary content in *Project → Primary*
- */
-export interface ProjectSliceDefaultPrimary {
-  /**
-   * Project Title field in *Project → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Projekttitel
-   * - **API ID Path**: project.primary.project_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_title: prismic.RichTextField;
-
-  /**
-   * Project Index field in *Project → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: 01
-   * - **API ID Path**: project.primary.project_index
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_index: prismic.RichTextField;
-
-  /**
-   * Project Brief field in *Project → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Beschreibung
-   * - **API ID Path**: project.primary.project_brief
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  project_brief: prismic.RichTextField;
-
-  /**
-   * Hero Image field in *Project → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.hero_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hero_image: prismic.ImageField<never>;
-}
-
-/**
- * Primary content in *Project → Items*
- */
-export interface ProjectSliceDefaultItem {
-  /**
-   * Legend Title field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].legend_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  legend_title: prismic.RichTextField;
-
-  /**
-   * Legend Description field in *Project → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.items[].legend_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  legend_description: prismic.RichTextField;
-}
-
-/**
- * project variation for Project Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectSliceDefaultPrimary>,
-  Simplify<ProjectSliceDefaultItem>
->;
-
-/**
- * Slice variation for *Project*
- */
-type ProjectSliceVariation = ProjectSliceDefault;
-
-/**
- * Project Shared Slice
- *
- * - **API ID**: `project`
- * - **Description**: Project
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSlice = prismic.SharedSlice<
-  "project",
-  ProjectSliceVariation
->;
+  | SettingsDocument
+  | SlideHomeDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -701,12 +667,9 @@ declare module "@prismicio/client" {
       ProjectsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SlideHomeDocument,
+      SlideHomeDocumentData,
       AllDocumentTypes,
-      ProjectSlice,
-      ProjectSliceDefaultPrimary,
-      ProjectSliceDefaultItem,
-      ProjectSliceVariation,
-      ProjectSliceDefault,
     };
   }
 }

@@ -2,6 +2,4 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {
-  project: dynamic(() => import("./Project")),
-};
+export const components = {};
