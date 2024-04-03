@@ -12,39 +12,23 @@
         },
         "type": "UID"
       },
-      "title_home": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Title home",
-          "placeholder": "Titel Slide",
-          "allowTargetBlank": true,
-          "multi": "heading1"
-        }
-      },
-      "index_home": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Index Home",
-          "placeholder": "01",
-          "allowTargetBlank": true,
-          "multi": "paragraph"
-        }
-      },
-      "description_home": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Description Home",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "heading5"
-        }
-      },
       "heroimage_home": {
         "type": "Image",
         "config": {
           "label": "Heroimage Home",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "project_info": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

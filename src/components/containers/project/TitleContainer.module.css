@@ -1,0 +1,38 @@
+.Container {
+    max-width: fit-content;
+    padding: var(--project_info_padding);
+    padding-left: 3em;
+    display: flex;
+    gap: 0.5em;
+    height: var(--project_info_height);
+}
+
+.Container h6 {
+    font-size: var(--project_info_index)
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .Container {
+        max-width: fit-content;
+        padding: var(--project_info_padding);
+        padding-left: 2em;
+        display: flex;
+        gap: 0.5em;
+        height: var(--project_info_height);
+    }
+
+    .Container h6 {
+        font-size: var(--project_info_index)
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

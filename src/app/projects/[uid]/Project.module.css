@@ -1,0 +1,153 @@
+.HeroImageSection {
+    display: flex;
+}
+
+.LegendContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    padding-left: 3em;
+    font-size: 0.9em;
+}
+
+.LegendContainer p {}
+
+.ImageContainer {
+    position: relative;
+    max-height: 75vh;
+    overflow: hidden;
+    width: 70em;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.ImageContainer img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.DescriptionContainer {
+    width: 80%;
+}
+
+.DescriptionTitleContainer {
+    padding: 2em 0 2em 2em;
+}
+
+.TextBlock p {
+    hyphens: auto;
+    text-align: justify;
+    font-size: 0.9em;
+}
+
+.GallerySection {
+    padding-top: 2em;
+}
+
+.GallerySection h3 {
+    padding-left: 8em;
+}
+
+.ImageGridItem {
+    height: 30em;
+    width: 30em;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.ImageGridItem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(0, 0);
+}
+
+.ImageGridItem img:hover {
+    cursor: zoom-in;
+}
+
+@media (hover: hover) and (pointer: fine) {}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .HeroImageSection {
+
+        flex-direction: column;
+    }
+
+    .LegendContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        padding: 2em 2em;
+        font-size: 0.9em;
+    }
+
+
+    .ImageContainer {
+        width: 100vw;
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .DescriptionContainer {
+        width: 100%;
+        padding-top: 3em;
+    }
+
+    .DescriptionTitleContainer {
+        padding: 2em 0 2em 2em;
+    }
+
+    .TextBlock p {
+        hyphens: auto;
+        text-align: justify;
+        font-size: 0.8em;
+    }
+
+    .GallerySection {
+        padding-top: 2em;
+    }
+
+    .GallerySection h3 {
+        padding-left: 4em;
+    }
+
+    .ImageGridItem {
+        height: 18em;
+        width: 18em;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .ImageGridItem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(0, 0);
+    }
+
+    .ImageGridItem img:hover {
+        cursor: zoom-in;
+    }
+}
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
+
+
+
+@media (min-width: 1840px) {}

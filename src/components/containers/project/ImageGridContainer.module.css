@@ -1,4 +1,34 @@
 .Container {
     display: grid;
-    background-color: red;
+    padding: 2em 6em;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5em;
+    column-gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .Container {
+        display: grid;
+        padding: 1em inherit;
+        grid-template-columns: 1fr;
+        row-gap: 2.5em;
+        column-gap: 1em;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+}
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
+
+
+
+@media (min-width: 1840px) {}

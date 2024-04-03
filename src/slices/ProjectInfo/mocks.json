@@ -1,0 +1,231 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"project_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Wohnhaus Austrasse, Meilen",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"project_index": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "01",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"project_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading5",
+						"content": {
+							"text": "Einfamilienhaus im Minergie-A-Standard",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"call_to_action": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "project",
+		"primary": {
+			"project_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Wohnhaus Austrasse, Meilen",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"project_index": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "01",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"project_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading5",
+						"content": {
+							"text": "Einfamilienhaus im Minergie-A-Standard",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contactLinks",
+		"primary": {
+			"external_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Baunetz Media GmbH",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"external_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "BauNetz ist das grösste deutschsprachige Online-Architekturmagazin\nmit monatlich über 11 Millionen Seitenabrufen und einer Milion Visits",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"call_to_action": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "newsInformation",
+		"primary": {
+			"call_to_action": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"news_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "NZZ: Platin üerstrahlt Alpengold",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"news_index": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "01",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"news_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading5",
+						"content": {
+							"text": "DSA | 24.03.04",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"filter_link",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Latest News"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"filter_link",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Architect News"
+						}
+					]
+				]
+			}
+		]
+	}
+]

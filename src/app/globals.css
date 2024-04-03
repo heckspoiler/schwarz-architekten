@@ -1,18 +1,39 @@
 :root {
+
+  /* general stuff Values */
+
   font-size: 16px;
   --semibold: 600;
   --bold: 700;
   --title: 1.3rem;
   --subtitle: 1.2rem;
-  --fontsize-footer: 0.85rem;
   --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
-  --rowgapdesktop: 5.625em;
   --lightgrey: #A7A7A7;
-  --headerheight: 3.5rem;
   --linkTranslateX: 0.5rem;
   --title_mobile: 1rem;
-  --subtitle_mobile: 0.9rem
+  --subtitle_mobile: 0.9rem;
+  --anchor_size: 0.8em;
+
+
+  --rowgapdesktop: 5.625em;
+
+
+  /* Header and Footer Values */
+  --fontsize-footer: 0.85rem;
+  --headerheight: 3.5rem;
+
+
+
+  /* Project Info Values */
+  --project_info_height: 10em;
+  --project_info_padding: 1.5em;
+  --project_info_index: 0.7em;
+  --anchor_padding_top: 1.5em;
+
+  /* External Link Info Values */
+
+  --project_link_height: 8em;
 }
 
 
@@ -59,8 +80,10 @@ h2 {
   font-size: var(--subtitle);
 }
 
+h3 {
+  font-size: 1em;
+}
 
-h3,
 h4,
 h5,
 p,
@@ -71,7 +94,11 @@ button {
 
 h5 {
   font-weight: 400;
-  font-size: 0.9em;
+}
+
+h6 {
+  font-size: var(--project_info_index);
+  font-weight: 400;
 }
 
 button {
@@ -111,7 +138,7 @@ a:hover {}
   p,
   a,
   button {
-    font-size: 0.7rem;
+    font-size: 0.8em;
   }
 
   h5 {

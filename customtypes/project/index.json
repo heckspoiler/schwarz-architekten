@@ -12,6 +12,121 @@
         },
         "type": "UID"
       },
+      "project_index": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Project Index",
+          "placeholder": "01",
+          "allowTargetBlank": true,
+          "multi": "heading6"
+        }
+      },
+      "project_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Project Title",
+          "placeholder": "Projekttitel",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "project_subtitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Project Subtitle",
+          "placeholder": "Einfamilienhaus im Minergie-A-Standard",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "project_main_image": {
+        "type": "Image",
+        "config": {
+          "label": "Project Main Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "project_image_legend": {
+        "type": "Group",
+        "config": {
+          "label": "Project Image Legend",
+          "repeat": true,
+          "fields": {
+            "legend_title": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Legend Title",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "heading3"
+              }
+            },
+            "legend_description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Legend Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "project_description": {
+        "type": "Group",
+        "config": {
+          "label": "Project Description ",
+          "repeat": true,
+          "fields": {
+            "project_description_title": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Project Description Title",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "heading3"
+              }
+            },
+            "project_description_description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Project Description Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "gallery_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Gallery Title",
+          "placeholder": "Galerie",
+          "allowTargetBlank": true,
+          "multi": "heading3"
+        }
+      },
+      "project_image_gallery": {
+        "type": "Group",
+        "config": {
+          "label": "Project Image Gallery",
+          "repeat": true,
+          "fields": {
+            "project_image": {
+              "type": "Image",
+              "config": {
+                "label": "Project Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

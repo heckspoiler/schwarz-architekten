@@ -1,5 +1,6 @@
 .Main {
-    padding-top: 7em;
+    padding-top: 6em;
+    padding-bottom: 4em;
     min-height: calc(100svh - var(--headerheight));
     overflow-y: hidden;
 }

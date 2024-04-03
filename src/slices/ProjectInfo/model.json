@@ -1,0 +1,185 @@
+{
+  "id": "project_info",
+  "type": "SharedSlice",
+  "name": "ProjectInfo",
+  "description": "ProjectInfo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "complete",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "project_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Title",
+            "placeholder": "Projekttitel",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "project_index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "project_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Description",
+            "placeholder": "Kurzbeschrieb",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "call_to_action": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action",
+            "placeholder": "Mehr sehen",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "project",
+      "name": "Project",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "project_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Title",
+            "placeholder": "Projekttitel",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "project_index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "project_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Project Description",
+            "placeholder": "Kurzbeschrieb",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "contactLinks",
+      "name": "Contact Links",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "external_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "External Title",
+            "placeholder": "Externer Link Titel",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "external_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "External Description",
+            "placeholder": "Kurzbeschrieb",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "call_to_action": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "newsInformation",
+      "name": "News Information",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "news_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "News Title",
+            "placeholder": "Newstitel",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "news_index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "News Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "news_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "News Description",
+            "placeholder": "Kurzbeschrieb",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "call_to_action": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action",
+            "placeholder": "Mehr sehen",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "filter_link": {
+          "type": "Text",
+          "config": {
+            "label": "Filter Link",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

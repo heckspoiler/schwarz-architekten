@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={opensans.className}>
         <Header />
-        <Bounded as="main">{children}</Bounded>
+        {children}
         <Footer />
       </body>
     </html>
