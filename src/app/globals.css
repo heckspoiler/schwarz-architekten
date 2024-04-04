@@ -122,6 +122,10 @@ a:hover {}
 /* Mobile */
 @media (max-width: 768px) {
 
+  body {
+    overflow-x: hidden;
+  }
+
   * {
     line-height: 1.5;
   }

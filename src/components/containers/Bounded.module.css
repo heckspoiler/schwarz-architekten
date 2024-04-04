@@ -16,7 +16,8 @@
     .Main {
         padding-top: 4em;
         min-height: calc(100svh - var(--headerheight));
-        overflow-y: hidden;
+        max-width: 768px;
+        overflow-x: hidden;
     }
 }
 
