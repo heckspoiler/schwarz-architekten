@@ -1,7 +1,5 @@
 .Footer {
-  position: absolute;
   width: 100vw;
-  bottom: calc(0 + var(--footerheight));
   display: flex;
   padding: 1em 0 0 3em;
   background-color: white;
@@ -96,8 +94,10 @@
   max-width: 8em;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.2s var(--bezier)
+  transition: transform 0.2s var(--bezier);
+
 }
+
 
 
 .Link:hover {

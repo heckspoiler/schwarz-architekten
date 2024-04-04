@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import { PrismicRichText, SliceZone } from '@prismicio/react';
 import { createClient } from '@/prismicio';
@@ -66,7 +67,7 @@ export default async function Page({ params }: { params: Params }) {
         ))}
       </TextblockContainer>
       <section className={styles.GallerySection}>
-        <PrismicRichText field={page.data.gallery_title} />
+        <h3>Galerie</h3>
         <ImageGridContainer>
           {page.data.project_image_gallery.map((item, index) => (
             <div key={index} className={styles.ImageGridItem}>

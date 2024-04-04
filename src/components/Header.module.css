@@ -31,10 +31,31 @@
   padding: 0.2em 1em;
   border-left: 0.15em solid white;
   transition: border 0.2s var(--bezier), font-weight 0.2s var(--bezier);
+  position: relative;
 }
 
 .Item:hover {
-  border-left: 0.15em solid black;
+  cursor: pointer;
+}
+
+.Item::before {
+  content: "";
+  position: absolute;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background-color: black;
+  z-index: 11;
+  transition: height 0.2s var(--bezier);
+}
+
+.Item:hover::before {
+  height: 100%;
+}
+
+.ItemActive::before {
+  height: 100%;
 }
 
 

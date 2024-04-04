@@ -1,0 +1,27 @@
+.ModalOverlay {}
+
+.ModalContent {}
+
+.ModalCloseBtn {}
+
+
+@media (hover: hover) and (pointer: fine) {}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ModalOverlay {}
+
+    .ModalContent {}
+
+    .ModalCloseBtn {}
+
+
+}
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
+
+
+
+@media (min-width: 1840px) {}

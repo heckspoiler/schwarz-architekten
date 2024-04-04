@@ -1,0 +1,10 @@
+.Main {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.Main h1 {
+    color: white;
+    font-size: 10em;
+}

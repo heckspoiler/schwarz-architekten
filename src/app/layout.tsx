@@ -4,7 +4,6 @@ import { createClient } from '@/prismicio';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import Bounded from '@/components/containers/Bounded';
 
 const opensans = Open_Sans({ subsets: ['latin'], variable: '--font-main' });
 

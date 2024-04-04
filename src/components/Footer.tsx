@@ -9,6 +9,7 @@ export async function Footer() {
   const client = createClient();
 
   const footer = await client.getSingle('footer');
+
   return (
     <footer className={styles.Footer}>
       <section className={styles.Main}>

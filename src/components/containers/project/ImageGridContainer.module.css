@@ -16,7 +16,7 @@
         display: grid;
         padding: 1em inherit;
         grid-template-columns: 1fr;
-        row-gap: 2.5em;
+        row-gap: 2em;
         column-gap: 1em;
         justify-content: center;
         align-items: center;
