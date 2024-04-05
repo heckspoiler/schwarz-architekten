@@ -9,7 +9,7 @@
   justify-content: space-between;
   z-index: 10;
   height: var(--headerheight);
-  transition: background-color 0.2s var(--bezier);
+  transition: background-color 0.2s var(--bezier), scale 0.2s var(--bezier);
 }
 
 .Main:hover {
@@ -33,7 +33,6 @@
 .Item {
   list-style-type: none;
   padding: 0.2em 1em;
-  border-left: 0.15em solid white;
   transition: border 0.2s var(--bezier), font-weight 0.2s var(--bezier);
   position: relative;
 }
