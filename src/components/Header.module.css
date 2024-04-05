@@ -9,6 +9,7 @@
   justify-content: space-between;
   z-index: 10;
   height: var(--headerheight);
+  scale: 1;
   transition: background-color 0.2s var(--bezier), scale 0.2s var(--bezier);
 }
 
@@ -16,6 +17,10 @@
   background-color: white;
 }
 
+
+.HeaderScrolled {
+  scale: 0.8;
+}
 
 .Navbar {
   width: 50%;

@@ -7,12 +7,13 @@
     flex-direction: column;
     justify-content: center;
     gap: 3em;
-    padding-left: 6em;
+    padding-left: 3em;
     font-size: 0.9em;
 }
 
 .LegendContainer p {
-    width: 70%;
+
+    width: 100%;
     hyphens: auto;
 }
 
@@ -37,8 +38,9 @@
 }
 
 .DescriptionTitleContainer {
-    padding: 1em 0 1em 2em;
+    padding: 2em 0 0.5em 2em;
 }
+
 
 .TextBlock p {
     hyphens: auto;
