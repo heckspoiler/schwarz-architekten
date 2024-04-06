@@ -1012,6 +1012,91 @@ export type ProjectInfoSlice = prismic.SharedSlice<
   ProjectInfoSliceVariation
 >;
 
+/**
+ * Primary content in *ProjectSlice → Primary*
+ */
+export interface ProjectSliceSliceDefaultPrimary {
+  /**
+   * Project Index field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.project_index
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_index: prismic.ContentRelationshipField;
+
+  /**
+   * Project Title field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.project_title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_title: prismic.ContentRelationshipField;
+
+  /**
+   * Project Descriptrion field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.project_descriptrion
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_descriptrion: prismic.ContentRelationshipField;
+
+  /**
+   * Project Link field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.ContentRelationshipField;
+
+  /**
+   * Project Image field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.project_image
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_image: prismic.ContentRelationshipField;
+}
+
+/**
+ * Default variation for ProjectSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectSlice*
+ */
+type ProjectSliceSliceVariation = ProjectSliceSliceDefault;
+
+/**
+ * ProjectSlice Shared Slice
+ *
+ * - **API ID**: `project_slice`
+ * - **Description**: ProjectSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceSlice = prismic.SharedSlice<
+  "project_slice",
+  ProjectSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1061,6 +1146,10 @@ declare module "@prismicio/client" {
       ProjectInfoSliceProject,
       ProjectInfoSliceContactLinks,
       ProjectInfoSliceNewsInformation,
+      ProjectSliceSlice,
+      ProjectSliceSliceDefaultPrimary,
+      ProjectSliceSliceVariation,
+      ProjectSliceSliceDefault,
     };
   }
 }

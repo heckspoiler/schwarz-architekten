@@ -4,4 +4,5 @@ import dynamic from "next/dynamic";
 
 export const components = {
   project_info: dynamic(() => import("./ProjectInfo")),
+  project_slice: dynamic(() => import("./ProjectSlice")),
 };
