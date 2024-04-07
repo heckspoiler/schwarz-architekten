@@ -1,5 +1,19 @@
 .Main {}
 
+.Carousel {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.SlideContainer {
+    height: calc(100vh - 8em);
+    overflow: hidden;
+    animation: slideAnimation 3s var(--bezier) infinite;
+}
+
+@keyframes slideAnimation {}
+
 .Slide {
     height: 80%;
     width: 100vw;
@@ -12,12 +26,18 @@
 
 .Anchor {
     display: flex;
-    gap: 1.5em;
-    font-size: var(--anchor_size)
+    gap: 1em;
+    font-size: var(--anchor_size);
+    transition: transform 0.2s var(--bezier);
+}
+
+
+.Anchor:hover {
+    transform: translateX(var(--linkTranslateX))
 }
 
 .ImageContainer {
-    height: 67vh;
+    height: 100%;
     width: 100vw;
     overflow: hidden;
     display: flex;
