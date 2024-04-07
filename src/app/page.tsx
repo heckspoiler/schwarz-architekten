@@ -39,7 +39,6 @@ export default async function Page() {
                 <PrismicNextImage
                   field={project.data.project_main_image}
                   key={project.id}
-                  alt={project.data.project_main_image.alt ?? ''}
                 />
               </div>
             </section>
