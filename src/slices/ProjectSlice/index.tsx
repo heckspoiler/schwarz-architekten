@@ -1,5 +1,7 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { Content, createClient } from '@prismicio/client';
+import { PrismicNextLink } from '@prismicio/next';
+import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
+import { create } from 'domain';
 
 /**
  * Props for `ProjectSlice`.
@@ -15,8 +17,7 @@ const ProjectSlice = ({ slice }: ProjectSliceProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for project_slice (variation: {slice.variation})
-      Slices
+      <PrismicRichText field={slice.primary.project_index} />
     </section>
   );
 };

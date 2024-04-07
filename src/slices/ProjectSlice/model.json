@@ -13,24 +13,30 @@
       "imageUrl": "",
       "primary": {
         "project_index": {
-          "type": "Link",
+          "type": "StructuredText",
           "config": {
             "label": "Project Index",
-            "select": "document"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
           }
         },
         "project_title": {
-          "type": "Link",
+          "type": "StructuredText",
           "config": {
             "label": "Project Title",
-            "select": "document"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
           }
         },
-        "project_descriptrion": {
-          "type": "Link",
+        "project_description": {
+          "type": "StructuredText",
           "config": {
-            "label": "Project Descriptrion",
-            "select": "document"
+            "label": "Project Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "project_link": {
@@ -41,9 +47,17 @@
           }
         },
         "project_image": {
-          "type": "Link",
+          "type": "Image",
           "config": {
             "label": "Project Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Link",
+          "config": {
+            "label": "title",
             "select": "document"
           }
         }

@@ -227,7 +227,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = ProjectSliceSlice;
 
 /**
  * Content for Home documents
@@ -1019,32 +1019,32 @@ export interface ProjectSliceSliceDefaultPrimary {
   /**
    * Project Index field in *ProjectSlice → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: project_slice.primary.project_index
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  project_index: prismic.ContentRelationshipField;
+  project_index: prismic.RichTextField;
 
   /**
    * Project Title field in *ProjectSlice → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: project_slice.primary.project_title
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  project_title: prismic.ContentRelationshipField;
+  project_title: prismic.RichTextField;
 
   /**
-   * Project Descriptrion field in *ProjectSlice → Primary*
+   * Project Description field in *ProjectSlice → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project_slice.primary.project_descriptrion
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: project_slice.primary.project_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  project_descriptrion: prismic.ContentRelationshipField;
+  project_description: prismic.RichTextField;
 
   /**
    * Project Link field in *ProjectSlice → Primary*
@@ -1059,12 +1059,22 @@ export interface ProjectSliceSliceDefaultPrimary {
   /**
    * Project Image field in *ProjectSlice → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: project_slice.primary.project_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  project_image: prismic.ImageField<never>;
+
+  /**
+   * title field in *ProjectSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_slice.primary.title
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  project_image: prismic.ContentRelationshipField;
+  title: prismic.ContentRelationshipField;
 }
 
 /**

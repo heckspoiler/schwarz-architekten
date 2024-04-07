@@ -1,5 +1,43 @@
 .Main {}
 
+.Slide {
+    height: 80%;
+    width: 100vw;
+    border: 1px solid black;
+}
+
+.ProjectIndex {
+    font-size: var(--project_info_index)
+}
+
+.Anchor {
+    display: flex;
+    gap: 1.5em;
+    font-size: var(--anchor_size)
+}
+
+.ImageContainer {
+    height: 67vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.ImageContainer img {
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    object-position: center;
+}
+
+
 
 
 
