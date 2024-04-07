@@ -1,9 +1,17 @@
 .Main {}
 
+.CarouselContainer {
+    width: 100vw;
+
+    overflow-x: hidden;
+}
+
 .Carousel {
     display: flex;
     flex-direction: row;
     width: fit-content;
+    overflow: hidden;
+
 }
 
 .SlideContainer {
@@ -12,7 +20,15 @@
     animation: slideAnimation 3s var(--bezier) infinite;
 }
 
-@keyframes slideAnimation {}
+/* @keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+} */
 
 .Slide {
     height: 80%;
