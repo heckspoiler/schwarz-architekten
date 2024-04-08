@@ -9,7 +9,7 @@ import styles from './HomeCarousel.module.css';
 export const Carousel = ({ projects }: { projects: any[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  console.log('x');
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -63,7 +63,7 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
                   <a href={project.url ?? '#'} className={styles.Anchor}>
                     Mehr sehen
                     <span>
-                      <Arrow height={8} width={8} />
+                      <Arrow />
                     </span>
                   </a>
                 </div>

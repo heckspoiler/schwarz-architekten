@@ -126,6 +126,45 @@ a:hover {}
     overflow-x: hidden;
   }
 
+  :root {
+
+    /* general stuff Values */
+
+    font-size: 14px;
+    --semibold: 600;
+    --bold: 700;
+    --title: 1.3rem;
+    --subtitle: 1.2rem;
+    --bezier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --buttonbezier: cubic-bezier(0.455, .03, 0.15, 1.05);
+    --lightgrey: #A7A7A7;
+    --linkTranslateX: 0.5rem;
+    --title_mobile: 1rem;
+    --subtitle_mobile: 0.9rem;
+    --anchor_size: 0.7em;
+
+
+    --rowgapdesktop: 5.625em;
+
+
+    /* Header and Footer Values */
+    --fontsize-footer: 0.9rem;
+    --headerheight: 3.5rem;
+
+
+
+    /* Project Info Values */
+    --project_info_height: 10em;
+    --project_info_padding: 1.5em;
+    --project_info_index: 0.7em;
+    --anchor_padding_top: 1.5em;
+
+    /* External Link Info Values */
+
+    --project_link_height: 8em;
+  }
+
+
   * {
     line-height: 1.5;
   }

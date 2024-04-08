@@ -2,6 +2,7 @@ import React from 'react';
 import { createClient } from '@/prismicio';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import Image from 'next/image';
+import Arrow from './Arrow';
 
 import styles from './Footer.module.css';
 
@@ -65,12 +66,7 @@ export async function Footer() {
                 <li key={label} className={styles.Listobject}>
                   <PrismicNextLink field={link} className={styles.Link}>
                     <span className={styles.Linkspan}>{label}</span>
-                    <Image
-                      src="/icons/arrow.svg"
-                      alt="Arrow"
-                      width="10"
-                      height="10"
-                    />
+                    <Arrow />
                   </PrismicNextLink>
                 </li>
               ))}
@@ -84,12 +80,7 @@ export async function Footer() {
                 <li key={label} className={styles.Listobject}>
                   <a href={link ?? ''} target="_blank" className={styles.Link}>
                     <span className={styles.Linkspan}>{label}</span>
-                    <Image
-                      src="/icons/arrow.svg"
-                      alt="Arrow"
-                      width="10"
-                      height="10"
-                    />
+                    <Arrow />
                   </a>
                 </li>
               ))}
