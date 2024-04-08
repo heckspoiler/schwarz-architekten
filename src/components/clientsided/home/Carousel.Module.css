@@ -19,16 +19,6 @@
     animation: slideAnimation 3s var(--bezier) infinite;
 }
 
-/* @keyframes slideAnimation {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100vw);
-    }
-} */
-
 .Slide {
     height: 80%;
     width: 100vw;
