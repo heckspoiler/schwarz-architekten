@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Arrow from '@/components/Arrow';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
-import styles from './Carousel.module.css';
+import styles from './HomeCarousel.module.css';
 
 export const Carousel = ({ projects }: { projects: any[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

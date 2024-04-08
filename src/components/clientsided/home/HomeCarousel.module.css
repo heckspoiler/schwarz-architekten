@@ -1,10 +1,7 @@
-.Main {}
-
 .CarouselContainer {
     width: 100vw;
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: red;
 }
 
 .Carousel {
@@ -48,7 +45,6 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-
     align-items: center;
 
 }

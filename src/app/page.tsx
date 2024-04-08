@@ -3,7 +3,7 @@ import { SliceZone } from '@prismicio/react';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
-import { Carousel } from '@/components/clientsided/home/Carousel';
+import { Carousel } from '@/components/clientsided/home/HomeCarousel';
 import styles from './page.module.css';
 
 export default async function Page() {
