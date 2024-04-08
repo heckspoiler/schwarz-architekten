@@ -1,7 +1,6 @@
 import React from 'react';
 import { createClient } from '@/prismicio';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
-import Image from 'next/image';
 import Arrow from './Arrow';
 
 import styles from './Footer.module.css';
