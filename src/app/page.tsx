@@ -4,11 +4,9 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import { Carousel } from '@/components/clientsided/home/HomeCarousel';
-import styles from './page.module.css';
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle('home');
   const projects = await client.getAllByType('project');
 
   return (

@@ -14,8 +14,6 @@
   --title_mobile: 1rem;
   --subtitle_mobile: 0.9rem;
   --anchor_size: 0.8em;
-
-
   --rowgapdesktop: 5.625em;
 
 
@@ -41,7 +39,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 
