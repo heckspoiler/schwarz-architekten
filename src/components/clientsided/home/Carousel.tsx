@@ -1,12 +1,48 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Arrow from '@/components/Arrow';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import styles from './Carousel.module.css';
 
 export const Carousel = ({ projects }: { projects: any[] }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  useEffect(() => {
+    const slideCount = projects.length;
+    const interval = setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % slideCount);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
+  useEffect(() => {
+    if (isHovered) {
+      return;
+    } else {
+      const carousel = document.querySelector(
+        `.${styles.Carousel}`
+      ) as HTMLElement;
+      if (carousel) {
+        const newTransform = `translateX(-${currentSlide * 100}vw)`;
+        carousel.style.transform = newTransform;
+        carousel.style.transition =
+          'transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)';
+      }
+    }
+  }, [currentSlide, isHovered]);
+
   return (
     <div>
       <section className={styles.CarouselContainer}>
@@ -28,11 +64,17 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
                   </a>
                 </div>
               </TitleContainer>
-              <div className={styles.ImageContainer}>
-                <PrismicNextImage
-                  field={project.data.project_main_image}
-                  key={project.id}
-                />
+              <div
+                className={styles.ImageContainer}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <a href={project.url ?? '#'}>
+                  <PrismicNextImage
+                    field={project.data.project_main_image}
+                    key={project.id}
+                  />
+                </a>
               </div>
             </section>
           ))}
