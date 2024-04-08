@@ -19,13 +19,17 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
   };
 
   useEffect(() => {
-    const slideCount = projects.length;
-    const interval = setInterval(() => {
-      setCurrentSlide((current) => (current + 1) % slideCount);
-    }, 5000);
+    if (!isHovered) {
+      const slideCount = projects.length;
+      const interval = setInterval(() => {
+        setCurrentSlide((current) => (current + 1) % slideCount);
+      }, 5000);
 
-    return () => clearInterval(interval);
-  }, [projects.length]);
+      return () => clearInterval(interval);
+    } else {
+      return;
+    }
+  }, [projects.length, isHovered]);
 
   useEffect(() => {
     if (isHovered) {
