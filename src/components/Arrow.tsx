@@ -18,7 +18,6 @@ export default function Arrow({ className, width, height }: ArrowProps) {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setIsMobile(true);
-        console.log(isMobile);
       } else {
         setIsMobile(false);
       }

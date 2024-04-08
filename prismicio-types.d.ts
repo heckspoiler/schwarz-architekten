@@ -311,6 +311,16 @@ export interface NavbarDocumentDataNavbarItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * identifier field in *Header → navbar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navbar[].identifier
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  identifier: prismic.KeyTextField;
 }
 
 /**

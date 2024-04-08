@@ -34,6 +34,13 @@
                 "label": "label",
                 "placeholder": ""
               }
+            },
+            "identifier": {
+              "type": "Text",
+              "config": {
+                "label": "identifier",
+                "placeholder": ""
+              }
             }
           }
         }

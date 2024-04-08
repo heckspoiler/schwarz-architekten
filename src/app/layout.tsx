@@ -9,7 +9,6 @@ const opensans = Open_Sans({ subsets: ['latin'], variable: '--font-main' });
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-
   const settingsMeta = await client.getSingle('settings');
 
   return {
@@ -22,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
