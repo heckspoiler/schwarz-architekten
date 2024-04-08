@@ -3,10 +3,8 @@ import { SliceZone } from '@prismicio/react';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
+import { Carousel } from '@/components/clientsided/home/Carousel';
 import styles from './page.module.css';
-import Arrow from '@/components/Arrow';
-import TitleContainer from '@/components/containers/project/TitleContainer';
-import { PrismicNextImage } from '@prismicio/next';
 
 export default async function Page() {
   const client = createClient();
@@ -16,35 +14,7 @@ export default async function Page() {
   return (
     <Bounded>
       {/* <SliceZone slices={page.data.slices} components={components} /> */}
-      <section className={styles.CarouselContainer}>
-        <section className={styles.Carousel}>
-          {projects.map((project) => (
-            <section key={project.id} className={styles.SlideContainer}>
-              <TitleContainer key={project.id}>
-                <p className={styles.ProjectIndex}>
-                  {(project.data.project_index[0] as any)?.text}
-                </p>
-                <div>
-                  <h1>{(project.data.project_title[0] as any)?.text}</h1>
-                  <p>{(project.data.project_subtitle[0] as any)?.text}</p>
-                  <a href={project.url ?? '#'} className={styles.Anchor}>
-                    Mehr sehen
-                    <span>
-                      <Arrow height={8} width={8} />
-                    </span>
-                  </a>
-                </div>
-              </TitleContainer>
-              <div className={styles.ImageContainer}>
-                <PrismicNextImage
-                  field={project.data.project_main_image}
-                  key={project.id}
-                />
-              </div>
-            </section>
-          ))}
-        </section>
-      </section>
+      <Carousel projects={projects} />
     </Bounded>
   );
 }
