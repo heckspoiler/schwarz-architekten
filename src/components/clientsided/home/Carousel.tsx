@@ -9,7 +9,7 @@ import styles from './Carousel.module.css';
 export const Carousel = ({ projects }: { projects: any[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-
+  console.log('x');
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
