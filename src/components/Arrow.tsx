@@ -41,7 +41,7 @@ export default function Arrow({ className, width, height }: ArrowProps) {
     <Image
       src="/icons/arrow.svg"
       alt="Arrow"
-      width={arrowSize || height || 10}
+      width={arrowSize || width || 10}
       height={arrowSize || height || 10}
       className={styles.Arrow}
     />
