@@ -15,6 +15,7 @@
     height: calc(100vh - 8em);
     overflow: hidden;
     animation: slideAnimation 3s var(--bezier) infinite;
+
 }
 
 .Slide {
@@ -51,6 +52,7 @@
 
 .ImageContainer img {
     width: 100%;
+    max-height: 100%;
     height: auto;
     object-fit: contain;
     object-position: center;
