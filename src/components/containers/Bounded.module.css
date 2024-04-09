@@ -2,6 +2,7 @@
     padding-top: 6em;
     min-height: calc(100svh - var(--headerheight));
     overflow-y: hidden;
+    width: 100vw;
 }
 
 
