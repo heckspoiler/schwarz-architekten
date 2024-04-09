@@ -1,13 +1,17 @@
 'use client';
 
-import React from 'react';
-import { PrismicNextLink } from '@prismicio/next';
+import React, { Suspense } from 'react';
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { Logo } from '@/components/Logo';
 
 const HeaderDesktop = ({ navbar, styles }: { navbar: any; styles: any }) => {
   return (
     <header className={styles.Main}>
-      <Logo logo={navbar.data.logo} />
+      <div className={styles.LogoContainer}>
+        <a href="/">
+          <PrismicNextImage field={navbar.data.logo} />
+        </a>
+      </div>
       <nav className={styles.Navbar}>
         <ul className={styles.NavList}>
           {navbar.data.navbar.map(

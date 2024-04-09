@@ -19,6 +19,18 @@
   background-color: white;
 }
 
+.LogoContainer {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.LogoContainer img {
+  padding-top: 10px;
+  width: 15em;
+  height: auto;
+}
+
 
 .HeaderScrolled {
   scale: 0.8;
@@ -97,6 +109,14 @@
   .NavbarMobile {
     transform: translateX(-100vw);
     position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.2s var(--bezier)
+  }
+
+
+  .IsOpen {
+    transform: translateX(0vw);
   }
 
   .LogoContainer {
@@ -126,7 +146,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
   }
 
   .NavListMobile {
@@ -141,14 +160,10 @@
     justify-content: center;
     padding: 2em;
     padding-left: 3em;
-    background-color: red;
-    transform: translateX(0vw);
-    transition: transform 0.2s var(--bezier)
   }
 
-  .IsOpen {
-    transform: translateX(-100vw);
-  }
+
+
 
   .LogoContainerMobile {
     position: absolute;

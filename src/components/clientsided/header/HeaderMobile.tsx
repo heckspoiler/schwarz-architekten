@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, Suspense } from 'react';
-import { PrismicNextLink } from '@prismicio/next';
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/Logo';
 
@@ -16,7 +16,11 @@ const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
 
   return (
     <section className={styles.Main}>
-      <Logo logo={navbar.data.logo} />
+      <div className={styles.LogoContainer}>
+        <a href="/">
+          <PrismicNextImage field={navbar.data.logo} />
+        </a>
+      </div>
       <section
         className={`${styles.NavbarMobile} ${isOpen ? styles.IsOpen : ''}`}
       >
@@ -49,7 +53,11 @@ const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
               )
             )}
             <div className={styles.LogoContainerMobile}>
-              <Logo logo={navbar.data.logo} />
+              <div className={styles.LogoContainer}>
+                <a href="/">
+                  <PrismicNextImage field={navbar.data.logo} />
+                </a>
+              </div>
               <a href="mailto:info@schwarz-architekten.com">
                 info@schwarz-architekten.com
               </a>
