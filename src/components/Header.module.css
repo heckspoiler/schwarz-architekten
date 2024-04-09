@@ -110,8 +110,8 @@
     display: none;
   }
 
-  .IsOpen .NavListMobileContainer {
-    height: 100vh;
+  .IsOpen {
+    background-color: red;
   }
 
   .NavListMobileContainer {
@@ -121,7 +121,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: height 0.2s var(--bezier)
+    transform: translateX(0vw);
+    transition: transform 0.2s var(--bezier)
   }
 
   .NavListMobile {
@@ -172,7 +173,7 @@
 
   .IsActive {
     transform: translateX(0.5em);
-    background-color: red;
+
   }
 
 

@@ -6,7 +6,6 @@ import styles from './Footer.module.css';
 
 export async function Footer() {
   const client = createClient();
-
   const footer = await client.getSingle('footer');
 
   return (

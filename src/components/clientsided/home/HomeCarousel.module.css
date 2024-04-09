@@ -15,6 +15,7 @@
     height: calc(100vh - 8em);
     overflow: hidden;
     animation: slideAnimation 3s var(--bezier) infinite;
+    max-width: 100vw;
 
 }
 
@@ -52,11 +53,12 @@
 }
 
 .ImageContainer img {
-    width: 100%;
+    width: 100vw;
     max-height: 100%;
     height: auto;
     object-fit: contain;
     object-position: center;
+    transform: translateY(-10vh)
 }
 
 
@@ -98,18 +100,19 @@
     }
 
     .ImageContainer {
-        height: 100%;
+        height: calc(100vh - 6em);
         width: 100vw;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
 
+
     }
 
     .ImageContainer img {
         width: auto;
-        height: 90%;
+        height: calc(100vh - 6em);
         object-fit: contain;
         object-position: center;
     }
