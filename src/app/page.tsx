@@ -19,9 +19,28 @@ export interface ProjectData {
   };
 }
 
+function shuffleArray<T>(array: T[]): T[] {
+  let currentIndex = array.length,
+    randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
 export default async function Page() {
   const client = createClient();
-  const projects = await client.getAllByTag('homeslide');
+  const fetchedProjects = await client.getAllByTag('homeslide');
+
+  const projects = shuffleArray(fetchedProjects);
 
   return (
     <Bounded>
