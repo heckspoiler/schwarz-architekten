@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import HeaderMobile from './HeaderMobile';
 import HeaderDesktop from './HeaderDesktop';
 
-export const HeaderClient = function ({
+const HeaderClient = function ({
   navbar,
   styles,
 }: {
@@ -27,11 +27,13 @@ export const HeaderClient = function ({
 
   return (
     <header className={styles.Main}>
-      {/* {windowWidth !== null && windowWidth <= 768 ? (
+      {windowWidth !== null && windowWidth <= 768 ? (
         <HeaderMobile navbar={navbar} styles={styles} />
       ) : (
         <HeaderDesktop navbar={navbar} styles={styles} />
-      )} */}
+      )}
     </header>
   );
 };
+
+export default HeaderClient;

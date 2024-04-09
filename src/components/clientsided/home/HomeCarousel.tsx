@@ -5,18 +5,15 @@ import Arrow from '@/components/Arrow';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import styles from './HomeCarousel.module.css';
+import { ImageFieldImage } from '@prismicio/client';
+import { ProjectData } from '@/app/page';
 
-export const Carousel = ({ projects }: { projects: any[] }) => {
+export const Carousel = ({ projects }: { projects: ProjectData[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
 
   useEffect(() => {
     if (!isHovered) {
@@ -26,21 +23,16 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
       }, 5000);
 
       return () => clearInterval(interval);
-    } else {
-      return;
     }
   }, [projects.length, isHovered]);
 
   useEffect(() => {
-    if (isHovered) {
-      return;
-    } else {
+    if (!isHovered) {
       const carousel = document.querySelector(
         `.${styles.Carousel}`
       ) as HTMLElement;
       if (carousel) {
-        const newTransform = `translateX(-${currentSlide * 100}vw)`;
-        carousel.style.transform = newTransform;
+        carousel.style.transform = `translateX(-${currentSlide * 100}vw)`;
         carousel.style.transition =
           'transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)';
       }
@@ -50,15 +42,15 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
   return (
     <section className={styles.CarouselContainer}>
       <section className={styles.Carousel}>
-        {projects.map((project) => (
+        {projects.map((project: any) => (
           <section key={project.id} className={styles.SlideContainer}>
-            <TitleContainer key={project.id}>
+            <TitleContainer>
               <p className={styles.ProjectIndex}>
-                {(project.data.project_index[0] as any)?.text}
+                {project.data.project_index?.[0]?.text}
               </p>
               <div>
-                <h1>{(project.data.project_title[0] as any)?.text}</h1>
-                <p>{(project.data.project_subtitle[0] as any)?.text}</p>
+                <h1>{project.data.project_title?.[0]?.text}</h1>
+                <p>{project.data.project_subtitle?.[0]?.text}</p>
                 <a href={project.url ?? '#'} className={styles.Anchor}>
                   Mehr sehen
                   <span>
@@ -74,8 +66,7 @@ export const Carousel = ({ projects }: { projects: any[] }) => {
             >
               <a href={project.url ?? '#'}>
                 <PrismicNextImage
-                  field={project.data.project_main_image}
-                  key={project.id}
+                  field={project.data.project_main_image as ImageFieldImage}
                 />
               </a>
             </div>

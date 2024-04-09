@@ -1,5 +1,5 @@
 import { createClient } from '@/prismicio';
-import { HeaderClient } from './clientsided/header/HeaderClient';
+import HeaderClient from './clientsided/header/HeaderClient';
 import styles from './Header.module.css';
 
 export async function Header() {
@@ -8,7 +8,7 @@ export async function Header() {
 
   return (
     <section className={styles.HeaderContainer}>
-      <HeaderClient navbar={navbar} styles={styles} />
+      {/* <HeaderClient navbar={navbar} styles={styles} /> */}
     </section>
   );
 }
