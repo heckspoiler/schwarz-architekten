@@ -107,16 +107,16 @@
   }
 
   .NavbarMobile {
-    transform: translateX(-100vw);
+    transform: translateY(-100vh);
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 0.2s var(--bezier)
+    transition: transform 0.5s var(--bezier)
   }
 
 
   .IsOpen {
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 
   .LogoContainer {
