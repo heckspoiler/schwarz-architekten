@@ -68,9 +68,12 @@ const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
       </section>
       <div className={styles.HamburgerContainer} onClick={toggleOpen}>
         <button className={styles.Hamburger}>
-          <span className={styles.HamburgerLine}></span>
-          <span className={styles.HamburgerLine}></span>
-          <span className={styles.HamburgerLine}></span>
+          {[...Array(3)].map((_, index) => (
+            <span
+              key={index}
+              className={`${styles.HamburgerLine} ${isOpen ? styles.Clicked : ''}`}
+            ></span>
+          ))}
         </button>
       </div>
     </section>
