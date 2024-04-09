@@ -2,9 +2,13 @@
 
 import React, { Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/Logo';
+import path from 'path';
 
 const HeaderDesktop = ({ navbar, styles }: { navbar: any; styles: any }) => {
+  const pathname = usePathname();
+
   return (
     <header className={styles.Main}>
       <div className={styles.LogoContainer}>
