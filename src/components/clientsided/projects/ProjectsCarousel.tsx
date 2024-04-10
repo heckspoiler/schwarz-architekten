@@ -45,7 +45,6 @@ export const ProjectsCarousel = ({
 
   return (
     <section className={styles.CarouselContainer}>
-      {' '}
       <section className={styles.Carousel}>
         {projects.map((project: any) => (
           <section key={project.id} className={styles.SlideContainer}>
