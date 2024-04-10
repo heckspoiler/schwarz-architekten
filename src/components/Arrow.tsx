@@ -43,6 +43,7 @@ export default function Arrow({ className, width, height }: ArrowProps) {
       width={arrowSize || width || 10}
       height={arrowSize || height || 10}
       className={styles.Arrow}
+      loading="eager"
     />
   );
 }
