@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+
 import gsap from 'gsap';
 
 const HeaderMobile = ({

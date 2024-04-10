@@ -1,0 +1,153 @@
+.Title {
+    padding-left: 1em;
+}
+
+.CarouselContainer {
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+    height: calc(100vh - 18em) !important;
+}
+
+.Carousel {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    overflow: hidden;
+    height: calc(100vh - 8em);
+}
+
+.SlideContainer {
+    height: calc(100vh - 8em);
+    overflow: hidden;
+    animation: slideAnimation 3s var(--bezier) infinite;
+    max-width: 100vw;
+    position: relative;
+
+}
+
+.Slide {
+    height: 80%;
+    width: 100vw;
+    border: 1px solid black;
+}
+
+.ProjectIndex {
+    font-size: var(--project_info_index)
+}
+
+.ProjectInfo {
+    background-color: white;
+    position: absolute;
+    bottom: var(--project_info_height);
+    right: 0;
+    height: var(--project_info_height);
+    width: fit-content;
+    min-width: 28em;
+    z-index: 2;
+}
+
+.Anchor {
+    display: flex;
+    gap: 1em;
+    font-size: var(--anchor_size);
+    transition: transform 0.2s var(--bezier);
+    padding-top: 1em;
+}
+
+
+.Anchor:hover {
+    transform: translateX(var(--linkTranslateX))
+}
+
+.ImageContainer {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ImageContainer img {
+    width: 100vw;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: translateY(-10vh)
+}
+
+
+
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .CarouselContainer {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .Carousel {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        overflow: hidden;
+    }
+
+    .SlideContainer {
+        height: calc(100vh - 6em);
+        overflow: hidden;
+        animation: slideAnimation 3s var(--bezier) infinite;
+        width: 100%;
+    }
+
+    .Slide {
+        height: 80%;
+        width: 100vw;
+        border: 1px solid black;
+    }
+
+    .ProjectInfo {
+        background-color: white;
+        position: absolute;
+        bottom: var(--project_info_height);
+        right: 0;
+        height: var(--project_info_height);
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        align-items: right;
+    }
+
+    .ImageContainer {
+        height: calc(100vh - 6em);
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ImageContainer img {
+        width: auto;
+        height: calc(100vh - 6em);
+        object-fit: contain;
+        object-position: center;
+        transform: translateY(-23vh);
+        background-color: red;
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

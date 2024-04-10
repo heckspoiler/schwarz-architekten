@@ -12,11 +12,6 @@ const HeaderDesktop = ({
   styles: any;
   isActive: string;
 }) => {
-  console.log('isActive: ', isActive);
-  console.log(
-    'navbar: ',
-    navbar.data.navbar.map(({ label }: { label: string }) => label)
-  );
   return (
     <header className={styles.Main}>
       <div className={styles.LogoContainer}>

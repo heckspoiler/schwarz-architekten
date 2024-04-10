@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
 import { SliceZone } from '@prismicio/react';
-
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
+import TitleContainer from '@/components/containers/project/TitleContainer';
+import styles from './Projects.module.css';
+import { Carousel } from '@/components/clientsided/home/HomeCarousel';
+import { ProjectsCarousel } from '@/components/clientsided/projects/ProjectsCarousel';
+import { ProjectData } from '@/app/page';
 
 export default async function Page() {
   const client = createClient();
@@ -14,7 +18,13 @@ export default async function Page() {
 
   return (
     <Bounded>
-      <h1>Projects</h1>
+      <TitleContainer>
+        <h1 className={styles.Title}>Projekte</h1>
+      </TitleContainer>
+      <ProjectsCarousel
+        projects={projects as unknown as ProjectData[]}
+        styles={styles}
+      />
     </Bounded>
   );
 }

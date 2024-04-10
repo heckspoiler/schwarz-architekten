@@ -32,11 +32,7 @@ const HeaderClient = function ({
       activeLabel = '/';
     }
     setIsActive(activeLabel);
-
-    console.log(activeLabel);
   }, [pathname]);
-
-  console.log(pathname, isActive);
 
   useEffect(() => {
     const handleResize = () => {
