@@ -28,7 +28,7 @@ const HeaderClient = function ({
       activeLabel = 'Über uns';
     } else if (pathname.startsWith('/contact')) {
       activeLabel = 'Kontakt';
-    } else {
+    } else if (pathname === '/') {
       activeLabel = '/';
     }
     setIsActive(activeLabel);
