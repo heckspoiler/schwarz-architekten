@@ -2,9 +2,12 @@
     max-width: fit-content;
     padding: var(--project_info_padding);
     padding-left: 3em;
+    padding-right: 6em;
     display: flex;
     gap: 0.5em;
     height: var(--project_info_height);
+    z-index: 20;
+
 }
 
 .Container h6 {
