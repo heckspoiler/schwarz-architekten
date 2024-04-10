@@ -26,7 +26,7 @@
   /* Project Info Values */
   --project_info_height: 10em;
   --project_info_padding: 1.5em;
-  --project_info_index: 0.7em;
+  --project_info_index: 0.6em;
   --anchor_padding_top: 1.5em;
 
   /* External Link Info Values */
@@ -154,7 +154,7 @@ a:hover {}
     /* Project Info Values */
     --project_info_height: 10em;
     --project_info_padding: 1.5em;
-    --project_info_index: 0.7em;
+    --project_info_index: 0.6em;
     --anchor_padding_top: 1.5em;
 
     /* External Link Info Values */

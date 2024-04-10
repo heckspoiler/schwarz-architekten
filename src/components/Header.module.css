@@ -189,9 +189,16 @@
     font-weight: 600;
   }
 
+  .Item:hover::before {
+    height: 100%;
+  }
 
   .IsActive {
-    transform: translateX(0.5em);
+    transform: translateX(2em);
+  }
+
+  .IsActive::before {
+    height: 100%;
   }
 
   .HamburgerContainer {

@@ -2,13 +2,21 @@
 
 import React, { Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
-import { usePathname } from 'next/navigation';
-import { Logo } from '@/components/Logo';
-import path from 'path';
 
-const HeaderDesktop = ({ navbar, styles }: { navbar: any; styles: any }) => {
-  const pathname = usePathname();
-
+const HeaderDesktop = ({
+  navbar,
+  styles,
+  isActive,
+}: {
+  navbar: any;
+  styles: any;
+  isActive: string;
+}) => {
+  console.log('isActive: ', isActive);
+  console.log(
+    'navbar: ',
+    navbar.data.navbar.map(({ label }: { label: string }) => label)
+  );
   return (
     <header className={styles.Main}>
       <div className={styles.LogoContainer}>
@@ -20,7 +28,10 @@ const HeaderDesktop = ({ navbar, styles }: { navbar: any; styles: any }) => {
         <ul className={styles.NavList}>
           {navbar.data.navbar.map(
             ({ link, label }: { link: any; label: string }) => (
-              <li key={label} className={styles.Item}>
+              <li
+                key={label}
+                className={`${styles.Item} ${label === isActive ? styles.IsActive : ''}`}
+              >
                 <PrismicNextLink field={link} className={styles.Link}>
                   {label}
                 </PrismicNextLink>

@@ -3,11 +3,17 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { usePathname } from 'next/navigation';
-import { Logo } from '@/components/Logo';
+import gsap from 'gsap';
 
-const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
-  const pathname = usePathname();
-  const [isActive, setIsActive] = useState('');
+const HeaderMobile = ({
+  navbar,
+  styles,
+  isActive,
+}: {
+  navbar: any;
+  styles: any;
+  isActive: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -28,7 +34,7 @@ const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
           <ul className={styles.NavListMobile}>
             <li
               key="/"
-              className={`${styles.Item} ${isActive ? styles.isActive : ''}`}
+              className={`${styles.Item} ${isActive === '/' ? styles.IsActive : ''}`}
             >
               <p>01</p>
               <a href="/" className={styles.Link}>
@@ -44,7 +50,10 @@ const HeaderMobile = ({ navbar, styles }: { navbar: any; styles: any }) => {
                 }: { link: any; label: string; identifier: string },
                 index: number
               ) => (
-                <li key={identifier} className={styles.Item}>
+                <li
+                  key={identifier}
+                  className={`${styles.Item} ${label === isActive ? styles.IsActive : ''}`}
+                >
                   <p>{(index + 2).toString().padStart(2, '0')}</p>
                   <PrismicNextLink field={link} className={styles.Link}>
                     {label}
