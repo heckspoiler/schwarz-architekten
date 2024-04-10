@@ -13,8 +13,6 @@ export const ProjectsCarousel = ({
   projects: any[]; // Adjusted for simplicity; replace any with your ProjectData type if needed
   styles: any;
 }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const [clicks, setClicks] = useState(0);
 
   const nextSlide = () => {
