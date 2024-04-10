@@ -20,7 +20,7 @@ export const Carousel = ({ projects }: { projects: ProjectData[] }) => {
       const slideCount = projects.length;
       const interval = setInterval(() => {
         setCurrentSlide((current) => (current + 1) % slideCount);
-      }, 5000);
+      }, 4500);
 
       return () => clearInterval(interval);
     }
