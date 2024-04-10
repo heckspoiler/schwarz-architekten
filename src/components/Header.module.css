@@ -156,7 +156,8 @@
     align-items: left;
     justify-content: center;
     padding: 2em;
-    padding-left: 3em;
+    padding-left: 1em;
+
   }
 
   .LogoContainerMobile {
