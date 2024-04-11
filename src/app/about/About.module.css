@@ -1,4 +1,6 @@
-.EmployeeContainer {}
+.EmployeeContainer {
+    padding-bottom: 4em;
+}
 
 .TitleSection h1 {
     padding-left: 1em;
