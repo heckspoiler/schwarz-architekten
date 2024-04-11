@@ -1,6 +1,6 @@
 .Image {
-    height: 28.25em;
-    width: 28.25em;
+    height: 26em;
+    width: 26em;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -18,26 +18,25 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0);
-
-    transform: translate(100%);
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(100%);
     transition: opacity 0.2s var(--bezier), transform 0.2s var(--bezier);
-
 }
 
 .Image:hover .EmployeeInformation {
-
     transform: translateX(0);
 }
 
-.EmployeeInformationContent h2 {}
+.EmployeeInformationContent h5 {
+    font-size: 0.9em;
+    transform: translateY(-4px)
+}
 
 .EmployeeInformationContent {
     bottom: 0;
     position: absolute;
     width: 100%;
     padding: 1em 0 2em 2em;
-    background-color: white;
 }
 
 .PositionContainer {
@@ -46,9 +45,7 @@
 
 
 .LowerContent {
-    font-size: 14px;
-    padding-top: 1em;
-    font-weight: 400 !important;
+    font-size: 0.8em;
 }
 
 .ArrowContainer {
@@ -58,11 +55,16 @@
 .EmailContainer {
     width: fit-content;
     padding-top: 1em;
+    transition: font-weight 0.2s var(--bezier)
+}
+
+.EmailContainer:hover {
+    font-weight: 500;
 }
 
 .ArrowContainer img {
-    height: 10px;
-    width: 10px;
+    height: 9px;
+    width: 9px;
 }
 
 

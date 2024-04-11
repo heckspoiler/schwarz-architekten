@@ -7,7 +7,6 @@ import Bounded from '@/components/containers/Bounded';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import styles from './About.module.css';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
-import { PrismicNextImage } from '@prismicio/next';
 
 export default async function Page() {
   const client = createClient();
