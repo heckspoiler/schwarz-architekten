@@ -1,0 +1,70 @@
+{
+  "id": "employee",
+  "type": "SharedSlice",
+  "name": "Employee",
+  "description": "Employee",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Employee",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "employee_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Employee Name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "employee_degree": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Employee Degree",
+            "placeholder": "ETH MSc",
+            "allowTargetBlank": true,
+            "multi": "heading5"
+          }
+        },
+        "employee_position": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Employee Position",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "employee_phone": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Employee Phone",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "employee_email": {
+          "type": "Text",
+          "config": {
+            "label": "Employee Email",
+            "placeholder": ""
+          }
+        },
+        "employee_image": {
+          "type": "Image",
+          "config": {
+            "label": "Employee Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

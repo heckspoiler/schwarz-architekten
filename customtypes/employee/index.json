@@ -1,0 +1,81 @@
+{
+  "format": "custom",
+  "id": "employee",
+  "label": "Mitarbeiter",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "employee_image": {
+        "type": "Image",
+        "config": {
+          "label": "Employee image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "employee_name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Employee Name",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "employee_degree": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Employee Degree",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading5"
+        }
+      },
+      "employee_role": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Employee Role",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "employee_phone": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Employee phone",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "employee_email": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Employee email",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "employee": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

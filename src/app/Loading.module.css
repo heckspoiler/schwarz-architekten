@@ -1,5 +1,5 @@
 .Main {
-    height: 100vh;
+    height: calc(100vh - var(--headerheight));
     width: 100vw;
     background-color: white;
     top: 0;
@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 }
 
 .Animation {
@@ -24,42 +25,55 @@
     width: 20em;
     display: flex;
     justify-content: center;
-    gap: 2em;
-
+    gap: 2vw;
+    transform: translateY(-8em);
 
 }
 
 .Block {
-
-    width: 0.4em;
+    height: 1em;
+    width: 0.2em;
+    animation: rotation 1.5s ease-in-out infinite;
     background-color: black;
     transform-origin: bottom;
 }
 
-.Block:nth-of-type(1) {
-    animation: rotation 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-}
+.Block:nth-of-type(1) {}
 
 .Block:nth-of-type(2) {
-    animation: rotation 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
     animation-delay: 0.3s;
 }
 
 .Block:nth-of-type(3) {
-    animation: rotation 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
     animation-delay: 0.6s;
+}
+
+.Block:nth-of-type(4) {
+    animation-delay: 0.9s;
+}
+
+.Block:nth-of-type(5) {
+    animation-delay: 1.2s;
+}
+
+.Block:nth-of-type(6) {
+    animation-delay: 1.5s;
+}
+
+.Block:nth-of-type(7) {
+    animation-delay: 1.8s;
 }
 
 @keyframes rotation {
     0% {
-        transform: scale(0);
+        transform: translateX(0) scale(1) rotate(0deg);
     }
 
     50% {
-        transform: scale(1);
+        transform: translateX(10em) scale(2) rotate(180deg);
     }
 
     100% {
-        transform: scale(0);
+        transform: translateX(0) scale(1) rotate(360deg);
     }
 }

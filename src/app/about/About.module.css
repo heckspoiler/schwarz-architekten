@@ -1,0 +1,25 @@
+.TitleSection h1 {
+    padding-left: 1em;
+}
+
+.DescriptionContainer p {
+    width: 80%;
+    hyphens: auto;
+    padding-bottom: 4em;
+}
+
+.TeamSubtitle {
+    padding: 0 0 2em 2em;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

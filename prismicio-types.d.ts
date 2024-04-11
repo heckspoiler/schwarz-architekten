@@ -4,6 +4,200 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type AboutDocumentDataSlicesSlice = EmployeeSlice;
+
+/**
+ * Content for About documents
+ */
+interface AboutDocumentData {
+  /**
+   * About Title field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.about_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_title: prismic.RichTextField;
+
+  /**
+   * About Description field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.about_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_description: prismic.RichTextField;
+
+  /**
+   * About Subtitle field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.about_subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_subtitle: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *About*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AboutDocumentDataSlicesSlice> /**
+   * Meta Description field in *About*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *About*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *About*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * About document from Prismic
+ *
+ * - **API ID**: `about`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+
+type EmployeeDocumentDataSlicesSlice = EmployeeSlice;
+
+/**
+ * Content for Mitarbeiter documents
+ */
+interface EmployeeDocumentData {
+  /**
+   * Employee image field in *Mitarbeiter*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  employee_image: prismic.ImageField<never>;
+
+  /**
+   * Employee Name field in *Mitarbeiter*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_name: prismic.RichTextField;
+
+  /**
+   * Employee Degree field in *Mitarbeiter*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_degree
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_degree: prismic.RichTextField;
+
+  /**
+   * Employee Role field in *Mitarbeiter*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_role
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_role: prismic.RichTextField;
+
+  /**
+   * Employee phone field in *Mitarbeiter*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_phone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_phone: prismic.RichTextField;
+
+  /**
+   * Employee email field in *Mitarbeiter*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.employee_email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_email: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Mitarbeiter*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<EmployeeDocumentDataSlicesSlice>;
+}
+
+/**
+ * Mitarbeiter document from Prismic
+ *
+ * - **API ID**: `employee`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EmployeeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<EmployeeDocumentData>,
+    "employee",
+    Lang
+  >;
+
 /**
  * Item in *Footer → Address*
  */
@@ -766,6 +960,8 @@ export type SlideHomeDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | AboutDocument
+  | EmployeeDocument
   | FooterDocument
   | HomeDocument
   | NavbarDocument
@@ -773,6 +969,101 @@ export type AllDocumentTypes =
   | ProjectsDocument
   | SettingsDocument
   | SlideHomeDocument;
+
+/**
+ * Primary content in *Employee → Primary*
+ */
+export interface EmployeeSliceDefaultPrimary {
+  /**
+   * Employee Name field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_name: prismic.RichTextField;
+
+  /**
+   * Employee Degree field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: ETH MSc
+   * - **API ID Path**: employee.primary.employee_degree
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_degree: prismic.RichTextField;
+
+  /**
+   * Employee Position field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_position
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_position: prismic.RichTextField;
+
+  /**
+   * Employee Phone field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_phone
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_phone: prismic.RichTextField;
+
+  /**
+   * Employee Email field in *Employee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  employee_email: prismic.KeyTextField;
+
+  /**
+   * Employee Image field in *Employee → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  employee_image: prismic.ImageField<never>;
+}
+
+/**
+ * Employee variation for Employee Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmployeeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EmployeeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Employee*
+ */
+type EmployeeSliceVariation = EmployeeSliceDefault;
+
+/**
+ * Employee Shared Slice
+ *
+ * - **API ID**: `employee`
+ * - **Description**: Employee
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmployeeSlice = prismic.SharedSlice<
+  "employee",
+  EmployeeSliceVariation
+>;
 
 /**
  * Primary content in *ProjectInfo → Primary*
@@ -1127,6 +1418,12 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutDocument,
+      AboutDocumentData,
+      AboutDocumentDataSlicesSlice,
+      EmployeeDocument,
+      EmployeeDocumentData,
+      EmployeeDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataAddressItem,
@@ -1155,6 +1452,10 @@ declare module "@prismicio/client" {
       SlideHomeDocumentData,
       SlideHomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      EmployeeSlice,
+      EmployeeSliceDefaultPrimary,
+      EmployeeSliceVariation,
+      EmployeeSliceDefault,
       ProjectInfoSlice,
       ProjectInfoSliceDefaultPrimary,
       ProjectInfoSliceProjectPrimary,
