@@ -39,6 +39,24 @@
             "multi": "paragraph"
           }
         },
+        "employee_university": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Employee University",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "minergie": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Minergie",
+            "placeholder": "Moin",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
         "employee_phone": {
           "type": "StructuredText",
           "config": {
@@ -55,10 +73,25 @@
             "placeholder": ""
           }
         },
+        "employee_biography": {
+          "type": "Text",
+          "config": {
+            "label": "Employee Biography",
+            "placeholder": ""
+          }
+        },
         "employee_image": {
           "type": "Image",
           "config": {
             "label": "Employee Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "employee_linkedin": {
+          "type": "Image",
+          "config": {
+            "label": "Employee Linkedin",
             "constraint": {},
             "thumbnails": []
           }

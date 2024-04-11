@@ -18,13 +18,15 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(100%);
+    background-color: rgba(255, 255, 255, 1);
     transition: opacity 0.2s var(--bezier), transform 0.2s var(--bezier);
+    /* opacity: 0; */
+    transform: translateY(100%);
 }
 
 .Image:hover .EmployeeInformation {
-    transform: translateX(0);
+    /* opacity: 1; */
+    transform: translateY(0);
 }
 
 .EmployeeInformationContent h5 {
@@ -40,7 +42,7 @@
 }
 
 .PositionContainer {
-    padding-bottom: 1em;
+    padding: 0.5em 0 1em 0;
 }
 
 
@@ -55,20 +57,27 @@
 .EmailContainer {
     width: fit-content;
     padding-top: 1em;
-    transition: font-weight 0.2s var(--bezier)
+    display: flex;
 }
 
-.EmailContainer:hover {
-    font-weight: 500;
+.EmailContainerMinergie {
+    width: fit-content;
+    transition: font-weight 0.2s var(--bezier);
+    display: flex;
 }
+
+
 
 .ArrowContainer img {
-    height: 9px;
-    width: 9px;
+    height: 8px;
+    width: 8px;
 }
 
-
-
+.LinkedInContainer {
+    height: 25px;
+    width: 25px;
+    padding-top: 1em;
+}
 
 
 /* Enable hover only on non-touch devices */
@@ -77,7 +86,84 @@
 
 
 /* Mobile */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+    .Image {
+        height: 20em;
+        width: 20em;
+        margin: 0 auto;
+    }
+
+    .Image img {
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .EmployeeInformation {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 1);
+        transition: opacity 0.2s var(--bezier), transform 0.2s var(--bezier);
+        /* opacity: 0; */
+        transform: translateY(100%);
+    }
+
+    .Image:hover .EmployeeInformation {
+        /* opacity: 1; */
+        transform: translateY(0);
+    }
+
+    .EmployeeInformationContent h5 {
+        font-size: 0.7em;
+        transform: translateY(0)
+    }
+
+    .EmployeeInformationContent {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        padding: 1em 0 1em 1em;
+    }
+
+    .PositionContainer {
+        padding: 0.5em 0 1em 0;
+    }
+
+    .LowerContent {
+        font-size: 0.8em;
+    }
+
+    .ArrowContainer {
+        padding-left: 1em;
+    }
+
+    .EmailContainer {
+        width: fit-content;
+        padding-top: 1em;
+        display: flex;
+    }
+
+    .EmailContainerMinergie {
+        width: fit-content;
+        display: flex;
+    }
+
+
+
+    .ArrowContainer img {
+        height: 7px;
+        width: 7px;
+    }
+
+    .LinkedInContainer {
+        height: 18px;
+        width: 18px;
+        padding-top: 1em;
+    }
+
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}

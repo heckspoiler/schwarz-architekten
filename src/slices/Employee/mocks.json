@@ -76,6 +76,54 @@
 				"__TYPE__": "FieldContent",
 				"value": "invented",
 				"type": "Text"
+			},
+			"employee_university": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum pariatur do duis. Dolor aliqua proident laboris reprehenderit consequat aute aute consequat magna consequat excepteur cillum ut consequat."
+						}
+					}
+				]
+			},
+			"employee_biography": {
+				"__TYPE__": "FieldContent",
+				"value": "term",
+				"type": "Text"
+			},
+			"minergie": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Incididunt aliquip quis ullamco officia non non exercitation sint in exercitation cillum."
+						}
+					}
+				]
+			},
+			"employee_linkedin": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+					"width": 6000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {}
 			}
 		},
 		"items": []

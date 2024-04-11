@@ -22,7 +22,6 @@
     align-items: center;
     justify-items: stretch;
     justify-content: center;
-
 }
 
 
@@ -32,7 +31,21 @@
 
 
 /* Mobile */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+    .EmployeeContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2em;
+        padding-bottom: 2em;
+    }
+
+    .DescriptionContainer p {
+        width: 100%;
+        text-align: justify;
+        padding-bottom: 0em;
+        transform: translateY(-4em);
+    }
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}

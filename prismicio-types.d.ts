@@ -1005,6 +1005,26 @@ export interface EmployeeSliceDefaultPrimary {
   employee_position: prismic.RichTextField;
 
   /**
+   * Employee University field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_university
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  employee_university: prismic.RichTextField;
+
+  /**
+   * Minergie field in *Employee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Moin
+   * - **API ID Path**: employee.primary.minergie
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  minergie: prismic.RichTextField;
+
+  /**
    * Employee Phone field in *Employee → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1025,6 +1045,16 @@ export interface EmployeeSliceDefaultPrimary {
   employee_email: prismic.KeyTextField;
 
   /**
+   * Employee Biography field in *Employee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_biography
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  employee_biography: prismic.KeyTextField;
+
+  /**
    * Employee Image field in *Employee → Primary*
    *
    * - **Field Type**: Image
@@ -1033,6 +1063,16 @@ export interface EmployeeSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   employee_image: prismic.ImageField<never>;
+
+  /**
+   * Employee Linkedin field in *Employee → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employee.primary.employee_linkedin
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  employee_linkedin: prismic.ImageField<never>;
 }
 
 /**

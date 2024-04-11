@@ -108,6 +108,7 @@ a {
   text-decoration: none;
   color: black;
   transition: color 0.2s var(--bezier);
+  font-weight: 400;
 }
 
 a:hover {}
@@ -181,7 +182,7 @@ a:hover {}
   p,
   a,
   button {
-    font-size: 0.8em;
+    font-size: 0.8rem;
   }
 
   h5 {
