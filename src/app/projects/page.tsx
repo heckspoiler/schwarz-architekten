@@ -5,9 +5,10 @@ import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import styles from './Projects.module.css';
-import { Carousel } from '@/components/clientsided/home/HomeCarousel';
+import { ProjectsRender } from '@/components/clientsided/projects/ProjectsRender';
 import { ProjectsCarousel } from '@/components/clientsided/projects/ProjectsCarousel';
-import { ProjectData } from '@/app/page';
+import { ProjectData } from '@/app/page'; // type definition for your project data
+import { ProjectsSwitch } from '@/components/clientsided/projects/ProjectsSwitch';
 
 function shuffleArray<T>(array: T[]): T[] {
   let currentIndex = array.length,
@@ -37,13 +38,13 @@ export default async function Page() {
 
   return (
     <Bounded>
-      <TitleContainer>
-        <h1 className={styles.Title}>Projekte</h1>
-      </TitleContainer>
-      <ProjectsCarousel
-        projects={projects as unknown as ProjectData[]}
-        styles={styles}
-      />
+      <section className={styles.UpperContainer}>
+        <TitleContainer>
+          <h1 className={styles.Title}>Projekte</h1>
+        </TitleContainer>
+        <ProjectsSwitch />
+      </section>
+      <ProjectsRender projects={projects} styles={styles} />
     </Bounded>
   );
 }

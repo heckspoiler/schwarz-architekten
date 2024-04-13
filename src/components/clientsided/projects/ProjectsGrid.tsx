@@ -1,47 +1,22 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Arrow from '@/components/Arrow';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
-import styles from './ProjectsCarousel.module.css';
+import styles from './ProjectsGrid.module.css';
 
-export const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
-  const [clicks, setClicks] = useState(0);
-
-  const nextSlide = () => {
-    setClicks((prevClicks) => prevClicks + 1);
-  };
-
-  const previousSlide = () => {
-    setClicks((prevClicks) => prevClicks - 1);
-  };
-
-  useEffect(() => {
-    const carousel = document.querySelector(
-      `.${styles.Carousel}`
-    ) as HTMLElement;
-    if (carousel) {
-      carousel.style.transform = `translateX(-${clicks * 100}vw)`;
-      carousel.style.transition =
-        'transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)';
-    }
-  }, [clicks, styles.Carousel]);
-
+export const ProjectsGrid = ({
+  projects,
+}: {
+  projects: any[]; // Adjusted for simplicity; replace any with your ProjectData type if needed
+}) => {
   return (
-    <section className={styles.CarouselContainer}>
-      <div className={styles.ArrowContainer}>
-        <div className={styles.Arrow} onClick={previousSlide}>
-          <span></span>
-        </div>
-        <div className={styles.Arrow} onClick={nextSlide}>
-          <span></span>
-        </div>
-      </div>
-      <section className={styles.Carousel}>
+    <section className={styles.ProjectsGridContainer}>
+      <section className={styles.GridContainer}>
         {projects.map((project: any) => (
-          <section key={project.id} className={styles.SlideContainer}>
+          <section key={project.id} className={styles.GridItem}>
             <div className={styles.ProjectInfo}>
               <TitleContainer>
                 <p className={styles.ProjectIndex}>
