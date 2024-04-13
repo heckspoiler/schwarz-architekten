@@ -13,8 +13,6 @@ export default async function Page() {
   const page = await client.getSingle('about');
   const employees = await client.getByType('employee');
 
-  console.log(employees.results[0].data);
-
   return (
     <Bounded>
       <TitleContainer>

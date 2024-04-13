@@ -7,7 +7,7 @@
   padding: 2em;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 25;
   height: var(--headerheight);
   scale: 1;
   transition: background-color 0.2s var(--bezier), scale 0.2s var(--bezier);

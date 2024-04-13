@@ -13,9 +13,18 @@ export const ProjectsGrid = ({ projects }: { projects: any }) => {
     <section className={styles.ProjectsGridContainer}>
       <section className={styles.GridContainer}>
         {projects.map((project: any) => (
-          <section key={project.id} className={styles.GridItem}>
+          <div key={project.id} className={styles.GridItemContainer}>
+            <div className={styles.GridItem}>
+              <div className={styles.ImageContainer}>
+                <a href={project.url ?? '#'}>
+                  <PrismicNextImage
+                    field={project.data.project_main_image as ImageFieldImage}
+                  />
+                </a>
+              </div>
+            </div>
             <div className={styles.ProjectInfo}>
-              <TitleContainer>
+              <div className={styles.ProjectsBlaBla}>
                 <p className={styles.ProjectIndex}>
                   {project.data.project_index?.[0]?.text}
                 </p>
@@ -31,16 +40,9 @@ export const ProjectsGrid = ({ projects }: { projects: any }) => {
                     </span>
                   </a>
                 </div>
-              </TitleContainer>
+              </div>
             </div>
-            <div className={styles.ImageContainer}>
-              <a href={project.url ?? '#'}>
-                <PrismicNextImage
-                  field={project.data.project_main_image as ImageFieldImage}
-                />
-              </a>
-            </div>
-          </section>
+          </div>
         ))}
       </section>
     </section>
