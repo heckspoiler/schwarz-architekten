@@ -42,7 +42,6 @@
     height: var(--project_info_height);
     width: fit-content;
     min-width: 28em;
-
     z-index: 2;
 }
 

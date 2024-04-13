@@ -7,19 +7,16 @@ import { SliderStore } from '@/stores/ProjectsStores';
 
 export const ProjectsRender = ({
   projects,
-  styles,
 }: {
   projects: any[]; // Adjusted for simplicity; replace any with your ProjectData type if needed
-  styles: any;
 }) => {
   const activeView = (SliderStore() as any).activeView;
-  const setActiveView = (SliderStore() as any).setActiveView;
   return (
     <section>
       {activeView === 'grid' ? (
-        <ProjectsGrid projects={projects} styles={styles} />
+        <ProjectsGrid projects={projects} />
       ) : (
-        <ProjectsCarousel projects={projects} styles={styles} />
+        <ProjectsCarousel projects={projects} />
       )}
     </section>
   );

@@ -5,9 +5,9 @@ import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import styles from './Projects.module.css';
-import { ProjectsRender } from '@/components/clientsided/projects/ProjectsRender';
 import { ProjectsCarousel } from '@/components/clientsided/projects/ProjectsCarousel';
-import { ProjectData } from '@/app/page'; // type definition for your project data
+import { ProjectsRender } from '@/components/clientsided/projects/ProjectsRender';
+import { ProjectsGrid } from '@/components/clientsided/projects/ProjectsGrid';
 import { ProjectsSwitch } from '@/components/clientsided/projects/ProjectsSwitch';
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -44,7 +44,7 @@ export default async function Page() {
         </TitleContainer>
         <ProjectsSwitch />
       </section>
-      <ProjectsRender projects={projects} styles={styles} />
+      <ProjectsRender projects={projects} />
     </Bounded>
   );
 }

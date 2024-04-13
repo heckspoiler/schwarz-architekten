@@ -1,17 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Arrow from '@/components/Arrow';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
+
 import styles from './ProjectsGrid.module.css';
 
-export const ProjectsGrid = ({
-  projects,
-}: {
-  projects: any[]; // Adjusted for simplicity; replace any with your ProjectData type if needed
-}) => {
+export const ProjectsGrid = ({ projects }: { projects: any }) => {
   return (
     <section className={styles.ProjectsGridContainer}>
       <section className={styles.GridContainer}>
@@ -24,7 +21,9 @@ export const ProjectsGrid = ({
                 </p>
                 <div>
                   <h1>{project.data.project_title?.[0]?.text}</h1>
-                  <p>{project.data.project_subtitle?.[0]?.text}</p>
+                  <p className={styles.ProjectDescription}>
+                    {project.data.project_subtitle?.[0]?.text}
+                  </p>
                   <a href={project.url ?? '#'} className={styles.Anchor}>
                     Mehr sehen
                     <span>

@@ -27,7 +27,7 @@ export const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
       carousel.style.transition =
         'transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)';
     }
-  }, [clicks, styles.Carousel]);
+  }, [clicks]);
 
   return (
     <section className={styles.CarouselContainer}>
