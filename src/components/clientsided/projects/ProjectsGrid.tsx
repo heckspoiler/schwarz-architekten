@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import Arrow from '@/components/Arrow';
-import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
 
-import styles from './ProjectsGrid.module.css';
+import styles from './Grid.module.css';
 
 export const ProjectsGrid = ({ projects }: { projects: any }) => {
   return (
