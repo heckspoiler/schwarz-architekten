@@ -5,13 +5,13 @@
     height: fit-content;
 
 
-    padding: 0 2em 4em 4em;
+    padding: 0 6em 4em 6em;
 }
 
 .GridContainer {
     display: grid;
     grid-template-columns: repeat(3, 33%);
-    row-gap: 2em;
+    row-gap: 3em;
     justify-items: center;
 }
 
