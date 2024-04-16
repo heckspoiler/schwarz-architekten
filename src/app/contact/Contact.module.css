@@ -43,6 +43,7 @@
 .Input {
     width: 30em;
     padding: 0.5em;
+    font-family: monospace;
 }
 
 .Textarea {
@@ -86,9 +87,37 @@
     display: flex;
     align-items: center;
     gap: 1em;
+    transition: transform 0.2s var(--bezier);
+    width: fit-content;
+}
+
+.Email:hover {
+    transform: translateX(0.5em);
+}
+
+.Arrow {
+    padding-left: 0.5em;
+}
+
+.Arrow img {
+    height: 10px;
+    width: 10px;
 }
 
 .RequiredStar {
     color: red;
-    margin-left: 2px;
+    padding-left: 2px;
 }
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

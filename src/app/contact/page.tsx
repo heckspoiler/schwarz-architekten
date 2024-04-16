@@ -8,6 +8,7 @@ import TitleContainer from '@/components/containers/project/TitleContainer';
 import styles from './Contact.module.css';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
 import mailImageSrc from 'public/icons/mail.svg';
+import Arrow from '@/components/Arrow';
 
 export default async function Page() {
   const client = createClient();
@@ -107,7 +108,7 @@ export default async function Page() {
                     height={18}
                     alt="Phone Symbol"
                   />
-                  <a href="tel:+41442123456">+41 44 212 34 56</a>
+                  <a href="tel:+41443891060">+41 (0) 44 389 10 60</a>
                 </div>
                 <div className={styles.Email}>
                   <Image
@@ -118,6 +119,9 @@ export default async function Page() {
                   />
                   <a href="mailto: info@schwarz-architekten.com">
                     info@schwarz-architekten.com
+                    <span className={styles.Arrow}>
+                      <Arrow />
+                    </span>
                   </a>
                 </div>
               </div>
@@ -125,7 +129,10 @@ export default async function Page() {
           </section>
         </TextblockContainer>
       </section>
-      <SliceZone slices={page.data.slices} components={components} />
+      <TextblockContainer>
+        <PrismicRichText field={page.data.contact_subtitle} />
+        <SliceZone slices={page.data.slices} components={components} />
+      </TextblockContainer>
     </Bounded>
   );
 }
