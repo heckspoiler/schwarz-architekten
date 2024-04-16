@@ -15,7 +15,9 @@ export type JobAddProps = SliceComponentProps<Content.JobAddSlice>;
 /**
  * Component for "JobAdd" Slices.
  */
+
 const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
+  console.log(slice.primary.vacancy_title);
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -30,7 +32,9 @@ const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
         <PrismicRichText field={slice.primary.vacancy_description} />
       </div>
       <div className={styles.Link}>
-        <a href="mailto: info@schwarz-architekten.com">
+        <a
+          href={`mailto: info@schwarz-architekten.com?subject=Bewerbung ${slice.primary.vacancy_title[0]?.text} `}
+        >
           {slice.primary.vacancy_link}
         </a>
 
