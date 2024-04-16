@@ -17,8 +17,6 @@ export type JobAddProps = SliceComponentProps<Content.JobAddSlice>;
  */
 
 const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
-  console.log(slice.primary.vacancy_title);
-
   return (
     <section
       data-slice-type={slice.slice_type}
