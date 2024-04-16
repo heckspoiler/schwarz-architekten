@@ -77,9 +77,6 @@
     transform: translateX(var(--linkTranslateX))
 }
 
-.ArrowContainer {
-    background-color: red;
-}
 
 .ImageContainer {
     height: 28em;
@@ -105,11 +102,13 @@
         flex-direction: column;
         height: fit-content;
         width: 20em;
+        padding: 0;
+        padding-bottom: 2em;
     }
 
     .GridContainer {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         row-gap: 2em;
         justify-items: center;
     }
