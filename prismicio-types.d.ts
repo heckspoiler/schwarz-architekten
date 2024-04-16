@@ -105,6 +105,39 @@ type ContactDocumentDataSlicesSlice = never;
  */
 interface ContactDocumentData {
   /**
+   * Contact Title field in *Contact*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Schreiben Sie uns
+   * - **API ID Path**: contact.contact_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact_title: prismic.RichTextField;
+
+  /**
+   * Contact Description upper field in *Contact*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.contact_description_upper
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact_description_upper: prismic.RichTextField;
+
+  /**
+   * Contact Subtitle field in *Contact*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.contact_subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact_subtitle: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *Contact*
    *
    * - **Field Type**: Slice Zone
@@ -157,7 +190,7 @@ interface ContactDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ContactDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<ContactDocumentData>,
     "contact",
     Lang

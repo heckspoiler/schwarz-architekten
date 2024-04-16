@@ -1,0 +1,10 @@
+.TitleSection h1 {
+    padding-left: 1em;
+}
+
+.DescriptionContainer p {
+    width: 80%;
+    hyphens: auto;
+    padding-bottom: 4em;
+    transform: translateY(-2em);
+}
