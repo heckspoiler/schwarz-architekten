@@ -71,29 +71,20 @@
     }
 
     .Link {
-        display: flex;
-        gap: 1em;
-        align-items: center;
+
         padding-top: 2em;
         padding-bottom: 0.5em;
-        transition: transform .2s var(--bezier)
+        font-size: 0.7em;
     }
 
     .Link:hover {
         transform: translateX(10px);
     }
 
-    .Link a {
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.9em;
-
-    }
 
     .Link img {
-        height: 9px;
-        width: 9px;
-
+        height: 8px;
+        width: 8px;
     }
 }
 
