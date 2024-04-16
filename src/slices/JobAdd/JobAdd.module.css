@@ -25,19 +25,18 @@
     align-items: center;
     padding-top: 2em;
     padding-bottom: 0.5em;
-    transition: transform .2s var(--bezier)
+    transition: transform .2s var(--bezier);
+    width: fit-content;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
 .Link:hover {
     transform: translateX(10px);
 }
 
-.Link a {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9em;
-
-}
+.Link a {}
 
 .Link img {
     height: 9px;

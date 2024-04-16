@@ -1,4 +1,4 @@
-import { Content } from '@prismicio/client';
+import { Content, RTNode } from '@prismicio/client';
 import {
   PrismicRichText,
   PrismicText,
@@ -18,6 +18,7 @@ export type JobAddProps = SliceComponentProps<Content.JobAddSlice>;
 
 const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
   console.log(slice.primary.vacancy_title);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -31,15 +32,14 @@ const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
       <div className={styles.VacancyDescription}>
         <PrismicRichText field={slice.primary.vacancy_description} />
       </div>
-      <div className={styles.Link}>
-        <a
-          href={`mailto: info@schwarz-architekten.com?subject=Bewerbung ${slice.primary.vacancy_title[0]?.text} `}
-        >
-          {slice.primary.vacancy_link}
-        </a>
 
+      <a
+        href={`mailto:info@schwarz-architekten.com?subject=Bewerbung ${(slice.primary.vacancy_title[0] as any).text}`}
+        className={styles.Link}
+      >
+        {slice.primary.vacancy_link}
         <Arrow />
-      </div>
+      </a>
     </section>
   );
 };
