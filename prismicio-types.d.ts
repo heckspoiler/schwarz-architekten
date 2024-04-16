@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type AboutDocumentDataSlicesSlice = EmployeeSlice;
+type AboutDocumentDataSlicesSlice = JobAddSlice | EmployeeSlice;
 
 /**
  * Content for About documents
@@ -1106,6 +1106,78 @@ export type EmployeeSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *JobAdd → Primary*
+ */
+export interface JobAddSliceDefaultPrimary {
+  /**
+   * Vacancy Index field in *JobAdd → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: job_add.primary.vacancy_index
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  vacancy_index: prismic.RichTextField;
+
+  /**
+   * Vacancy Title field in *JobAdd → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: job_add.primary.vacancy_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  vacancy_title: prismic.RichTextField;
+
+  /**
+   * Vacancy Description field in *JobAdd → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: job_add.primary.vacancy_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  vacancy_description: prismic.RichTextField;
+
+  /**
+   * Vacancy Link field in *JobAdd → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: job_add.primary.vacancy_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  vacancy_link: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for JobAdd Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JobAddSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<JobAddSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *JobAdd*
+ */
+type JobAddSliceVariation = JobAddSliceDefault;
+
+/**
+ * JobAdd Shared Slice
+ *
+ * - **API ID**: `job_add`
+ * - **Description**: JobAdd
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JobAddSlice = prismic.SharedSlice<"job_add", JobAddSliceVariation>;
+
+/**
  * Primary content in *ProjectInfo → Primary*
  */
 export interface ProjectInfoSliceDefaultPrimary {
@@ -1496,6 +1568,10 @@ declare module "@prismicio/client" {
       EmployeeSliceDefaultPrimary,
       EmployeeSliceVariation,
       EmployeeSliceDefault,
+      JobAddSlice,
+      JobAddSliceDefaultPrimary,
+      JobAddSliceVariation,
+      JobAddSliceDefault,
       ProjectInfoSlice,
       ProjectInfoSliceDefaultPrimary,
       ProjectInfoSliceProjectPrimary,

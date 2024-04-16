@@ -123,7 +123,7 @@
 @media (max-width: 768px) {
   .Footer {
     flex-direction: column;
-    padding: 1em;
+    padding: 2em 1em 1em 1em;
     font-size: var(--fontsize-footer);
   }
 

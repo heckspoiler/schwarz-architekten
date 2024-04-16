@@ -17,6 +17,10 @@
     padding: 0 0 4em 2em;
 }
 
+.Subtitle {
+    padding: 0 0 4em 2em;
+}
+
 .EmployeeContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -24,6 +28,13 @@
     align-items: center;
     justify-items: stretch;
     justify-content: center;
+}
+
+.JobAdds {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-items: start;
+    padding-bottom: 4em;
 }
 
 

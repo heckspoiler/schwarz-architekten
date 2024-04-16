@@ -1,0 +1,47 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"vacancy_index": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip ut ullamco commodo proident eiusmod veniam."
+						}
+					}
+				]
+			},
+			"vacancy_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Garden"
+						}
+					}
+				]
+			},
+			"vacancy_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit laboris cupidatat deserunt do nisi eu commodo qui exercitation reprehenderit laborum."
+						}
+					}
+				]
+			},
+			"vacancy_link": {
+				"__TYPE__": "FieldContent",
+				"value": "answer",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

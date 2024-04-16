@@ -1,0 +1,53 @@
+{
+  "id": "job_add",
+  "type": "SharedSlice",
+  "name": "JobAdd",
+  "description": "JobAdd",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "vacancy_index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Vacancy Index",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "vacancy_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Vacancy Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "vacancy_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Vacancy Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "vacancy_link": {
+          "type": "Text",
+          "config": {
+            "label": "Vacancy Link",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
