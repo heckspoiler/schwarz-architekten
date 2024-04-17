@@ -14,6 +14,13 @@ export default async function Page() {
   const client = createClient();
   const page = await client.getSingle('contact');
 
+  const defaultVariationSlices = page.data.slices.filter(
+    (slice) => slice.variation === 'default'
+  );
+  const generalLinksVariationSlices = page.data.slices.filter(
+    (slice) => slice.variation === 'generalLinks'
+  );
+
   return (
     <Bounded>
       <TitleContainer>
@@ -130,8 +137,24 @@ export default async function Page() {
         </TextblockContainer>
       </section>
       <TextblockContainer>
-        <PrismicRichText field={page.data.contact_subtitle} />
-        <SliceZone slices={page.data.slices} components={components} />
+        <div className={styles.Subtitle}>
+          <PrismicRichText field={page.data.contact_subtitle} />
+        </div>
+        <div className={styles.Title}>
+          <h3>Architektur</h3>
+        </div>
+        <section className={styles.LinksContainer}>
+          <SliceZone slices={defaultVariationSlices} components={components} />
+        </section>
+        <div className={styles.Title}>
+          <h3>Links</h3>
+        </div>
+        <section className={styles.LinksContainer}>
+          <SliceZone
+            slices={generalLinksVariationSlices}
+            components={components}
+          />
+        </section>
       </TextblockContainer>
     </Bounded>
   );

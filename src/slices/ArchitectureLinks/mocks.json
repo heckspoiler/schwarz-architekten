@@ -1,0 +1,81 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"link_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Range"
+						}
+					}
+				]
+			},
+			"link_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip velit fugiat dolor Lorem ad voluptate commodo et enim minim."
+						}
+					}
+				]
+			},
+			"link_link": {
+				"__TYPE__": "FieldContent",
+				"value": "garden",
+				"type": "Text"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "generalLinks",
+		"primary": {
+			"link_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Quickly"
+						}
+					}
+				]
+			},
+			"link_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit culpa labore labore eiusmod eiusmod magna laborum amet minim ea dolore irure laboris reprehenderit."
+						}
+					}
+				]
+			},
+			"link_link": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor consectetur nisi amet aliqua adipisicing in non dolor qui ad."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

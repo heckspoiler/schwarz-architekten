@@ -98,7 +98,7 @@ interface AboutDocumentData {
 export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
-type ContactDocumentDataSlicesSlice = never;
+type ContactDocumentDataSlicesSlice = ArchitectureLinksSlice;
 
 /**
  * Content for Contact documents
@@ -1070,6 +1070,121 @@ export type AllDocumentTypes =
   | SlideHomeDocument;
 
 /**
+ * Primary content in *ArchitectureLinks → Primary*
+ */
+export interface ArchitectureLinksSliceDefaultPrimary {
+  /**
+   * Link Title field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Baunetz GmbH
+   * - **API ID Path**: architecture_links.primary.link_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_title: prismic.RichTextField;
+
+  /**
+   * Link Description field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Beschreibung
+   * - **API ID Path**: architecture_links.primary.link_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_description: prismic.RichTextField;
+
+  /**
+   * Link Link field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.link_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_link: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ArchitectureLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArchitectureLinksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArchitectureLinksSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ArchitectureLinks → Primary*
+ */
+export interface ArchitectureLinksSliceGeneralLinksPrimary {
+  /**
+   * Link Title field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Baunetz GmbH
+   * - **API ID Path**: architecture_links.primary.link_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_title: prismic.RichTextField;
+
+  /**
+   * Link Description field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Beschreibung
+   * - **API ID Path**: architecture_links.primary.link_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_description: prismic.RichTextField;
+
+  /**
+   * Link Link field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Link
+   * - **API ID Path**: architecture_links.primary.link_link
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_link: prismic.RichTextField;
+}
+
+/**
+ * General Links variation for ArchitectureLinks Slice
+ *
+ * - **API ID**: `generalLinks`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArchitectureLinksSliceGeneralLinks = prismic.SharedSliceVariation<
+  "generalLinks",
+  Simplify<ArchitectureLinksSliceGeneralLinksPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArchitectureLinks*
+ */
+type ArchitectureLinksSliceVariation =
+  | ArchitectureLinksSliceDefault
+  | ArchitectureLinksSliceGeneralLinks;
+
+/**
+ * ArchitectureLinks Shared Slice
+ *
+ * - **API ID**: `architecture_links`
+ * - **Description**: ArchitectureLinks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArchitectureLinksSlice = prismic.SharedSlice<
+  "architecture_links",
+  ArchitectureLinksSliceVariation
+>;
+
+/**
  * Primary content in *Employee → Primary*
  */
 export interface EmployeeSliceDefaultPrimary {
@@ -1666,6 +1781,12 @@ declare module "@prismicio/client" {
       SlideHomeDocumentData,
       SlideHomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ArchitectureLinksSlice,
+      ArchitectureLinksSliceDefaultPrimary,
+      ArchitectureLinksSliceGeneralLinksPrimary,
+      ArchitectureLinksSliceVariation,
+      ArchitectureLinksSliceDefault,
+      ArchitectureLinksSliceGeneralLinks,
       EmployeeSlice,
       EmployeeSliceDefaultPrimary,
       EmployeeSliceVariation,

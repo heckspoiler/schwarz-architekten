@@ -1,0 +1,82 @@
+{
+  "id": "architecture_links",
+  "type": "SharedSlice",
+  "name": "ArchitectureLinks",
+  "description": "ArchitectureLinks",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Title",
+            "placeholder": "Baunetz GmbH",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "link_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Description",
+            "placeholder": "Beschreibung",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "link_link": {
+          "type": "Text",
+          "config": {
+            "label": "Link Link",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "generalLinks",
+      "name": "General Links",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Title",
+            "placeholder": "Baunetz GmbH",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "link_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Description",
+            "placeholder": "Beschreibung",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "link_link": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Link",
+            "placeholder": "Link",
+            "allowTargetBlank": true,
+            "multi": "hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
