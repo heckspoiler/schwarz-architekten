@@ -1,0 +1,18 @@
+.Impressum {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    transition: transform 0.2s var(--bezier);
+    padding-bottom: 4em;
+    width: fit-content;
+}
+
+.Impressum:hover {
+    transform: translateX(1em);
+    cursor: pointer;
+}
+
+.Impressum img {
+    height: 11px;
+    width: 11px;
+}

@@ -9,6 +9,8 @@ import styles from './Contact.module.css';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
 import mailImageSrc from 'public/icons/mail.svg';
 import Arrow from '@/components/Arrow';
+import { ImpressumButton } from '@/components/clientsided/contact/ImpressumButton';
+import { Impressum } from '@/components/clientsided/contact/Impressum';
 
 export default async function Page() {
   const client = createClient();
@@ -155,7 +157,12 @@ export default async function Page() {
             components={components}
           />
         </section>
+
+        <div className={styles.Title}>
+          <ImpressumButton />
+        </div>
       </TextblockContainer>
+      <Impressum />
     </Bounded>
   );
 }
