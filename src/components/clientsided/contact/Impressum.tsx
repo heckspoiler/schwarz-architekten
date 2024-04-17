@@ -71,8 +71,6 @@ export const Impressum = () => {
           alt="SA LOGO"
           src="/images/SA_logo_pngreal.png"
         />
-        {/* <p className={styles.AddressPara}>Seefeldstrasse 224</p>
-        <p className={styles.AddressPara}>CH-8008 Zürich</p> */}
       </div>
     </div>
   );
