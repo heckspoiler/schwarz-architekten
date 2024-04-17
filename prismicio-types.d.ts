@@ -1057,6 +1057,71 @@ export type SlideHomeDocument<Lang extends string = string> =
     Lang
   >;
 
+type TheoryDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Theory documents
+ */
+interface TheoryDocumentData {
+  /**
+   * Slice Zone field in *Theory*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TheoryDocumentDataSlicesSlice> /**
+   * Meta Description field in *Theory*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: theory.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Theory*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Theory*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: theory.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Theory document from Prismic
+ *
+ * - **API ID**: `theory`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TheoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TheoryDocumentData>,
+    "theory",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AboutDocument
   | ContactDocument
@@ -1067,7 +1132,8 @@ export type AllDocumentTypes =
   | ProjectDocument
   | ProjectsDocument
   | SettingsDocument
-  | SlideHomeDocument;
+  | SlideHomeDocument
+  | TheoryDocument;
 
 /**
  * Primary content in *ArchitectureLinks → Primary*
@@ -1780,6 +1846,9 @@ declare module "@prismicio/client" {
       SlideHomeDocument,
       SlideHomeDocumentData,
       SlideHomeDocumentDataSlicesSlice,
+      TheoryDocument,
+      TheoryDocumentData,
+      TheoryDocumentDataSlicesSlice,
       AllDocumentTypes,
       ArchitectureLinksSlice,
       ArchitectureLinksSliceDefaultPrimary,

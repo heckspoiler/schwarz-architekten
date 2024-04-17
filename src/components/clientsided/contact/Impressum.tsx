@@ -5,6 +5,7 @@ import styles from './Impressum.module.css';
 import Arrow from '@/components/Arrow';
 import { ImpressumVisible } from '@/stores/ImpressumStores';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Impressum = () => {
   const { isVisible, setIsVisible } = ImpressumVisible() as {
@@ -63,6 +64,12 @@ export const Impressum = () => {
           </p>
         </div>
       </div>
+      <Image
+        height={15}
+        width={157.5}
+        alt="SA LOGO"
+        src="/images/SA_logo_pngreal.png"
+      />
     </div>
   );
 };
