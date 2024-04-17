@@ -9,7 +9,7 @@
     padding: 4em;
     transform: translateX(60vw);
     transition: transform 0.6s var(--bezier);
-    box-shadow: 1px 1px 5px black;
+    border-left: 1px solid black;
 
 }
 
@@ -96,4 +96,15 @@
 
 .Link:hover {
     transform: translateX(0.5em)
+}
+
+.AddressPara {
+    font-size: 0.7em;
+}
+
+.LogoContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em 2em;
 }

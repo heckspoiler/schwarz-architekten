@@ -64,12 +64,16 @@ export const Impressum = () => {
           </p>
         </div>
       </div>
-      <Image
-        height={15}
-        width={157.5}
-        alt="SA LOGO"
-        src="/images/SA_logo_pngreal.png"
-      />
+      <div className={styles.LogoContainer}>
+        <Image
+          height={15}
+          width={160}
+          alt="SA LOGO"
+          src="/images/SA_logo_pngreal.png"
+        />
+        {/* <p className={styles.AddressPara}>Seefeldstrasse 224</p>
+        <p className={styles.AddressPara}>CH-8008 Zürich</p> */}
+      </div>
     </div>
   );
 };
