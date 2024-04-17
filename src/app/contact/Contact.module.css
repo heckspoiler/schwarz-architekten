@@ -123,8 +123,6 @@
     text-transform: none;
 }
 
-
-
 .LinksContainer {
     padding-top: 1.5em;
     padding-bottom: 1em;
@@ -150,6 +148,7 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+
     .TitleSection h1 {
         padding-left: 1em;
     }
