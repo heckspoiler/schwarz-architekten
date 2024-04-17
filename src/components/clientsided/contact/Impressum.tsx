@@ -52,9 +52,9 @@ export const Impressum = () => {
         <div>
           <h3>Verlinkte Websites</h3>
           <p>
-            Schwarz Architekten überprüfen die Inhalte der verlinkten Websites
-            nicht. Sie übernimmt somit keine Verantwortung für den Inhalt dieser
-            Websites.
+            Die Dietrich Schwarz Architekten AG überprüft die Inhalte der
+            verlinkten Websites nicht. Sie übernimmt somit keine Verantwortung
+            für den Inhalt dieser Websites.
           </p>
         </div>
       </div>
