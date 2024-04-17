@@ -32,11 +32,15 @@ export const Impressum = () => {
           <p>Carlo Ettisberger & Ozelot Studios GmbH</p>
           <div className={styles.LinkContainer}>
             <div className={styles.Link}>
-              <a href="https://ozelot.ltd/">Ozelot Studios</a>
+              <a href="https://ozelot.ltd/" target="_blank">
+                Ozelot Studios
+              </a>
               <Arrow />
             </div>
             <div className={styles.Link}>
-              <a href="https://carlothedom.digital">Carlo Ettisberger</a>
+              <a href="https://carlothedom.digital" target="_blank">
+                Carlo Ettisberger
+              </a>
               <Arrow />
             </div>
           </div>
