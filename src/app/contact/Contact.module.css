@@ -55,7 +55,8 @@
     width: 10em;
     padding: 0.5em 0;
     align-self: flex-end;
-    transition: color 0.2s var(--bezier), background-color 0.2s var(--bezier)
+    transition: color 0.2s var(--bezier), background-color 0.2s var(--bezier);
+    border: 1px solid black;
 }
 
 .Button:hover {
@@ -148,7 +149,122 @@
 
 
 /* Mobile */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+    .TitleSection h1 {
+        padding-left: 1em;
+    }
+
+    .DescriptionContainer p {
+        width: 80%;
+        hyphens: auto;
+        padding-bottom: 4em;
+        transform: translateY(-4em);
+    }
+
+    .ContactSection {
+        transform: translateY(-4em);
+        flex-direction: column;
+    }
+
+    .FormContainer {}
+
+    .Form {
+        gap: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .FormUpperSection,
+    .FormLowerSection {
+
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+    }
+
+    .Label {
+        font-size: 0.8em;
+    }
+
+    .LabelWithStar {
+        display: flex;
+        gap: 2px;
+    }
+
+    .Input {
+        width: 100%;
+        padding: 0.5em;
+        font-family: monospace;
+    }
+
+    .Textarea {
+        height: 6em;
+        padding: 0.5em;
+    }
+
+
+    .AddressSection {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0em;
+        padding-top: 2em;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+
+    .Email {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        transition: transform 0.2s var(--bezier);
+        width: fit-content;
+    }
+
+    .Email:hover {
+        transform: translateX(0.5em);
+    }
+
+    .Arrow {
+        padding-left: 0.5em;
+    }
+
+    .Arrow img {
+        height: 8px;
+        width: 8px;
+    }
+
+    .RequiredStar {
+        color: red;
+        padding-left: 1px;
+        font-size: 0.8em;
+    }
+
+    .Subtitle {
+        padding-top: 3em;
+        padding-left: 1em;
+        padding-bottom: 2em;
+    }
+
+    .Title {
+        padding-top: 2em;
+    }
+
+    .Title h3 {
+        text-transform: none;
+
+    }
+
+    .LinksContainer {
+        grid-template-columns: 100%;
+        row-gap: 1em;
+    }
+
+    .LinksContainer:nth-of-type(2) {
+        padding-bottom: 2em;
+    }
+
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}
