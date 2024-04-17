@@ -11,6 +11,7 @@ import mailImageSrc from 'public/icons/mail.svg';
 import Arrow from '@/components/Arrow';
 import { ImpressumButton } from '@/components/clientsided/contact/ImpressumButton';
 import { Impressum } from '@/components/clientsided/contact/Impressum';
+import Link from 'next/link';
 
 export default async function Page() {
   const client = createClient();
@@ -117,7 +118,7 @@ export default async function Page() {
                     height={18}
                     alt="Phone Symbol"
                   />
-                  <a href="tel:+41443891060">+41 (0) 44 389 10 60</a>
+                  <Link href="tel:+41443891060">+41 (0) 44 389 10 60</Link>
                 </div>
                 <div className={styles.Email}>
                   <Image
@@ -126,12 +127,12 @@ export default async function Page() {
                     height={18}
                     alt="Email Symbol"
                   />
-                  <a href="mailto: info@schwarz-architekten.com">
+                  <Link href="mailto: info@schwarz-architekten.com">
                     info@schwarz-architekten.com
                     <span className={styles.Arrow}>
                       <Arrow />
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>

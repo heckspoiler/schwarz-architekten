@@ -6,6 +6,7 @@ import TitleContainer from '@/components/containers/project/TitleContainer';
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
 import styles from './ProjectsCarousel.module.css';
+import Link from 'next/link';
 
 export const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
   const [clicks, setClicks] = useState(0);
@@ -50,21 +51,21 @@ export const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
                 <div>
                   <h1>{project.data.project_title?.[0]?.text}</h1>
                   <p>{project.data.project_subtitle?.[0]?.text}</p>
-                  <a href={project.url ?? '#'} className={styles.Anchor}>
+                  <Link href={project.url ?? '#'} className={styles.Anchor}>
                     Mehr sehen
                     <span>
                       <Arrow />
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </TitleContainer>
             </div>
             <div className={styles.ImageContainer}>
-              <a href={project.url ?? '#'}>
+              <Link href={project.url ?? '#'}>
                 <PrismicNextImage
                   field={project.data.project_main_image as ImageFieldImage}
                 />
-              </a>
+              </Link>
             </div>
           </section>
         ))}

@@ -6,6 +6,7 @@ import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
 
 import styles from './Grid.module.css';
+import Link from 'next/link';
 
 export const ProjectsGrid = ({ projects }: { projects: any }) => {
   return (
@@ -15,11 +16,11 @@ export const ProjectsGrid = ({ projects }: { projects: any }) => {
           <div key={project.id} className={styles.GridItemContainer}>
             <div className={styles.GridItem}>
               <div className={styles.ImageContainer}>
-                <a href={project.url ?? '#'}>
+                <Link href={project.url ?? '#'}>
                   <PrismicNextImage
                     field={project.data.project_main_image as ImageFieldImage}
                   />
-                </a>
+                </Link>
               </div>
             </div>
             <div className={styles.ProjectInfo}>

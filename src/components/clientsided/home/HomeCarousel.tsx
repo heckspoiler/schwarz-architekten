@@ -7,6 +7,7 @@ import { PrismicNextImage } from '@prismicio/next';
 import styles from './HomeCarousel.module.css';
 import { ImageFieldImage } from '@prismicio/client';
 import { ProjectData } from '@/app/page';
+import Link from 'next/link';
 
 export const Carousel = ({ projects }: { projects: ProjectData[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,12 +52,12 @@ export const Carousel = ({ projects }: { projects: ProjectData[] }) => {
               <div>
                 <h1>{project.data.project_title?.[0]?.text}</h1>
                 <p>{project.data.project_subtitle?.[0]?.text}</p>
-                <a href={project.url ?? '#'} className={styles.Anchor}>
+                <Link href={project.url ?? '#'} className={styles.Anchor}>
                   Mehr sehen
                   <span>
                     <Arrow />
                   </span>
-                </a>
+                </Link>
               </div>
             </TitleContainer>
             <div
@@ -64,11 +65,11 @@ export const Carousel = ({ projects }: { projects: ProjectData[] }) => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <a href={project.url ?? '#'}>
+              <Link href={project.url ?? '#'}>
                 <PrismicNextImage
                   field={project.data.project_main_image as ImageFieldImage}
                 />
-              </a>
+              </Link>
             </div>
           </section>
         ))}

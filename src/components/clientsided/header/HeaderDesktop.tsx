@@ -2,6 +2,7 @@
 
 import React, { Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import Link from 'next/link';
 
 const HeaderDesktop = ({
   navbar,
@@ -15,9 +16,9 @@ const HeaderDesktop = ({
   return (
     <header className={styles.Main}>
       <div className={styles.LogoContainer}>
-        <a href="/">
+        <Link href="/">
           <PrismicNextImage field={navbar.data.logo} />
-        </a>
+        </Link>
       </div>
       <nav className={styles.Navbar}>
         <ul className={styles.NavList}>

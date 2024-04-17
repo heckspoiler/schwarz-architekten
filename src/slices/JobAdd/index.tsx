@@ -6,6 +6,7 @@ import {
 } from '@prismicio/react';
 import styles from './JobAdd.module.css';
 import Arrow from '@/components/Arrow';
+import Link from 'next/link';
 
 /**
  * Props for `JobAdd`.
@@ -31,13 +32,13 @@ const JobAdd = ({ slice }: JobAddProps): JSX.Element => {
         <PrismicRichText field={slice.primary.vacancy_description} />
       </div>
 
-      <a
+      <Link
         href={`mailto:info@schwarz-architekten.com?subject=Bewerbung ${(slice.primary.vacancy_title[0] as any).text}`}
         className={styles.Link}
       >
         {slice.primary.vacancy_link}
         <Arrow />
-      </a>
+      </Link>
     </section>
   );
 };

@@ -7,6 +7,7 @@ import {
 import styles from './Employee.module.css';
 import { PrismicNextImage } from '@prismicio/next';
 import Arrow from '@/components/Arrow';
+import Link from 'next/link';
 
 /**
  * Props for `Employee`.
@@ -38,7 +39,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                   {slice.primary.minergie &&
                   slice.primary.minergie.length > 0 ? (
                     <div>
-                      <a
+                      <Link
                         href="https://www.minergie.ch/de/"
                         target="_blank"
                         className={styles.EmailContainerMinergie}
@@ -47,12 +48,12 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                         <span className={styles.ArrowContainer}>
                           <Arrow />
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   ) : null}
                 </div>
                 <PrismicRichText field={slice.primary.employee_phone} />
-                <a
+                <Link
                   href={`mailto:${slice.primary.employee_email || ''}`}
                   className={styles.EmailContainer}
                 >
@@ -60,11 +61,11 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                   <span className={styles.ArrowContainer}>
                     <Arrow />
                   </span>
-                </a>
+                </Link>
                 {slice.primary.employee_biography &&
                 slice.primary.employee_biography.length > 0 ? (
                   <div>
-                    <a
+                    <Link
                       href="https://www.minergie.ch/de/"
                       target="_blank"
                       className={styles.EmailContainerMinergie}
@@ -73,16 +74,16 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                       <span className={styles.ArrowContainer}>
                         <Arrow />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 ) : null}
                 <div className={styles.LinkedInContainer}>
-                  <a
+                  <Link
                     href="https://www.linkedin.com/in/dietrich-schwarz-9a502ab1/?originalSubdomain=ch"
                     target="_blank"
                   >
                     <PrismicNextImage field={slice.primary.employee_linkedin} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

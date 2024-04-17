@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import Arrow from '@/components/Arrow';
+import Link from 'next/link';
 
 export const FooterClient = ({
   footer,
@@ -22,12 +23,12 @@ export const FooterClient = ({
             <section
               className={`${styles.SubcontainerUpper} ${styles.LogoContainer}`}
             >
-              <a href="/">
+              <Link href="/">
                 <PrismicNextImage
                   field={footer.data.logo}
                   className={styles.Logo}
                 />
-              </a>
+              </Link>
             </section>
             <section
               className={`${styles.SubcontainerUpper} ${styles.AddressContainer}`}
@@ -55,7 +56,7 @@ export const FooterClient = ({
                 <section className={styles.Social}>
                   {footer.data.social.map(
                     ({ icon, link }: { icon: any; link: string }) => (
-                      <a
+                      <Link
                         key={icon?.url ?? `key-${icon}`}
                         href={link ?? ''}
                         target="_blank"
@@ -63,7 +64,7 @@ export const FooterClient = ({
                         className={styles.SocialLink}
                       >
                         <PrismicNextImage field={icon} />
-                      </a>
+                      </Link>
                     )
                   )}
                 </section>
@@ -93,7 +94,7 @@ export const FooterClient = ({
                   {footer.data.external_nav.map(
                     ({ label, link }: { label: string; link: any }) => (
                       <li key={label} className={styles.Listobject}>
-                        <a
+                        <Link
                           href={link ?? ''}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -101,7 +102,7 @@ export const FooterClient = ({
                         >
                           <span className={styles.Linkspan}>{label}</span>
                           <Arrow />
-                        </a>
+                        </Link>
                       </li>
                     )
                   )}
@@ -112,13 +113,13 @@ export const FooterClient = ({
           <section
             className={`${styles.SubcontainerUpper} ${styles.MapContainer}`}
           >
-            <a
+            <Link
               href="https://www.google.com/maps/place/Dietrich+Schwarz+Architekten+ETH%2FSIA/@47.3523211,8.5566546,17z/data=!3m1!4b1!4m6!3m5!1s0x479aa7cfdd328a73:0x36f2b2b6993200e8!8m2!3d47.3523211!4d8.5592295!16s%2Fg%2F11t7m_y3l1?entry=ttu"
               target="_blank"
               rel="noopener noreferrer"
             >
               <PrismicNextImage field={footer.data.map} />
-            </a>
+            </Link>
           </section>
           <p className={styles.Copyright}>© {new Date().getFullYear()}</p>
         </footer>

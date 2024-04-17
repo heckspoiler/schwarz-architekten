@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './Impressum.module.css';
 import Arrow from '@/components/Arrow';
 import { ImpressumVisible } from '@/stores/ImpressumStores';
+import Link from 'next/link';
 
 export const Impressum = () => {
   const { isVisible, setIsVisible } = ImpressumVisible() as {
@@ -32,15 +33,15 @@ export const Impressum = () => {
           <p>Carlo Ettisberger & Ozelot Studios GmbH</p>
           <div className={styles.LinkContainer}>
             <div className={styles.Link}>
-              <a href="https://ozelot.ltd/" target="_blank">
+              <Link href="https://ozelot.ltd/" target="_blank">
                 Ozelot Studios
-              </a>
+              </Link>
               <Arrow />
             </div>
             <div className={styles.Link}>
-              <a href="https://carlothedom.digital" target="_blank">
+              <Link href="https://carlothedom.digital" target="_blank">
                 Carlo Ettisberger
-              </a>
+              </Link>
               <Arrow />
             </div>
           </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const HeaderMobile = ({
   navbar,
@@ -23,9 +24,9 @@ const HeaderMobile = ({
   return (
     <section className={styles.Main}>
       <div className={styles.LogoContainer}>
-        <a href="/">
+        <Link href="/">
           <PrismicNextImage field={navbar.data.logo} />
-        </a>
+        </Link>
       </div>
       <section
         className={`${styles.NavbarMobile} ${isOpen ? styles.IsOpen : ''}`}
@@ -37,9 +38,9 @@ const HeaderMobile = ({
               className={`${styles.Item} ${isActive === '/' ? styles.IsActive : ''}`}
             >
               <p>01</p>
-              <a href="/" className={styles.Link}>
+              <Link href="/" className={styles.Link}>
                 Home
-              </a>
+              </Link>
             </li>
             {navbar.data.navbar.map(
               (
@@ -63,13 +64,13 @@ const HeaderMobile = ({
             )}
             <div className={styles.LogoContainerMobile}>
               <div className={styles.LogoContainer}>
-                <a href="/">
+                <Link href="/">
                   <PrismicNextImage field={navbar.data.logo} />
-                </a>
+                </Link>
               </div>
-              <a href="mailto:info@schwarz-architekten.com">
+              <Link href="mailto:info@schwarz-architekten.com">
                 info@schwarz-architekten.com
-              </a>
+              </Link>
               <p>+41 (0) 44 389 10 60</p>
             </div>
           </ul>
