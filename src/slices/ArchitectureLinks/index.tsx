@@ -23,14 +23,20 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
       <PrismicRichText field={slice.primary.link_description} />
       <div className={styles.LinkContainer}>
         {slice.variation === 'default' ? (
-          <a target="_blank" href={slice.primary.link_link as string}>
+          <a
+            target="_blank"
+            href={slice.primary.link_link as unknown as string}
+          >
             Mehr erfahren
             <span>
               <Arrow />
             </span>
           </a>
         ) : (
-          <a target="_blank" href={slice.primary.link_link[0]?.text as string}>
+          <a
+            target="_blank"
+            href={slice.primary.link_link as unknown as string}
+          >
             Mehr erfahren
             <span>
               <Arrow />
