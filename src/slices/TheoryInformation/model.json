@@ -54,11 +54,13 @@
             "thumbnails": []
           }
         },
-        "theory_link": {
+        "document_link": {
           "type": "Link",
           "config": {
-            "label": "Theory Link",
-            "select": "document"
+            "label": "Document Link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
           }
         }
       },

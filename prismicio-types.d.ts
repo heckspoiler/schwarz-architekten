@@ -1943,14 +1943,14 @@ export interface TheoryInformationSliceDefaultPrimary {
   theory_image: prismic.ImageField<never>;
 
   /**
-   * Theory Link field in *TheoryInformation → Primary*
+   * Document Link field in *TheoryInformation → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: theory_information.primary.theory_link
+   * - **API ID Path**: theory_information.primary.document_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  theory_link: prismic.ContentRelationshipField;
+  document_link: prismic.LinkField;
 }
 
 /**
@@ -1984,38 +1984,48 @@ export type TheoryInformationSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *TheoryContentSlice → Items*
+ * Primary content in *TheoryContentSlice → Primary*
  */
-export interface TheoryPageSliceSliceDefaultItem {
+export interface TheoryPageSliceSliceDefaultPrimary {
   /**
-   * Subtitle field in *TheoryContentSlice → Items*
+   * Subtitle field in *TheoryContentSlice → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: theory_page_slice.items[].subtitle
+   * - **API ID Path**: theory_page_slice.primary.subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subtitle: prismic.RichTextField;
 
   /**
-   * Description field in *TheoryContentSlice → Items*
+   * Description field in *TheoryContentSlice → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: theory_page_slice.items[].description
+   * - **API ID Path**: theory_page_slice.primary.description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
 
   /**
-   * Theory Image field in *TheoryContentSlice → Items*
+   * Image field in *TheoryContentSlice → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: theory_page_slice.items[].theory_image
+   * - **API ID Path**: theory_page_slice.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  theory_image: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *TheoryContentSlice → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_page_slice.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -2027,8 +2037,8 @@ export interface TheoryPageSliceSliceDefaultItem {
  */
 export type TheoryPageSliceSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  Simplify<TheoryPageSliceSliceDefaultItem>
+  Simplify<TheoryPageSliceSliceDefaultPrimary>,
+  never
 >;
 
 /**
@@ -2135,7 +2145,7 @@ declare module "@prismicio/client" {
       TheoryInformationSliceVariation,
       TheoryInformationSliceDefault,
       TheoryPageSliceSlice,
-      TheoryPageSliceSliceDefaultItem,
+      TheoryPageSliceSliceDefaultPrimary,
       TheoryPageSliceSliceVariation,
       TheoryPageSliceSliceDefault,
     };
