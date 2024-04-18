@@ -1057,12 +1057,23 @@ export type SlideHomeDocument<Lang extends string = string> =
     Lang
   >;
 
-type TheoryDocumentDataSlicesSlice = never;
+type TheoryDocumentDataSlicesSlice = TheoryInformationSlice;
 
 /**
  * Content for Theory documents
  */
 interface TheoryDocumentData {
+  /**
+   * Theory Title field in *Theory*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Theorie
+   * - **API ID Path**: theory.theory_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  theory_title: prismic.RichTextField;
+
   /**
    * Slice Zone field in *Theory*
    *
@@ -1122,6 +1133,82 @@ export type TheoryDocument<Lang extends string = string> =
     Lang
   >;
 
+type TheorypageDocumentDataSlicesSlice = TheoryPageSliceSlice;
+
+/**
+ * Content for TheoryPage documents
+ */
+interface TheorypageDocumentData {
+  /**
+   * Theroy Title field in *TheoryPage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theorypage.theroy_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  theroy_title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *TheoryPage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theorypage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TheorypageDocumentDataSlicesSlice> /**
+   * Meta Description field in *TheoryPage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: theorypage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *TheoryPage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theorypage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *TheoryPage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: theorypage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * TheoryPage document from Prismic
+ *
+ * - **API ID**: `theorypage`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TheorypageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TheorypageDocumentData>,
+    "theorypage",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AboutDocument
   | ContactDocument
@@ -1133,7 +1220,8 @@ export type AllDocumentTypes =
   | ProjectsDocument
   | SettingsDocument
   | SlideHomeDocument
-  | TheoryDocument;
+  | TheoryDocument
+  | TheorypageDocument;
 
 /**
  * Primary content in *ArchitectureLinks → Primary*
@@ -1800,6 +1888,166 @@ export type ProjectSliceSlice = prismic.SharedSlice<
   ProjectSliceSliceVariation
 >;
 
+/**
+ * Primary content in *TheoryInformation → Primary*
+ */
+export interface TheoryInformationSliceDefaultPrimary {
+  /**
+   * uid field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_information.primary.uid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  uid: prismic.KeyTextField;
+
+  /**
+   * Theory Index field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: theory_information.primary.theory_index
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  theory_index: prismic.RichTextField;
+
+  /**
+   * Theory Title field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_information.primary.theory_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  theory_title: prismic.RichTextField;
+
+  /**
+   * Theory Author field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_information.primary.theory_author
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  theory_author: prismic.RichTextField;
+
+  /**
+   * Theory Image field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_information.primary.theory_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  theory_image: prismic.ImageField<never>;
+
+  /**
+   * Theory Link field in *TheoryInformation → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_information.primary.theory_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  theory_link: prismic.ContentRelationshipField;
+}
+
+/**
+ * Default variation for TheoryInformation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TheoryInformationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TheoryInformationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TheoryInformation*
+ */
+type TheoryInformationSliceVariation = TheoryInformationSliceDefault;
+
+/**
+ * TheoryInformation Shared Slice
+ *
+ * - **API ID**: `theory_information`
+ * - **Description**: TheoryInformation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TheoryInformationSlice = prismic.SharedSlice<
+  "theory_information",
+  TheoryInformationSliceVariation
+>;
+
+/**
+ * Primary content in *TheoryContentSlice → Items*
+ */
+export interface TheoryPageSliceSliceDefaultItem {
+  /**
+   * Subtitle field in *TheoryContentSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_page_slice.items[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * Description field in *TheoryContentSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_page_slice.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Theory Image field in *TheoryContentSlice → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: theory_page_slice.items[].theory_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  theory_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TheoryContentSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TheoryPageSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TheoryPageSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TheoryContentSlice*
+ */
+type TheoryPageSliceSliceVariation = TheoryPageSliceSliceDefault;
+
+/**
+ * TheoryContentSlice Shared Slice
+ *
+ * - **API ID**: `theory_page_slice`
+ * - **Description**: TheoryPageSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TheoryPageSliceSlice = prismic.SharedSlice<
+  "theory_page_slice",
+  TheoryPageSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1849,6 +2097,9 @@ declare module "@prismicio/client" {
       TheoryDocument,
       TheoryDocumentData,
       TheoryDocumentDataSlicesSlice,
+      TheorypageDocument,
+      TheorypageDocumentData,
+      TheorypageDocumentDataSlicesSlice,
       AllDocumentTypes,
       ArchitectureLinksSlice,
       ArchitectureLinksSliceDefaultPrimary,
@@ -1879,6 +2130,14 @@ declare module "@prismicio/client" {
       ProjectSliceSliceDefaultPrimary,
       ProjectSliceSliceVariation,
       ProjectSliceSliceDefault,
+      TheoryInformationSlice,
+      TheoryInformationSliceDefaultPrimary,
+      TheoryInformationSliceVariation,
+      TheoryInformationSliceDefault,
+      TheoryPageSliceSlice,
+      TheoryPageSliceSliceDefaultItem,
+      TheoryPageSliceSliceVariation,
+      TheoryPageSliceSliceDefault,
     };
   }
 }

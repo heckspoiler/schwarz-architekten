@@ -39,6 +39,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'theory',
     path: '/theory',
   },
+  {
+    type: 'theorypage',
+    path: '/theory/:uid',
+  },
 ];
 
 /**

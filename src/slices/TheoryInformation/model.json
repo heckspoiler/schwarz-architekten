@@ -1,0 +1,68 @@
+{
+  "id": "theory_information",
+  "type": "SharedSlice",
+  "name": "TheoryInformation",
+  "description": "TheoryInformation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "uid": {
+          "type": "Text",
+          "config": {
+            "label": "uid",
+            "placeholder": ""
+          }
+        },
+        "theory_index": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Theory Index",
+            "placeholder": "01",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "theory_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Theory Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "theory_author": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Theory Author",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "theory_image": {
+          "type": "Image",
+          "config": {
+            "label": "Theory Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "theory_link": {
+          "type": "Link",
+          "config": {
+            "label": "Theory Link",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,18 +1,24 @@
 {
   "format": "page",
-  "id": "theory",
-  "label": "Theory",
-  "repeatable": false,
+  "id": "theorypage",
+  "label": "TheoryPage",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
-      "theory_title": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "theroy_title": {
         "type": "StructuredText",
         "config": {
-          "label": "Theory Title",
-          "placeholder": "Theorie",
+          "label": "Theroy Title",
+          "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "heading1"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "slices": {
@@ -20,7 +26,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "theory_information": {
+            "theory_page_slice": {
               "type": "SharedSlice"
             }
           }

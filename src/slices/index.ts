@@ -8,4 +8,6 @@ export const components = {
   job_add: dynamic(() => import("./JobAdd")),
   project_info: dynamic(() => import("./ProjectInfo")),
   project_slice: dynamic(() => import("./ProjectSlice")),
+  theory_information: dynamic(() => import("./TheoryInformation")),
+  theory_page_slice: dynamic(() => import("./TheoryContentSlice")),
 };

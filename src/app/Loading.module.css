@@ -26,16 +26,16 @@
     display: flex;
     justify-content: center;
     gap: 2vw;
-    transform: translateY(-8em);
-
+    transform: translateY(-2em);
 }
 
 .Block {
     height: 1em;
-    width: 0.2em;
-    animation: rotation 1.5s ease-in-out infinite;
+    width: 1em;
+    animation: rotation 2.1s ease-in-out infinite;
     background-color: black;
-    transform-origin: bottom;
+    border-radius: 50%;
+
 }
 
 .Block:nth-of-type(1) {}
@@ -66,14 +66,14 @@
 
 @keyframes rotation {
     0% {
-        transform: translateX(0) scale(1) rotate(0deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateX(10em) scale(2) rotate(180deg);
+        transform: translateY(5em);
     }
 
     100% {
-        transform: translateX(0) scale(1) rotate(360deg);
+        transform: translateY(0);
     }
 }
