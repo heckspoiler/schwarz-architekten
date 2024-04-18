@@ -20,7 +20,7 @@ export const TheoryContent: React.FC<TheoryContentProps> = ({
 
   return (
     <>
-      <PrismicNextLink field={slice.primary.document_link}>
+      <PrismicNextLink field={slice.primary.document_link} target="_blank">
         <div
           className={styles.Container}
           onMouseEnter={() => setIsHovered(true)}
