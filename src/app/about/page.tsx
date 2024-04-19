@@ -21,8 +21,16 @@ export default async function Page() {
     (slice) => slice.slice_type === 'job_add'
   );
 
-  const awardSlices = page.data.slices.filter(
+  const architectureSlices = page.data.slices.filter(
     (slice) => slice.slice_type === 'architecture_links'
+  );
+
+  const awardSlices = page.data.slices.filter(
+    (slice) => slice.variation === 'awards'
+  );
+
+  const bookSlices = architectureSlices.filter(
+    (slice) => slice.variation === 'books'
   );
 
   return (
@@ -59,6 +67,13 @@ export default async function Page() {
           <h2 className={styles.Subtitle}>Auszeichnungen</h2>
           <section className={styles.Awards}>
             <SliceZone slices={awardSlices} components={components} />
+          </section>
+        </TextblockContainer>
+
+        <TextblockContainer>
+          <h2 className={styles.Subtitle}>Publikationen</h2>
+          <section className={styles.Awards}>
+            <SliceZone slices={bookSlices} components={components} />
           </section>
         </TextblockContainer>
       </section>

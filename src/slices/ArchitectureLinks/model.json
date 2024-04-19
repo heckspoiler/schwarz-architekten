@@ -121,6 +121,62 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "books",
+      "name": "Books",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Book Title",
+            "placeholder": "Baunetz GmbH",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "link_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Book Description",
+            "placeholder": "Beschreibung",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "book_author": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Book Author",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "strong"
+          }
+        },
+        "isbn": {
+          "type": "StructuredText",
+          "config": {
+            "label": "ISBN",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "book_link": {
+          "type": "Link",
+          "config": {
+            "label": "Book Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

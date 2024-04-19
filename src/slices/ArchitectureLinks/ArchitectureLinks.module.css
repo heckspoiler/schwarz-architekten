@@ -1,11 +1,22 @@
 .Links {
     border: 1px solid black;
     width: 28em;
-    height: 8em;
+    min-height: 9em;
     padding: 0.5em 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.BookLinks {
+
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .Links p {
@@ -13,17 +24,25 @@
     padding-top: 0.2em;
 }
 
-.LinkContainer {
+.LinkContainer,
+.BookContainer {
     padding-top: 0.2em;
     width: fit-content;
     transition: transform 0.2s var(--bezier)
+}
+
+.BookContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
 }
 
 .LinkContainer:hover {
     transform: translateX(0.5em)
 }
 
-.LinkContainer a {
+.LinkContainer a,
+.BookContainer a {
     font-size: 0.7em;
     display: flex;
     gap: 1em;

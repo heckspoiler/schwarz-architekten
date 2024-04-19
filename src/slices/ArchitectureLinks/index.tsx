@@ -86,6 +86,28 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
             </div>
           </section>
         );
+      case 'books':
+        return (
+          <section className={styles.BookLinks}>
+            <div className={styles.LinkContainer}>
+              <PrismicRichText field={slice.primary.book_author} />
+            </div>
+            <div className={styles.LinkContainer}>
+              <PrismicRichText field={slice.primary.isbn} />
+            </div>
+            <div className={styles.LinkContainer}>
+              <PrismicNextLink
+                target="_blank"
+                field={slice.primary.book_link as LinkField | null | undefined}
+              >
+                Mehr erfahren
+                <span>
+                  <Arrow />
+                </span>
+              </PrismicNextLink>
+            </div>
+          </section>
+        );
     }
   };
 

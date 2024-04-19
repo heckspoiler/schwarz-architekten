@@ -15,10 +15,12 @@
 
 .TeamSubtitle {
     padding: 0 0 4em 2em;
+
 }
 
 .Subtitle {
-    padding: 2em 0 4em 2em;
+    padding: 2em 0 2em 2em;
+
 }
 
 .EmployeeContainer {
@@ -31,15 +33,17 @@
 }
 
 .JobAdds,
-.Awards {
+.Awards,
+.Books {
     display: grid;
     justify-items: start;
-    padding-bottom: 4em;
-    row-gap: 4em;
+    padding-bottom: 2em;
+    row-gap: 2em;
 }
 
 
-.JobAdds {
+.JobAdds,
+.Books {
     grid-template-columns: repeat(2, 40%);
 }
 

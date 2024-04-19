@@ -1480,12 +1480,81 @@ export type ArchitectureLinksSliceAwards = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ArchitectureLinks → Primary*
+ */
+export interface ArchitectureLinksSliceBooksPrimary {
+  /**
+   * Book Title field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Baunetz GmbH
+   * - **API ID Path**: architecture_links.primary.link_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_title: prismic.RichTextField;
+
+  /**
+   * Book Description field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Beschreibung
+   * - **API ID Path**: architecture_links.primary.link_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_description: prismic.RichTextField;
+
+  /**
+   * Book Author field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.book_author
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  book_author: prismic.RichTextField;
+
+  /**
+   * ISBN field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.isbn
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  isbn: prismic.RichTextField;
+
+  /**
+   * Book Link field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.book_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  book_link: prismic.LinkField;
+}
+
+/**
+ * Books variation for ArchitectureLinks Slice
+ *
+ * - **API ID**: `books`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArchitectureLinksSliceBooks = prismic.SharedSliceVariation<
+  "books",
+  Simplify<ArchitectureLinksSliceBooksPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ArchitectureLinks*
  */
 type ArchitectureLinksSliceVariation =
   | ArchitectureLinksSliceDefault
   | ArchitectureLinksSliceGeneralLinks
-  | ArchitectureLinksSliceAwards;
+  | ArchitectureLinksSliceAwards
+  | ArchitectureLinksSliceBooks;
 
 /**
  * ArchitectureLinks Shared Slice
@@ -2279,10 +2348,12 @@ declare module "@prismicio/client" {
       ArchitectureLinksSliceDefaultPrimary,
       ArchitectureLinksSliceGeneralLinksPrimary,
       ArchitectureLinksSliceAwardsPrimary,
+      ArchitectureLinksSliceBooksPrimary,
       ArchitectureLinksSliceVariation,
       ArchitectureLinksSliceDefault,
       ArchitectureLinksSliceGeneralLinks,
       ArchitectureLinksSliceAwards,
+      ArchitectureLinksSliceBooks,
       EmployeeSlice,
       EmployeeSliceDefaultPrimary,
       EmployeeSliceVariation,
