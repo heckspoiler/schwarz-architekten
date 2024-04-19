@@ -108,8 +108,10 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={styles.Links}
     >
-      <PrismicRichText field={slice.primary.link_title} />
-      <PrismicRichText field={slice.primary.link_description} />
+      <div className={styles.MainPara}>
+        <PrismicRichText field={slice.primary.link_title} />
+        <PrismicRichText field={slice.primary.link_description} />
+      </div>
       {renderLink()}
     </section>
   );

@@ -24,6 +24,11 @@
     padding-top: 0.2em;
 }
 
+.MainPara {
+    display: flex;
+    flex-direction: column;
+}
+
 .LinkContainer,
 .BookContainer {
     padding-top: 0.2em;
