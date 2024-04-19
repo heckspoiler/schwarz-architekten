@@ -1,0 +1,59 @@
+.Main {
+    position: absolute;
+    width: 30em;
+    height: fit-content;
+    top: 30%;
+    left: 10%;
+    transform: translateX(0%) translateY(-30%);
+    flex-direction: column;
+    display: flex;
+    gap: 2em;
+}
+
+.Main h1 {
+    font-size: 1.8em;
+}
+
+.Main a {
+    font-size: 0.8em;
+    width: fit-content;
+    transition: transform 0.2s var(--bezier)
+}
+
+
+.Main a:hover {
+    transform: translateX(1em);
+}
+
+.Main a span {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .Main {
+
+        gap: 2em;
+    }
+
+
+    .Main h1 {
+        font-size: 1.3em;
+    }
+
+
+    .Main p {
+        width: 80%;
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

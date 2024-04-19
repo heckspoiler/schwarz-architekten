@@ -1,8 +1,9 @@
-import { Content } from '@prismicio/client';
+import { Content, LinkField } from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import styles from './ArchitectureLinks.module.css';
 import Arrow from '@/components/Arrow';
 import Link from 'next/link';
+import { PrismicNextLink } from '@prismicio/next';
 
 /**
  * Props for `ArchitectureLinks`.
@@ -14,6 +15,80 @@ export type ArchitectureLinksProps =
  * Component for "ArchitectureLinks" Slices.
  */
 const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
+  // Function to determine what to render based on the slice variation
+  const renderLink = () => {
+    switch (slice.variation) {
+      case 'default':
+        return (
+          <div className={styles.LinkContainer}>
+            <Link
+              target="_blank"
+              href={slice.primary.link_link as unknown as string}
+            >
+              Mehr erfahren
+              <span>
+                <Arrow />
+              </span>
+            </Link>
+            <Link
+              target="_blank"
+              href={slice.primary.link_link as unknown as string}
+            >
+              Mehr erfahren
+              <span>
+                <Arrow />
+              </span>
+            </Link>
+          </div>
+        );
+
+      case 'generalLinks':
+        return (
+          <div className={styles.LinkContainer}>
+            <Link
+              target="_blank"
+              href={slice.primary.link_link as unknown as string}
+            >
+              General Info
+              <span>
+                <Arrow />
+              </span>
+            </Link>
+          </div>
+        );
+
+      case 'awards':
+        return (
+          <section className={styles.AwardsLinks}>
+            <div className={styles.LinkContainer}>
+              <PrismicNextLink
+                target="_blank"
+                field={
+                  slice.primary.project_link as LinkField | null | undefined
+                }
+              >
+                Zum Projekt
+                <span>
+                  <Arrow />
+                </span>
+              </PrismicNextLink>
+            </div>
+            <div className={styles.LinkContainer}>
+              <PrismicNextLink
+                target="_blank"
+                field={slice.primary.award_link as LinkField | null | undefined}
+              >
+                Mehr erfahren
+                <span>
+                  <Arrow />
+                </span>
+              </PrismicNextLink>
+            </div>
+          </section>
+        );
+    }
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -22,29 +97,7 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
     >
       <PrismicRichText field={slice.primary.link_title} />
       <PrismicRichText field={slice.primary.link_description} />
-      <div className={styles.LinkContainer}>
-        {slice.variation === 'default' ? (
-          <Link
-            target="_blank"
-            href={slice.primary.link_link as unknown as string}
-          >
-            Mehr erfahren
-            <span>
-              <Arrow />
-            </span>
-          </Link>
-        ) : (
-          <Link
-            target="_blank"
-            href={slice.primary.link_link as unknown as string}
-          >
-            Mehr erfahren
-            <span>
-              <Arrow />
-            </span>
-          </Link>
-        )}
-      </div>
+      {renderLink()}
     </section>
   );
 };

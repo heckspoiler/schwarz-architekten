@@ -21,6 +21,10 @@ export default async function Page() {
     (slice) => slice.slice_type === 'job_add'
   );
 
+  const awardSlices = page.data.slices.filter(
+    (slice) => slice.slice_type === 'architecture_links'
+  );
+
   return (
     <Bounded>
       <TitleContainer>
@@ -48,6 +52,13 @@ export default async function Page() {
           <h2 className={styles.Subtitle}>Offene Stellen</h2>
           <section className={styles.JobAdds}>
             <SliceZone slices={jobAddSlices} components={components} />
+          </section>
+        </TextblockContainer>
+
+        <TextblockContainer>
+          <h2 className={styles.Subtitle}>Auszeichnungen</h2>
+          <section className={styles.Awards}>
+            <SliceZone slices={awardSlices} components={components} />
           </section>
         </TextblockContainer>
       </section>

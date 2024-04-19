@@ -77,6 +77,50 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "awards",
+      "name": "Awards",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Title",
+            "placeholder": "Baunetz GmbH",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "link_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link Description",
+            "placeholder": "Beschreibung",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "project_link": {
+          "type": "Link",
+          "config": {
+            "label": "Project Link",
+            "select": "document"
+          }
+        },
+        "award_link": {
+          "type": "Link",
+          "config": {
+            "label": "Award Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

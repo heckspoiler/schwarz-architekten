@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type AboutDocumentDataSlicesSlice = JobAddSlice | EmployeeSlice;
+type AboutDocumentDataSlicesSlice =
+  | ArchitectureLinksSlice
+  | JobAddSlice
+  | EmployeeSlice;
 
 /**
  * Content for About documents
@@ -579,6 +582,104 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+
+type LinkNotFoundDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Link not Found documents
+ */
+interface LinkNotFoundDocumentData {
+  /**
+   * Title field in *Link not Found*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Dieser Link wurde nicht gefunden
+   * - **API ID Path**: link_not_found.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Link not Found*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_not_found.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * back field in *Link not Found*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_not_found.back
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  back: prismic.ContentRelationshipField;
+
+  /**
+   * Slice Zone field in *Link not Found*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_not_found.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LinkNotFoundDocumentDataSlicesSlice> /**
+   * Meta Description field in *Link not Found*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: link_not_found.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Link not Found*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_not_found.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Link not Found*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: link_not_found.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Link not Found document from Prismic
+ *
+ * - **API ID**: `link_not_found`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LinkNotFoundDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<LinkNotFoundDocumentData>,
+    "link_not_found",
+    Lang
+  >;
 
 /**
  * Item in *Header → navbar*
@@ -1215,6 +1316,7 @@ export type AllDocumentTypes =
   | EmployeeDocument
   | FooterDocument
   | HomeDocument
+  | LinkNotFoundDocument
   | NavbarDocument
   | ProjectDocument
   | ProjectsDocument
@@ -1320,11 +1422,70 @@ export type ArchitectureLinksSliceGeneralLinks = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ArchitectureLinks → Primary*
+ */
+export interface ArchitectureLinksSliceAwardsPrimary {
+  /**
+   * Link Title field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Baunetz GmbH
+   * - **API ID Path**: architecture_links.primary.link_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_title: prismic.RichTextField;
+
+  /**
+   * Link Description field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Beschreibung
+   * - **API ID Path**: architecture_links.primary.link_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_description: prismic.RichTextField;
+
+  /**
+   * Project Link field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.ContentRelationshipField;
+
+  /**
+   * Award Link field in *ArchitectureLinks → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architecture_links.primary.award_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  award_link: prismic.LinkField;
+}
+
+/**
+ * Awards variation for ArchitectureLinks Slice
+ *
+ * - **API ID**: `awards`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArchitectureLinksSliceAwards = prismic.SharedSliceVariation<
+  "awards",
+  Simplify<ArchitectureLinksSliceAwardsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ArchitectureLinks*
  */
 type ArchitectureLinksSliceVariation =
   | ArchitectureLinksSliceDefault
-  | ArchitectureLinksSliceGeneralLinks;
+  | ArchitectureLinksSliceGeneralLinks
+  | ArchitectureLinksSliceAwards;
 
 /**
  * ArchitectureLinks Shared Slice
@@ -2087,6 +2248,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      LinkNotFoundDocument,
+      LinkNotFoundDocumentData,
+      LinkNotFoundDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,
@@ -2114,9 +2278,11 @@ declare module "@prismicio/client" {
       ArchitectureLinksSlice,
       ArchitectureLinksSliceDefaultPrimary,
       ArchitectureLinksSliceGeneralLinksPrimary,
+      ArchitectureLinksSliceAwardsPrimary,
       ArchitectureLinksSliceVariation,
       ArchitectureLinksSliceDefault,
       ArchitectureLinksSliceGeneralLinks,
+      ArchitectureLinksSliceAwards,
       EmployeeSlice,
       EmployeeSliceDefaultPrimary,
       EmployeeSliceVariation,

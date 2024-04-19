@@ -5,7 +5,6 @@ import Arrow from '@/components/Arrow';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
 import React from 'react';
-import Link from 'next/link';
 
 interface TheoryContentProps {
   styles: any;

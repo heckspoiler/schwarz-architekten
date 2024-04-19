@@ -1,53 +1,48 @@
 {
   "format": "page",
-  "id": "about",
-  "label": "About",
+  "id": "link_not_found",
+  "label": "Link not Found",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "about_title": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "title": {
         "type": "StructuredText",
         "config": {
-          "label": "About Title",
-          "placeholder": "",
+          "label": "Title",
+          "placeholder": "Dieser Link wurde nicht gefunden",
           "allowTargetBlank": true,
           "multi": "heading1"
         }
       },
-      "about_description": {
+      "description": {
         "type": "StructuredText",
         "config": {
-          "label": "About Description",
+          "label": "description",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph"
         }
       },
-      "about_subtitle": {
-        "type": "StructuredText",
+      "back": {
+        "type": "Link",
         "config": {
-          "label": "About Subtitle",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "heading2"
+          "label": "back",
+          "select": "document"
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "architecture_links": {
-              "type": "SharedSlice"
-            },
-            "job_add": {
-              "type": "SharedSlice"
-            },
-            "employee": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
