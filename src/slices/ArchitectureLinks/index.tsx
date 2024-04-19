@@ -30,15 +30,6 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
                 <Arrow />
               </span>
             </Link>
-            <Link
-              target="_blank"
-              href={slice.primary.link_link as unknown as string}
-            >
-              Mehr erfahren
-              <span>
-                <Arrow />
-              </span>
-            </Link>
           </div>
         );
 
@@ -49,7 +40,7 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
               target="_blank"
               href={slice.primary.link_link as unknown as string}
             >
-              General Info
+              Mehr erfahren
               <span>
                 <Arrow />
               </span>

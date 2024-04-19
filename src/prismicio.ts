@@ -43,6 +43,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'theorypage',
     path: '/theory/:uid',
   },
+  {
+    type: 'link_not_found',
+    path: '/link-not-found',
+  },
 ];
 
 /**
