@@ -80,10 +80,10 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
       case 'books':
         return (
           <section className={styles.BookLinks}>
-            <div className={styles.LinkContainer}>
+            <div className={styles.OtherLinkContainer}>
               <PrismicRichText field={slice.primary.book_author} />
             </div>
-            <div className={styles.LinkContainer}>
+            <div className={styles.OtherLinkContainer}>
               <PrismicRichText field={slice.primary.isbn} />
             </div>
             <div className={styles.LinkContainer}>
@@ -116,5 +116,4 @@ const ArchitectureLinks = ({ slice }: ArchitectureLinksProps): JSX.Element => {
     </section>
   );
 };
-
 export default ArchitectureLinks;

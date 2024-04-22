@@ -36,6 +36,11 @@
     transition: transform 0.2s var(--bezier)
 }
 
+.OtherLinkContainer {
+    padding-top: 0.2em;
+    width: fit-content;
+}
+
 .BookContainer {
     display: flex;
     flex-direction: column;
