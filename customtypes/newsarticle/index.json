@@ -1,0 +1,129 @@
+{
+  "format": "page",
+  "id": "newsarticle",
+  "label": "Newsarticle",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "article_index": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Article Index",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "article_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Article Title",
+          "placeholder": "Titel",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "author_field": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Author Field",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "date_field": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Date Field",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "type_field": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Type Field",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "article_image": {
+        "type": "Image",
+        "config": {
+          "label": "Article Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "article_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Article Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "project_link": {
+        "type": "Link",
+        "config": {
+          "label": "Project Link",
+          "select": "document"
+        }
+      },
+      "other_link": {
+        "type": "Link",
+        "config": {
+          "label": "Other Link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}

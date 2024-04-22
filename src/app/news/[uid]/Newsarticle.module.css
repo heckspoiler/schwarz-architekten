@@ -1,0 +1,73 @@
+.HeadingContainer {
+    display: flex;
+    gap: 0.5em;
+}
+
+.IndexContainer {
+    font-size: 0.7em;
+}
+
+.LegendContainer {
+    display: flex;
+    gap: 4px;
+    font-size: 0.8em;
+    color: var(--lightgrey);
+}
+
+.ImageContainer {
+    display: flex;
+}
+
+.ImageContainer img {
+    max-height: 40em;
+    width: auto;
+
+}
+
+.LinksContainer {
+    padding-top: 2em;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.LinkContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: transform 0.2s var(--bezier)
+}
+
+.LinkContainer:hover {
+    transform: translateX(0.5em);
+}
+
+.LinkContainer a {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8em;
+}
+
+.LinkContainer img {
+    height: 8px;
+    width: 8px;
+}
+
+.Description {
+    width: 80%;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
