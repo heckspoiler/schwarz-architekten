@@ -147,16 +147,23 @@ export default async function Page() {
           <h3>Architektur</h3>
         </div>
         <section className={styles.LinksContainer}>
-          <SliceZone slices={defaultVariationSlices} components={components} />
+          <div className={styles.LinksWrapper}>
+            <SliceZone
+              slices={defaultVariationSlices}
+              components={components}
+            />
+          </div>
         </section>
         <div className={styles.Title}>
           <h3>Links</h3>
         </div>
         <section className={styles.LinksContainer}>
-          <SliceZone
-            slices={generalLinksVariationSlices}
-            components={components}
-          />
+          <div className={styles.LinksWrapper}>
+            <SliceZone
+              slices={generalLinksVariationSlices}
+              components={components}
+            />
+          </div>
         </section>
 
         <div className={styles.Title}>
