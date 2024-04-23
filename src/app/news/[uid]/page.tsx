@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: Params }) {
       </div>
       <TextblockContainer>
         <div className={styles.Description}>
-          <PrismicRichText field={page.data.article_description} />
+          <SliceZone slices={page.data.slices} components={components} />
         </div>
         <div className={styles.LinksContainer}>
           {(page.data.project_link as any)?.url &&
@@ -68,10 +68,6 @@ export default async function Page({ params }: { params: Params }) {
       </TextblockContainer>
     </Bounded>
   );
-}
-
-{
-  /* <SliceZone slices={page.data.slices} components={components} /> */
 }
 
 export async function generateMetadata({

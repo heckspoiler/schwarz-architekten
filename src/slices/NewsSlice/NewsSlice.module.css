@@ -1,0 +1,14 @@
+.SliceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+}
+
+.SliceContainer p {
+    font-weight: 300 !important;
+}
+
+.SliceContainer h2 {
+    font-size: 1em;
+}

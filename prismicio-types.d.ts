@@ -820,7 +820,7 @@ interface NewsDocumentData {
 export type NewsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<NewsDocumentData>, "news", Lang>;
 
-type NewsarticleDocumentDataSlicesSlice = never;
+type NewsarticleDocumentDataSlicesSlice = NewsSliceSlice;
 
 /**
  * Content for Newsarticle documents
@@ -891,17 +891,6 @@ interface NewsarticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   article_image: prismic.ImageField<never>;
-
-  /**
-   * Article Description field in *Newsarticle*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: newsarticle.article_description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  article_description: prismic.RichTextField;
 
   /**
    * Project Link field in *Newsarticle*
@@ -2003,6 +1992,91 @@ type JobAddSliceVariation = JobAddSliceDefault;
 export type JobAddSlice = prismic.SharedSlice<"job_add", JobAddSliceVariation>;
 
 /**
+ * Primary content in *NewsSlice → Primary*
+ */
+export interface NewsSliceSliceDefaultPrimary {
+  /**
+   * News Slice Title field in *NewsSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_slice.primary.news_slice_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  news_slice_title: prismic.RichTextField;
+
+  /**
+   * News Slice Description field in *NewsSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_slice.primary.news_slice_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  news_slice_description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for NewsSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *NewsSlice → Primary*
+ */
+export interface NewsSliceSliceNewsSliceNoTitlePrimary {
+  /**
+   * News Slice Description field in *NewsSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_slice.primary.news_slice_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  news_slice_description: prismic.RichTextField;
+}
+
+/**
+ * News Slice no Title variation for NewsSlice Slice
+ *
+ * - **API ID**: `newsSliceNoTitle`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsSliceSliceNewsSliceNoTitle = prismic.SharedSliceVariation<
+  "newsSliceNoTitle",
+  Simplify<NewsSliceSliceNewsSliceNoTitlePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NewsSlice*
+ */
+type NewsSliceSliceVariation =
+  | NewsSliceSliceDefault
+  | NewsSliceSliceNewsSliceNoTitle;
+
+/**
+ * NewsSlice Shared Slice
+ *
+ * - **API ID**: `news_slice`
+ * - **Description**: NewsSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsSliceSlice = prismic.SharedSlice<
+  "news_slice",
+  NewsSliceSliceVariation
+>;
+
+/**
  * Primary content in *ProjectInfo → Primary*
  */
 export interface ProjectInfoSliceDefaultPrimary {
@@ -2595,6 +2669,12 @@ declare module "@prismicio/client" {
       JobAddSliceDefaultPrimary,
       JobAddSliceVariation,
       JobAddSliceDefault,
+      NewsSliceSlice,
+      NewsSliceSliceDefaultPrimary,
+      NewsSliceSliceNewsSliceNoTitlePrimary,
+      NewsSliceSliceVariation,
+      NewsSliceSliceDefault,
+      NewsSliceSliceNewsSliceNoTitle,
       ProjectInfoSlice,
       ProjectInfoSliceDefaultPrimary,
       ProjectInfoSliceProjectPrimary,

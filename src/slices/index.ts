@@ -6,6 +6,7 @@ export const components = {
   architecture_links: dynamic(() => import("./ArchitectureLinks")),
   employee: dynamic(() => import("./Employee")),
   job_add: dynamic(() => import("./JobAdd")),
+  news_slice: dynamic(() => import("./NewsSlice")),
   project_info: dynamic(() => import("./ProjectInfo")),
   project_slice: dynamic(() => import("./ProjectSlice")),
   theory_information: dynamic(() => import("./TheoryInformation")),

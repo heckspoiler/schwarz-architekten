@@ -165,7 +165,6 @@ export default async function Page() {
             />
           </div>
         </section>
-
         <div className={styles.Title}>
           <ImpressumButton />
         </div>

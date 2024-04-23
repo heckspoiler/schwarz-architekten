@@ -41,7 +41,7 @@
 .SlideIcon {
     height: 100%;
     width: 100%;
-    border: 1.5px solid black;
+    border: 1px solid black;
 }
 
 .GridView {
@@ -54,7 +54,7 @@
 }
 
 .GridItem {
-    border: 1.5px solid black;
+    border: 1px solid black;
     height: 90%;
     width: 90%;
 }
