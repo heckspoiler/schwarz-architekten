@@ -44,6 +44,14 @@ const routes: prismic.ClientConfig['routes'] = [
     path: '/theory/:uid',
   },
   {
+    type: 'news',
+    path: '/news',
+  },
+  {
+    type: 'newsarticle',
+    path: '/news/:uid',
+  },
+  {
     type: 'link_not_found',
     path: '/link-not-found',
   },

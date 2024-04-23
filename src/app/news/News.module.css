@@ -1,0 +1,133 @@
+.NewsGridContainer {
+    width: 100vw;
+    max-width: 100vw;
+    overflow: scroll;
+    height: fit-content;
+    padding: 0 6em 4em 6em;
+}
+
+.GridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    justify-items: center;
+    row-gap: 2em;
+}
+
+.GridItemContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 28em;
+}
+
+
+.GridItem {
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.ArticleBlaBla {
+    display: flex;
+    gap: 0.3em;
+    padding-top: 1em;
+}
+
+.IndexContainer p {
+    font-size: 0.5em;
+}
+
+
+
+.ArticleInfo {
+    background-color: white;
+    max-width: 28em;
+    bottom: 0;
+    right: 0;
+    height: fit-content;
+    min-height: 8em;
+    width: 100%;
+    transition: transform 0.2s var(--bezier);
+    display: flex;
+}
+
+.ArticleInfo h1 {
+    font-size: 1em;
+}
+
+.ArticleDescription {
+    font-size: 0.7em;
+}
+
+.Anchor {
+    display: flex;
+    gap: 1em;
+    font-size: 0.6em;
+    transition: transform 0.2s var(--bezier);
+    padding-top: 0.5em;
+    width: fit-content;
+}
+
+.Anchor img {
+    height: 7px;
+    width: 7px;
+}
+
+
+.Anchor:hover {
+    transform: translateX(var(--linkTranslateX))
+}
+
+
+.ImageContainer {
+    height: 28em;
+    width: 28em;
+    overflow: hidden;
+}
+
+.ImageContainer img {
+    height: 28em;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .GridItemContainer {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 20em;
+        padding: 0;
+        padding-bottom: 2em;
+    }
+
+    .GridContainer {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 2em;
+        justify-items: center;
+    }
+
+    .GridItem {
+        height: 20em;
+        width: 20em;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ProjectInfo {
+        background-color: white;
+        max-width: 20em;
+
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}

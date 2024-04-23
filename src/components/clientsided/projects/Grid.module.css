@@ -13,7 +13,6 @@
     row-gap: 2em;
 }
 
-
 .GridItemContainer {
     display: flex;
     flex-direction: column;
@@ -25,7 +24,6 @@
 .GridItem {
     position: relative;
     overflow: hidden;
-
 }
 
 .ProjectsBlaBla {

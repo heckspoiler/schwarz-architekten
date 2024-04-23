@@ -766,6 +766,17 @@ type NewsDocumentDataSlicesSlice = never;
  */
 interface NewsDocumentData {
   /**
+   * Title field in *News*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: News
+   * - **API ID Path**: news.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *News*
    *
    * - **Field Type**: Slice Zone
@@ -818,7 +829,7 @@ interface NewsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NewsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<NewsDocumentData>, "news", Lang>;
+  prismic.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
 
 type NewsarticleDocumentDataSlicesSlice = NewsSliceSlice;
 
