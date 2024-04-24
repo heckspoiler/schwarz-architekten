@@ -21,6 +21,12 @@ const HeaderMobile = ({
     isOpen ? setIsOpen(false) : setIsOpen(true);
   };
 
+  const closeMenu = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 500);
+  };
+
   return (
     <section className={styles.Main}>
       <div className={styles.LogoContainer}>
@@ -36,6 +42,7 @@ const HeaderMobile = ({
             <li
               key="/"
               className={`${styles.Item} ${isActive === '/' ? styles.IsActive : ''}`}
+              onClick={() => closeMenu()}
             >
               <p>01</p>
               <Link href="/" className={styles.Link}>
@@ -54,6 +61,7 @@ const HeaderMobile = ({
                 <li
                   key={identifier}
                   className={`${styles.Item} ${label === isActive ? styles.IsActive : ''}`}
+                  onClick={() => closeMenu()}
                 >
                   <p>{(index + 2).toString().padStart(2, '0')}</p>
                   <PrismicNextLink field={link} className={styles.Link}>
