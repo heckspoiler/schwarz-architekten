@@ -16,8 +16,6 @@ export default async function Page() {
   const page = await client.getSingle('news');
   const articles = await client.getAllByType('newsarticle');
 
-  console.log(page.data);
-
   return (
     <Bounded>
       <TitleContainer>
@@ -43,7 +41,7 @@ export default async function Page() {
                   <div className={styles.IndexContainer}>
                     <PrismicRichText field={article.data.article_index} />
                   </div>
-                  <div>
+                  <div className={styles.LowerContainer}>
                     <PrismicRichText field={article.data.article_title} />
 
                     <a href={article.url ?? '#'} className={styles.Anchor}>

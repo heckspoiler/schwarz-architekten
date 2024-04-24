@@ -18,8 +18,6 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID('newsarticle', params.uid)
     .catch(() => notFound());
 
-  console.log((page.data.project_link as any)?.url);
-
   return (
     <Bounded>
       <TitleContainer>
