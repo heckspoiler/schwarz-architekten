@@ -36,10 +36,11 @@
 .LinkContainer {
     display: flex;
     gap: 1em;
-    font-size: 0.7em;
+    font-size: 0.7rem;
     transition: transform 0.2s var(--bezier);
     padding-top: 0.5em;
     width: fit-content;
+
 }
 
 .LinkContainer:hover {
@@ -49,7 +50,6 @@
 .LinkContainer a {
     display: flex;
     gap: 10px;
-    font-size: 0.8em;
     padding-left: 1.3em;
 }
 
