@@ -1,26 +1,37 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Arrow from '@/components/Arrow';
+import emailStore from '@/stores/EmailStore';
 
 export const Form = ({ styles }: { styles: any }) => {
-  const [firstname, setFirstname] = useState('');
-  const [surname, setSurname] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [result, setResult] = useState(null); // to store response or error
-  const [isLoading, setLoading] = useState(false); // to indicate loading state
+  const firstname = emailStore().firstname;
+  const setFirstname = emailStore().setFirstname;
+  const surname = emailStore().surname;
+  const setSurname = emailStore().setFirstname;
+  const phone = emailStore().phone;
+  const setPhone = emailStore().setPhone;
+  const email = emailStore().email;
+  const setEmail = emailStore().setEmail;
+  const message = emailStore().message;
+  const setMessage = emailStore().setMessage;
+  const result = emailStore().result;
+  const setResult = emailStore().setResult;
 
   const sendEmail = () => {
+    const formData = {
+      to: email,
+      subject: 'Kontaktformular Schwarz Architekten AG',
+      html: `<h1>${message}</h1>`,
+    };
     fetch('/api/contact/customermail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ firstname, surname, phone, email, message }),
+      body: JSON.stringify(formData),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -39,7 +50,7 @@ export const Form = ({ styles }: { styles: any }) => {
   return (
     <section className={styles.ContactSection}>
       <section className={styles.FormContainer}>
-        <div className={styles.Form}>
+        <form onSubmit={() => sendEmail()} className={styles.Form}>
           <div className={styles.FormUpperSection}>
             <label htmlFor="firstname" className={styles.Label}>
               <span className={styles.LabelWithStar}>
@@ -111,14 +122,10 @@ export const Form = ({ styles }: { styles: any }) => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </label>
-          <button
-            type="submit"
-            className={styles.Button}
-            onClick={() => sendEmail()}
-          >
+          <button type="submit" className={styles.Button}>
             Senden
           </button>
-        </div>
+        </form>
       </section>
       <section className={styles.AddressSection}>
         <h3>Kontakt</h3>
@@ -156,9 +163,3 @@ export const Form = ({ styles }: { styles: any }) => {
     </section>
   );
 };
-function setResult(data: any): any {
-  throw new Error('Function not implemented.');
-}
-function setLoading(arg0: boolean): void {
-  throw new Error('Function not implemented.');
-}
