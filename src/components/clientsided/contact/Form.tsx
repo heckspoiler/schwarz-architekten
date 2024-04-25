@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Arrow from '@/components/Arrow';
 import emailStore from '@/stores/EmailStore';
+import { get } from 'http';
 
 export const Form = ({ styles }: { styles: any }) => {
   const {
@@ -22,7 +23,7 @@ export const Form = ({ styles }: { styles: any }) => {
     ...state,
   }));
 
-  const sendEmail = async () => {
+  const customerMail = async () => {
     try {
       const formData = {
         to: email,
@@ -47,6 +48,38 @@ export const Form = ({ styles }: { styles: any }) => {
     } catch (error) {
       console.error('Error sending email', error);
     }
+  };
+
+  const ourMail = async () => {
+    try {
+      const formData = {
+        to: email,
+        subject: 'Kontaktformular Website',
+        message: message,
+        surname: surname,
+        firstname: firstname,
+        phone: phone,
+      };
+      const response = await fetch('/api/contact/ourmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log('Email sent successfully');
+      } else {
+        console.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email', error);
+    }
+  };
+
+  const sendEmail = () => {
+    customerMail();
+    ourMail();
   };
 
   return (
