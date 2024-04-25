@@ -7,50 +7,52 @@ import Arrow from '@/components/Arrow';
 import emailStore from '@/stores/EmailStore';
 
 export const Form = ({ styles }: { styles: any }) => {
-  const firstname = emailStore().firstname;
-  const setFirstname = emailStore().setFirstname;
-  const surname = emailStore().surname;
-  const setSurname = emailStore().setFirstname;
-  const phone = emailStore().phone;
-  const setPhone = emailStore().setPhone;
-  const email = emailStore().email;
-  const setEmail = emailStore().setEmail;
-  const message = emailStore().message;
-  const setMessage = emailStore().setMessage;
-  const result = emailStore().result;
-  const setResult = emailStore().setResult;
+  const {
+    firstname,
+    setFirstname,
+    surname,
+    setSurname,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    message,
+    setMessage,
+  } = emailStore((state) => ({
+    ...state,
+  }));
 
-  const sendEmail = () => {
-    const formData = {
-      to: email,
-      subject: 'Kontaktformular Schwarz Architekten AG',
-      html: `<h1>${message}</h1>`,
-    };
-    fetch('/api/contact/customermail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setResult(data);
-        setFirstname('');
-        setSurname('');
-        setPhone('');
-        setEmail('');
-        setMessage('');
-      })
-      .catch((error) => {
-        setResult(error.toString());
+  const sendEmail = async () => {
+    try {
+      const formData = {
+        to: email,
+        subject: 'Kontaktformular Schwarz Architekten AG',
+        message: message,
+        surname: surname,
+        firstname: firstname,
+        phone: phone,
+      };
+      const response = await fetch('/api/contact/customermail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+      if (response.ok) {
+        console.log('Email sent successfully');
+      } else {
+        console.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email', error);
+    }
   };
 
   return (
     <section className={styles.ContactSection}>
       <section className={styles.FormContainer}>
-        <form onSubmit={() => sendEmail()} className={styles.Form}>
+        <div className={styles.Form}>
           <div className={styles.FormUpperSection}>
             <label htmlFor="firstname" className={styles.Label}>
               <span className={styles.LabelWithStar}>
@@ -122,10 +124,14 @@ export const Form = ({ styles }: { styles: any }) => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </label>
-          <button type="submit" className={styles.Button}>
+          <button
+            type="submit"
+            className={styles.Button}
+            onClick={() => sendEmail()}
+          >
             Senden
           </button>
-        </form>
+        </div>
       </section>
       <section className={styles.AddressSection}>
         <h3>Kontakt</h3>

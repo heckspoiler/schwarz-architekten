@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 interface EmailStoreState {
+  setSurname: any;
   setResult: any;
   setMessage: any;
   setEmail: any;
