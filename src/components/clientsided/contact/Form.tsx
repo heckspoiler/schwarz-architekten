@@ -77,9 +77,13 @@ export const Form = ({ styles }: { styles: any }) => {
     }
   };
 
-  const sendEmail = () => {
-    customerMail();
-    ourMail();
+  const sendEmail = async () => {
+    try {
+      await customerMail();
+      await ourMail();
+    } catch (error) {
+      console.error('Error in sending emails', error);
+    }
   };
 
   return (
