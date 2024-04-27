@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Arrow from '@/components/Arrow';
 import emailStore from '@/stores/EmailStore';
+import { PrismicLink } from '@prismicio/react';
 
 export const Form = ({ styles }: { styles: any }) => {
   const {
@@ -21,6 +22,20 @@ export const Form = ({ styles }: { styles: any }) => {
   } = emailStore((state) => ({
     ...state,
   }));
+
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [checkboxClicked, setCheckboxClicked] = useState(false);
+
+  const resetForm = () => {
+    setFirstname('');
+    setSurname('');
+    setPhone('');
+    setEmail('');
+    setMessage('');
+  };
+
+  console.log(checkboxClicked);
 
   const customerMail = async () => {
     try {
@@ -67,6 +82,7 @@ export const Form = ({ styles }: { styles: any }) => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
+        console.log(isSending);
         console.log('Email sent successfully');
       } else {
         console.error('Failed to send email');
@@ -76,19 +92,29 @@ export const Form = ({ styles }: { styles: any }) => {
     }
   };
 
-  const sendEmail = async () => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSending(true);
     try {
       await customerMail();
       await ourMail();
+      setIsSent(true);
     } catch (error) {
       console.error('Error in sending emails', error);
+      setIsSent(false);
+    } finally {
+      resetForm();
+      setIsSending(false);
     }
   };
 
   return (
     <section className={styles.ContactSection}>
       <section className={styles.FormContainer}>
-        <div className={styles.Form}>
+        <form
+          className={styles.Form}
+          onSubmit={(e: FormEvent<HTMLFormElement>) => sendEmail(e)}
+        >
           <div className={styles.FormUpperSection}>
             <label htmlFor="firstname" className={styles.Label}>
               <span className={styles.LabelWithStar}>
@@ -160,14 +186,43 @@ export const Form = ({ styles }: { styles: any }) => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </label>
+          <div className={styles.CheckboxContainer}>
+            <label htmlFor="checkbox" className={styles.CheckboxLabel}>
+              <span className={styles.Checkbox}>Ich bin kein Roboter </span>
+              <input
+                id="checkbox"
+                name="checkbox"
+                type="checkbox"
+                required
+                value={message}
+                onChange={() => setCheckboxClicked(!checkboxClicked)}
+              />
+            </label>
+            <p>
+              Mit dem Absenden des Formulars stimme ich den{' '}
+              <PrismicLink href="/privacy-policy" target="_blank">
+                Datenschutzbestimmungen
+              </PrismicLink>
+              <span> zu</span>
+            </p>
+          </div>
+
           <button
             type="submit"
             className={styles.Button}
-            onClick={() => sendEmail()}
+            disabled={isSending || !checkboxClicked}
           >
-            Senden
+            {isSending ? (
+              <div className={styles.SendingIndicator}>
+                <div className={styles.InnerIndicator}></div>
+              </div>
+            ) : isSent ? (
+              'Gesendet!'
+            ) : (
+              'Senden'
+            )}
           </button>
-        </div>
+        </form>
       </section>
       <section className={styles.AddressSection}>
         <h3>Kontakt</h3>

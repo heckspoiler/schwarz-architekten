@@ -126,6 +126,13 @@ textarea {
   font-size: 0.9em;
 }
 
+input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  accent-color: black;
+  border-radius: none;
+}
 
 
 /* Enable hover only on non-touch devices */

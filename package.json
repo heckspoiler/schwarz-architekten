@@ -16,6 +16,7 @@
     "dotenv": "^16.4.5",
     "gsap": "^3.12.5",
     "next": "^14.1.4",
+    "next-recaptcha-v3": "^1.4.1",
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",

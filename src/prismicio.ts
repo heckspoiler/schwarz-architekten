@@ -55,6 +55,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'link_not_found',
     path: '/link-not-found',
   },
+  {
+    type: 'terms_of_service',
+    path: '/privacy-policy',
+  },
 ];
 
 /**

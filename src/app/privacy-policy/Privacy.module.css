@@ -1,0 +1,27 @@
+.Main {
+    width: 80%;
+    padding-bottom: 4em;
+}
+
+
+.Main p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+.TitleContainer {
+    padding-left: 1.3em;
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {}
