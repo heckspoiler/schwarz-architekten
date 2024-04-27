@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Arrow from '@/components/Arrow';
 import emailStore from '@/stores/EmailStore';
-import { get } from 'http';
 
 export const Form = ({ styles }: { styles: any }) => {
   const {
