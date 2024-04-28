@@ -1,0 +1,117 @@
+{
+  "format": "page",
+  "id": "dietrich_schwarz",
+  "label": "Dietrich Schwarz",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "dietrich_schwarz",
+          "placeholder": ""
+        }
+      },
+      "biography_image": {
+        "type": "Image",
+        "config": {
+          "label": "Biography Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "graduation": {
+        "type": "StructuredText",
+        "config": {
+          "label": "graduation",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "position": {
+        "type": "StructuredText",
+        "config": {
+          "label": "position",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "university": {
+        "type": "StructuredText",
+        "config": {
+          "label": "university",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "minergie": {
+        "type": "StructuredText",
+        "config": {
+          "label": "minergie",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "email": {
+        "type": "Link",
+        "config": {
+          "label": "email",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "news_slice": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}

@@ -66,7 +66,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                 slice.primary.employee_biography.length > 0 ? (
                   <div>
                     <Link
-                      href="https://www.minergie.ch/de/"
+                      href="/about/dietrich-schwarz"
                       target="_blank"
                       className={styles.EmailContainerMinergie}
                     >

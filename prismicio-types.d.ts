@@ -199,6 +199,148 @@ export type ContactDocument<Lang extends string = string> =
     Lang
   >;
 
+type DietrichSchwarzDocumentDataSlicesSlice = NewsSliceSlice;
+
+/**
+ * Content for Dietrich Schwarz documents
+ */
+interface DietrichSchwarzDocumentData {
+  /**
+   * Biography Image field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.biography_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  biography_image: prismic.ImageField<never>;
+
+  /**
+   * graduation field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.graduation
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  graduation: prismic.RichTextField;
+
+  /**
+   * position field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.position
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  position: prismic.RichTextField;
+
+  /**
+   * university field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.university
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  university: prismic.RichTextField;
+
+  /**
+   * minergie field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.minergie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  minergie: prismic.RichTextField;
+
+  /**
+   * email field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  email: prismic.LinkField;
+
+  /**
+   * title field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DietrichSchwarzDocumentDataSlicesSlice> /**
+   * Meta Description field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: dietrich_schwarz.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dietrich_schwarz.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Dietrich Schwarz*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: dietrich_schwarz.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Dietrich Schwarz document from Prismic
+ *
+ * - **API ID**: `dietrich_schwarz`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DietrichSchwarzDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<DietrichSchwarzDocumentData>,
+    "dietrich_schwarz",
+    Lang
+  >;
+
 type EmployeeDocumentDataSlicesSlice = EmployeeSlice;
 
 /**
@@ -1614,6 +1756,7 @@ export type TheorypageDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AboutDocument
   | ContactDocument
+  | DietrichSchwarzDocument
   | EmployeeDocument
   | FooterDocument
   | HomeDocument
@@ -2693,6 +2836,9 @@ declare module "@prismicio/client" {
       ContactDocument,
       ContactDocumentData,
       ContactDocumentDataSlicesSlice,
+      DietrichSchwarzDocument,
+      DietrichSchwarzDocumentData,
+      DietrichSchwarzDocumentDataSlicesSlice,
       EmployeeDocument,
       EmployeeDocumentData,
       EmployeeDocumentDataSlicesSlice,

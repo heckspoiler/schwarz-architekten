@@ -35,7 +35,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-20%, -70%);
+    transform: translate(-30%, -40%);
     opacity: 0;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .ImageContainer img {
-    height: 30em;
+    height: 25em;
     width: auto;
 }
 
