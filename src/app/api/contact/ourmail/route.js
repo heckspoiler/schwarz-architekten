@@ -33,7 +33,7 @@ export async function POST(request, response) {
     });
 
     const mailOption = {
-      from: process.env.EMAIL,
+      from: `"Kontaktformular Webseite" <${process.env.EMAIL}>`,
       to: 'carlo_ettisberger@hotmail.com',
       subject: subject,
       html: `<!DOCTYPE html>

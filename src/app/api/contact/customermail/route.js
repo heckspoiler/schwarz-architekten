@@ -17,7 +17,7 @@ export async function POST(request, response) {
     });
 
     const mailOption = {
-      from: process.env.EMAIL,
+      from: `"Schwarz Architekten" <${process.env.EMAIL}>`,
       to: to,
       subject: subject,
       html: `<!DOCTYPE html>
