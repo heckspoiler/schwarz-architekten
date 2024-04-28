@@ -10,29 +10,16 @@ import { ProjectsRender } from '@/components/clientsided/projects/ProjectsRender
 import { ProjectsGrid } from '@/components/clientsided/projects/ProjectsGrid';
 import { ProjectsSwitch } from '@/components/clientsided/projects/ProjectsSwitch';
 
-function shuffleArray<T>(array: T[]): T[] {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle('projects');
   const fetchedProjects = await client.getAllByType('project');
 
-  const projects = shuffleArray(fetchedProjects);
+  const projects = fetchedProjects.sort((a, b) => {
+    let aIndex = parseInt((a.data.project_index as any)[0].text, 10);
+    let bIndex = parseInt((b.data.project_index as any)[0].text, 10);
+    return bIndex - aIndex;
+  });
 
   // return <SliceZone slices={page.data.slices} components={components} />;
 

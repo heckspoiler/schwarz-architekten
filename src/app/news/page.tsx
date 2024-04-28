@@ -14,7 +14,13 @@ import Arrow from '@/components/Arrow';
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle('news');
-  const articles = await client.getAllByType('newsarticle');
+  const fetchedArticles = await client.getAllByType('newsarticle');
+
+  const articles = fetchedArticles.sort((a, b) => {
+    let aIndex = parseInt((a.data.article_index as any)[0].text, 10);
+    let bIndex = parseInt((b.data.article_index as any)[0].text, 10);
+    return bIndex - aIndex;
+  });
 
   return (
     <Bounded>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Arrow from '@/components/Arrow';
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';

@@ -9,11 +9,11 @@
     flex-direction: column-reverse;
     gap: 2em;
     padding-left: 4em;
-    padding-top: 2em;
-    justify-content: space-between;
+    padding-top: 3.5em;
+    justify-content: center;
     height: fit-content;
     width: 100%;
-    height: 100%;
+    height: fit-content;
 
 }
 
@@ -26,6 +26,7 @@
 
 .InformationContainer {
     padding-left: 3em;
+
 }
 
 .ImageContainer img {
@@ -41,9 +42,14 @@
     padding-top: 1em
 }
 
+.LowerContainer {
+    transform: translateX(-20em)
+}
+
 .LowerContainer p {
     text-align: justify;
     hyphens: auto;
+
 }
 
 
@@ -100,7 +106,9 @@
     .LowerContainer {
         padding-top: 15em;
         padding-bottom: 4em;
+        transform: translateX(0)
     }
+
 
 
     .LowerContainer p {
