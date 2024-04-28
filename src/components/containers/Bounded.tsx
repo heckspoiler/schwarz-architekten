@@ -28,7 +28,6 @@ export default function Bounded({
       tl.to(ref.current, {
         duration: 0.2,
         autoAlpha: 0,
-        x: -10,
         ease: 'power2.inOut',
       })
         .addLabel('endFadeOut')
@@ -37,14 +36,13 @@ export default function Bounded({
           ref.current,
           {
             autoAlpha: 0,
-            x: 10,
+            y: 20,
           },
           {
             duration: 0.3,
             autoAlpha: 1,
+            y: 0,
             ease: 'power2.out',
-            x: 0,
-            immediateRender: false,
           },
           'endFadeOut+=0.1'
         );
