@@ -21,30 +21,38 @@ export default function Bounded({
   const ref = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
-
     if (ref.current) {
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+
+      // Subtle fade out with a slight upward movement
       tl.to(ref.current, {
-        duration: 0.3,
+        duration: 0.2,
         autoAlpha: 0,
-        blur: 5,
-        y: 20,
-        onComplete: () => {
-          gsap.fromTo(
-            ref.current,
-            { autoAlpha: 0, y: 20 },
-            {
-              duration: 0.3,
-              autoAlpha: 1,
-              y: 0,
-            }
-          );
-        },
-      });
+        x: -10,
+        ease: 'power2.inOut',
+      })
+        .addLabel('endFadeOut')
+
+        .fromTo(
+          ref.current,
+          {
+            autoAlpha: 0,
+            x: 10,
+          },
+          {
+            duration: 0.3,
+            autoAlpha: 1,
+            ease: 'power2.out',
+            x: 0,
+            immediateRender: false,
+          },
+          'endFadeOut+=0.1'
+        );
     }
   }, [pathname]);
+
   return (
-    <Comp className={styles.Main} {...restProps} ref={ref}>
+    <Comp className={className || styles.Main} {...restProps} ref={ref}>
       {children}
     </Comp>
   );
