@@ -4,6 +4,7 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import { Carousel } from '@/components/clientsided/home/HomeCarousel';
+import { ProjectSlideStore } from '@/stores/SliderStore';
 
 export interface ProjectData {
   id: string;
@@ -44,7 +45,6 @@ export default async function Page() {
 
   return (
     <Bounded>
-      {/* <SliceZone slices={page.data.slices} components={components} /> */}
       <Carousel projects={projects as unknown as ProjectData[]} />
     </Bounded>
   );

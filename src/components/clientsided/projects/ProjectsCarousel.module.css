@@ -11,6 +11,7 @@
     width: fit-content;
     overflow: hidden;
     height: calc(100vh - 8em);
+
 }
 
 .SlideContainer {
@@ -23,7 +24,7 @@
 }
 
 .Slide {
-    height: 80%;
+    height: 100%;
     width: 100vw;
     border: 1px solid black;
 }

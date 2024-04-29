@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ProjectsGrid } from './ProjectsGrid';
 import { ProjectsCarousel } from './ProjectsCarousel';
 import { SliderStore } from '@/stores/ProjectsStores';
+import styles from './ProjectsRender.module.css';
 
 export const ProjectsRender = ({
   projects,
@@ -12,7 +13,7 @@ export const ProjectsRender = ({
 }) => {
   const activeView = (SliderStore() as any).activeView;
   return (
-    <section>
+    <section className={styles.Main}>
       {activeView === 'grid' ? (
         <ProjectsGrid projects={projects} />
       ) : (

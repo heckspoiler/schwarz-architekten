@@ -46,6 +46,7 @@
 body {
   margin-top: var(--headerheight);
   position: relative;
+  overflow: hidden;
 }
 
 html {}

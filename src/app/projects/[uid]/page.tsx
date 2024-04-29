@@ -9,6 +9,8 @@ import styles from './Project.module.css';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
 import ImageGridContainer from '@/components/containers/project/ImageGridContainer';
+import { ProjectImageGrid } from '@/components/clientsided/projects/ProjectImageGrid';
+import { ImageSliderContainer } from '@/components/containers/project/ImageSliderContainer';
 
 type Params = { uid: string };
 
@@ -19,65 +21,65 @@ export default async function Page({ params }: { params: Params }) {
     .catch(() => notFound());
 
   return (
-    <Bounded>
-      <TitleContainer>
-        <PrismicRichText field={page.data.project_index} />
-        <div>
-          <PrismicRichText field={page.data.project_title} />
-          <PrismicRichText field={page.data.project_subtitle} />
-        </div>
-      </TitleContainer>
-      <section className={styles.HeroImageSection}>
-        <div className={styles.ImageContainer}>
-          <PrismicNextImage field={page.data.project_main_image} />
-        </div>
-        <div className={styles.LegendContainer}>
-          {page.data.project_image_legend.map((item, index) => (
-            <div key={index}>
-              <PrismicRichText
-                field={page.data.project_image_legend[index].legend_title}
-              />
-              <PrismicRichText
-                field={page.data.project_image_legend[index].legend_description}
-              />
+    <>
+      <ImageSliderContainer page={page} />
+      <Bounded>
+        <section className={styles.Main}>
+          <TitleContainer>
+            <PrismicRichText field={page.data.project_index} />
+            <div>
+              <PrismicRichText field={page.data.project_title} />
+              <PrismicRichText field={page.data.project_subtitle} />
             </div>
-          ))}
-        </div>
-      </section>
-      <TextblockContainer>
-        {page.data.project_description.map((item, index) => (
-          <div key={index} className={styles.DescriptionContainer}>
-            <div className={styles.DescriptionTitleContainer}>
-              <PrismicRichText
-                field={
-                  page.data.project_description[index].project_description_title
-                }
-              />
+          </TitleContainer>
+          <section className={styles.HeroImageSection}>
+            <div className={styles.ImageContainer}>
+              <PrismicNextImage field={page.data.project_main_image} />
             </div>
-            <div className={styles.TextBlock}>
-              <PrismicRichText
-                field={
-                  page.data.project_description[index]
-                    .project_description_description
-                }
-              />
+            <div className={styles.LegendContainer}>
+              {page.data.project_image_legend.map((item, index) => (
+                <div key={index}>
+                  <PrismicRichText
+                    field={page.data.project_image_legend[index].legend_title}
+                  />
+                  <PrismicRichText
+                    field={
+                      page.data.project_image_legend[index].legend_description
+                    }
+                  />
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </TextblockContainer>
-      <section className={styles.GallerySection}>
-        <h3>Galerie</h3>
-        <ImageGridContainer>
-          {page.data.project_image_gallery.map((item, index) => (
-            <div key={index} className={styles.ImageGridItem}>
-              <PrismicNextImage
-                field={page.data.project_image_gallery[index].project_image}
-              />
-            </div>
-          ))}
-        </ImageGridContainer>
-      </section>
-    </Bounded>
+          </section>
+          <TextblockContainer>
+            {page.data.project_description.map((item, index) => (
+              <div key={index} className={styles.DescriptionContainer}>
+                <div className={styles.DescriptionTitleContainer}>
+                  <PrismicRichText
+                    field={
+                      page.data.project_description[index]
+                        .project_description_title
+                    }
+                  />
+                </div>
+                <div className={styles.TextBlock}>
+                  <PrismicRichText
+                    field={
+                      page.data.project_description[index]
+                        .project_description_description
+                    }
+                  />
+                </div>
+              </div>
+            ))}
+          </TextblockContainer>
+          <section className={styles.GallerySection}>
+            <h3>Galerie</h3>
+            <ImageGridContainer page={page} />
+          </section>
+        </section>
+      </Bounded>
+    </>
   );
 }
 
