@@ -36,7 +36,7 @@ export const ImageSliderContainer = ({
     if (!isDragging || !sliderRef.current) return;
     e.preventDefault();
     const x = e.pageX - sliderRef.current.offsetLeft;
-    const newWalk = (x - startX) * 3;
+    const newWalk = (x - startX) * 2;
     sliderRef.current.scrollLeft = scrollLeft - newWalk;
   };
 
@@ -46,12 +46,19 @@ export const ImageSliderContainer = ({
     sliderRef.current.style.cursor = 'grab';
   };
 
+  const revertToDefault = () => {
+    setIsClicked(false);
+    setTimeout(() => {
+      sliderRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
+    }, 200);
+  };
+
   return (
     <>
       <div>
         <div
           className={`${styles.Schliessen} ${isClicked ? styles.CrossVisible : ''}`}
-          onClick={() => setIsClicked(false)}
+          onClick={() => revertToDefault()}
         >
           <div className={styles.CrossContainer}>
             <div className={styles.Cross}></div>
