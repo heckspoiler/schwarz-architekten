@@ -33,6 +33,7 @@ export const Form = ({ styles }: { styles: any }) => {
     setPhone('');
     setEmail('');
     setMessage('');
+    setCheckboxClicked(false);
   };
 
   console.log(checkboxClicked);

@@ -34,7 +34,7 @@ export async function POST(request, response) {
 
     const mailOption = {
       from: `"Kontaktformular Webseite" <${process.env.EMAIL}>`,
-      to: 'carlo_ettisberger@hotmail.com',
+      to: 'info@schwarz-architekten.com',
       subject: subject,
       html: `<!DOCTYPE html>
       <html lang="en">

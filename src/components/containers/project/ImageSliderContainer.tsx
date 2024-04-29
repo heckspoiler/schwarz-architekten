@@ -23,27 +23,27 @@ export const ImageSliderContainer = ({
   const [startX, setStartX] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
 
-  const startDragging = (e: MouseEvent) => {
+  const startDragging = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!sliderRef.current) return;
+    const currentScrollLeft = sliderRef.current.scrollLeft;
     setIsDragging(true);
-    console.log('startDragging', startX, scrollLeft);
     setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
+    setScrollLeft(currentScrollLeft);
     sliderRef.current.style.cursor = 'grabbing';
+  };
+
+  const whileDragging = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !sliderRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const newWalk = (x - startX) * 3;
+    sliderRef.current.scrollLeft = scrollLeft - newWalk;
   };
 
   const stopDragging = () => {
     if (!sliderRef.current) return;
     setIsDragging(false);
     sliderRef.current.style.cursor = 'grab';
-  };
-
-  const whileDragging = (e: MouseEvent) => {
-    if (!isDragging || !sliderRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
@@ -53,17 +53,18 @@ export const ImageSliderContainer = ({
           className={`${styles.Schliessen} ${isClicked ? styles.CrossVisible : ''}`}
           onClick={() => setIsClicked(false)}
         >
-          <div></div>
-          <div></div>
+          <div className={styles.CrossContainer}>
+            <div className={styles.Cross}></div>
+            <div className={styles.Cross}></div>
+          </div>
         </div>
       </div>
       <Container
         className={`${styles.SlideContainer} ${isClicked ? styles.isVisible : ''}`}
       >
-        <div className={styles.SumtingContainer}>
+        <div className={styles.SumtingContainer} ref={sliderRef}>
           <div
             className={styles.ImageSliderContainer}
-            ref={sliderRef}
             onMouseDown={startDragging}
             onMouseUp={stopDragging}
             onMouseLeave={stopDragging}
