@@ -46,7 +46,6 @@
 
 }
 
-
 .TextBlock p {
     hyphens: auto;
     text-align: justify;
@@ -135,14 +134,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         flex-direction: column;
-        justify-content: center;
         gap: 1em;
         padding: 2em;
         font-size: 0.9em;
     }
 
     .LegendContainer p {
-        width: 100%;
+        width: 80%;
         hyphens: auto;
     }
 

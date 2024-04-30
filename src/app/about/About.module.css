@@ -83,4 +83,28 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 768px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1120px) {
+    .EmployeeContainer {
+        display: grid;
+        row-gap: 2em;
+        padding-bottom: 2em;
+        justify-items: center;
+    }
+
+    .DescriptionContainer p {
+        width: 100%;
+        text-align: justify;
+        padding-bottom: 0em;
+        transform: translateY(-4em);
+    }
+
+    .JobAdds,
+    .Awards {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        padding-bottom: 2em;
+        row-gap: 2em;
+
+    }
+}
