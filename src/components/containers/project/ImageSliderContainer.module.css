@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     padding: 4em;
-    background-color: rgba(178, 178, 178, 0.6);
+    background-color: rgba(255, 255, 255, 0.3);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.2s var(--bezier), transform 0.2s var(--bezier);
@@ -14,7 +14,7 @@
     width: 100vw;
     z-index: 10;
     pointer-events: none;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px)
 }
 
 .SumtingContainer {

@@ -31,12 +31,13 @@
     display: flex;
     gap: 0.3em;
     padding-top: 1em;
+    height: 7em;
 }
 
 
 
 .ProjectIndex {
-    font-size: 0.5em !important;
+    font-size: 0.6em !important;
 }
 
 .ProjectInfo {
@@ -127,4 +128,37 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 768px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1180px) {
+    .GridItemContainer {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 25em;
+        padding: 0;
+        padding-bottom: 2em;
+    }
+
+    .GridContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+        row-gap: 2em;
+        justify-items: center;
+
+    }
+
+    .GridItem {
+        height: 25em;
+        width: 25em;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ProjectInfo {
+        background-color: white;
+        max-width: 25em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
