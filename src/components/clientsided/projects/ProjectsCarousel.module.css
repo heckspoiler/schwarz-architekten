@@ -239,4 +239,40 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1120px) {
+
+
+    .ProjectInfo {
+        bottom: calc(var(--project_info_height) + 3em);
+        width: 80%;
+        align-items: right;
+    }
+
+    .ImageContainer {
+        height: calc(100vh - 6em);
+        width: 100%;
+    }
+
+    .ImageContainer img {
+        width: auto;
+        height: calc(100vh - 6em);
+    }
+
+    .ArrowContainer {
+        height: calc(100vh - 18em);
+        width: 100vw;
+    }
+
+    .Arrow {
+        padding: 0 1.5em;
+        height: 100%;
+        z-index: 1;
+    }
+
+
+    .Arrow span {
+        height: 1.3em;
+        width: 1.3em;
+    }
+
+}

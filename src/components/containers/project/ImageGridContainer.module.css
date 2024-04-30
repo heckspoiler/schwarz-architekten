@@ -71,7 +71,33 @@
 
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1120px) {
+    .Container {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .ImageGridItem {
+        height: 28em;
+        width: 28em;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .ImageGridItem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(0, 0);
+    }
+
+    .ImageGridItem img:hover {
+        cursor: zoom-in;
+    }
+}
 
 
 

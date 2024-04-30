@@ -167,4 +167,4 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1120px) {}

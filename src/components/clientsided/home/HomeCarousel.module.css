@@ -119,4 +119,26 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {}
+@media (min-width: 768px) and (max-width: 1120px) {
+
+
+    .SlideContainer {
+        height: calc(100vh - 6em);
+        width: 100%;
+    }
+
+    .Slide {
+        height: calc(100vh - 6em);
+        width: 100vw;
+    }
+
+    .ImageContainer {
+        height: calc(100vh - 6em);
+
+    }
+
+    .ImageContainer img {
+        width: auto;
+        height: calc(100vh - 6em);
+    }
+}

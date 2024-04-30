@@ -14,7 +14,7 @@ const HeaderClient = function ({
 }) {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
   const [isActive, setIsActive] = useState('');
-  let mobileWidth = 768;
+  let mobileWidth = 1180;
 
   const pathname = usePathname();
 
