@@ -9,7 +9,6 @@ import styles from './Project.module.css';
 import TitleContainer from '@/components/containers/project/TitleContainer';
 import TextblockContainer from '@/components/containers/project/TextblockContainer';
 import ImageGridContainer from '@/components/containers/project/ImageGridContainer';
-import { ProjectImageGrid } from '@/components/clientsided/projects/ProjectImageGrid';
 import { ImageSliderContainer } from '@/components/containers/project/ImageSliderContainer';
 
 type Params = { uid: string };
