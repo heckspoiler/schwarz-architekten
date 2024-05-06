@@ -5,7 +5,7 @@ import {
   SliceComponentProps,
 } from '@prismicio/react';
 import styles from './Employee.module.css';
-import { PrismicNextImage } from '@prismicio/next';
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import Arrow from '@/components/Arrow';
 import Link from 'next/link';
 
@@ -65,7 +65,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                 {slice.primary.employee_biography &&
                 slice.primary.employee_biography.length > 0 ? (
                   <div>
-                    <Link
+                    <PrismicNextLink
                       href="/dietrich-schwarz"
                       target="_blank"
                       className={styles.EmailContainerMinergie}
@@ -74,7 +74,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                       <span className={styles.ArrowContainer}>
                         <Arrow />
                       </span>
-                    </Link>
+                    </PrismicNextLink>
                   </div>
                 ) : null}
                 <div className={styles.LinkedInContainer}>

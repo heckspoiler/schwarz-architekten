@@ -59,6 +59,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'terms_of_service',
     path: '/privacy-policy',
   },
+  {
+    type: 'dietrich_schwarz',
+    path: '/dietrich-schwarz',
+  },
 ];
 
 /**
