@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PrismicRichText, SliceZone } from '@prismicio/react';
 import { createClient } from '@/prismicio';
-import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import { PrismicNextImage } from '@prismicio/next';
 import styles from './Project.module.css';
