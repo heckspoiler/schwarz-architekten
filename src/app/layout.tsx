@@ -4,6 +4,7 @@ import { createClient } from '@/prismicio';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const opensans = Open_Sans({ subsets: ['latin'], variable: '--font-main' });
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
       <body className={opensans.className}>
         <Header />
         {children}
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
