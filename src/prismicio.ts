@@ -61,7 +61,7 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'dietrich_schwarz',
-    path: '/uber-uns-2/team/dietrich-schwarz',
+    path: '/dietrich-schwarz',
   },
 ];
 
