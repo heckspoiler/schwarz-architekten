@@ -29,11 +29,11 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'about',
-    path: '/ueber-uns-2',
+    path: '/uber-uns-2',
   },
   {
     type: 'contact',
-    path: '/kontakt',
+    path: '/kontakt-2',
   },
   {
     type: 'theory',
