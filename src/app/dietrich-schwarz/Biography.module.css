@@ -1,0 +1,177 @@
+.Main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.UpperContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2em;
+    padding-left: 4em;
+    padding-top: 3.5em;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.ImageContainer {
+    height: 25em;
+    width: 25em;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.InformationContainer {
+    padding-left: 3em;
+
+}
+
+.ImageContainer img {
+    height: 25em;
+    width: auto;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 0.8em;
+    padding-top: 1em
+}
+
+.LowerContainer {
+    transform: translateX(-20em)
+}
+
+.LowerContainer p {
+    text-align: justify;
+    hyphens: auto;
+
+}
+
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .Main {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .UpperContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2em;
+        padding-top: 2em;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+
+    }
+
+    .ImageContainer {
+        height: 20em;
+        width: 20em;
+        object-fit: contain;
+        overflow: hidden;
+    }
+
+    .InformationContainer {
+        padding-left: 3em;
+    }
+
+    .ImageContainer img {
+        height: auto;
+        width: 100%;
+    }
+
+    .Container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        font-size: 0.8em;
+        padding-top: 1em
+    }
+
+
+    .LowerContainer {
+        padding-top: 15em;
+        padding-bottom: 4em;
+        transform: translateX(0)
+    }
+
+
+
+    .LowerContainer p {
+        text-align: justify;
+        hyphens: auto;
+    }
+
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 768px) and (max-width: 1180px) {
+    .Main {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .UpperContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2em;
+        padding-top: 2em;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+
+    }
+
+    .ImageContainer {
+        height: 20em;
+        width: 20em;
+        object-fit: contain;
+        overflow: hidden;
+    }
+
+    .InformationContainer {
+        padding-left: 3em;
+    }
+
+    .ImageContainer img {
+        height: auto;
+        width: 100%;
+    }
+
+    .Container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        font-size: 0.8em;
+        padding-top: 1em
+    }
+
+
+    .LowerContainer {
+        padding-top: 15em;
+        padding-bottom: 4em;
+        transform: translateX(0)
+    }
+
+
+
+    .LowerContainer p {
+        text-align: justify;
+        hyphens: auto;
+    }
+}

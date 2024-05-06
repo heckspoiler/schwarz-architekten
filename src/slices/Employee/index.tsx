@@ -65,8 +65,8 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                 {slice.primary.employee_biography &&
                 slice.primary.employee_biography.length > 0 ? (
                   <div>
-                    <a
-                      href="https://www.schwarz-architekten.com/uber-uns-2/team/dietrich-schwarz"
+                    <Link
+                      href="/dietrich-schwarz"
                       target="_blank"
                       className={styles.EmailContainerMinergie}
                     >
@@ -74,7 +74,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                       <span className={styles.ArrowContainer}>
                         <Arrow />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 ) : null}
                 <div className={styles.LinkedInContainer}>
