@@ -66,7 +66,7 @@ const Employee = ({ slice }: EmployeeProps): JSX.Element => {
                 slice.primary.employee_biography.length > 0 ? (
                   <div>
                     <Link
-                      href="/uber-uns-2/team/dietrich-schwarz"
+                      href="https://www.schwarz-architekten.com/uber-uns-2/team/dietrich-schwarz"
                       target="_blank"
                       className={styles.EmailContainerMinergie}
                     >
