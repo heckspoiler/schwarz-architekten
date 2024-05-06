@@ -5,6 +5,7 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const opensans = Open_Sans({ subsets: ['latin'], variable: '--font-main' });
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
         <Header />
         {children}
         <SpeedInsights />
+        <Analytics />
         <Footer />
       </body>
     </html>
