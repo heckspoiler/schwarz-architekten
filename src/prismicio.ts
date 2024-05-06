@@ -29,7 +29,7 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'about',
-    path: '/uber-uns-2',
+    path: '/uber-uns-2/team',
   },
   {
     type: 'contact',
