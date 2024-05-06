@@ -21,27 +21,27 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'projects',
-    path: '/projects',
+    path: '/projekte',
   },
   {
     type: 'project',
-    path: '/projects/:uid',
+    path: '/projekte/:uid',
   },
   {
     type: 'about',
-    path: '/about',
+    path: '/ueber-uns-2',
   },
   {
     type: 'contact',
-    path: '/contact',
+    path: '/kontakt',
   },
   {
     type: 'theory',
-    path: '/theory',
+    path: '/theorie',
   },
   {
     type: 'theorypage',
-    path: '/theory/:uid',
+    path: '/theorie/:uid',
   },
   {
     type: 'news',
