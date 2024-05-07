@@ -20,13 +20,13 @@ const HeaderClient = function ({
 
   useEffect(() => {
     let activeLabel = '';
-    if (pathname.startsWith('/projects')) {
+    if (pathname.startsWith('/projekte')) {
       activeLabel = 'Projekte';
-    } else if (pathname.startsWith('/theory')) {
+    } else if (pathname.startsWith('/theorie')) {
       activeLabel = 'Theorie';
-    } else if (pathname.startsWith('/about')) {
+    } else if (pathname.startsWith('/uber-uns-2')) {
       activeLabel = 'Über uns';
-    } else if (pathname.startsWith('/contact')) {
+    } else if (pathname.startsWith('/kontakt-2')) {
       activeLabel = 'Kontakt';
     } else if (pathname.startsWith('/news')) {
       activeLabel = 'News';
