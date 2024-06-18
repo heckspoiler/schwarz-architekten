@@ -1231,6 +1231,17 @@ interface ProjectDocumentData {
   project_subtitle: prismic.RichTextField;
 
   /**
+   * Project Preview Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project_preview_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  project_preview_image: prismic.ImageField<never>;
+
+  /**
    * Project Main Image field in *Project*
    *
    * - **Field Type**: Image

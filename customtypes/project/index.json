@@ -39,6 +39,14 @@
           "multi": "paragraph"
         }
       },
+      "project_preview_image": {
+        "type": "Image",
+        "config": {
+          "label": "Project Preview Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "project_main_image": {
         "type": "Image",
         "config": {
