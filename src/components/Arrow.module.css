@@ -4,6 +4,7 @@
 @media (hover: hover) and (pointer: fine) {}
 
 
+.Arrow {}
 
 /* Mobile */
 @media (max-width: 768px) {}
