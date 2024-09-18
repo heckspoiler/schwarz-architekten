@@ -71,10 +71,10 @@ export const ImageSliderContainer = ({
           '--yarl__color_button_active': 'black',
         },
         navigationNext: {
-          '--yarl__color_button': isMobile ? 'white' : 'black',
+          '--yarl__color_button': 'black',
         },
         navigationPrev: {
-          '--yarl__color_button': isMobile ? 'white' : 'black',
+          '--yarl__color_button': 'black',
         },
       }}
     />
