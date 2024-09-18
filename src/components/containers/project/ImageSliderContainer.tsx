@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useRef, MouseEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProjectSlideStore } from '@/stores/SliderStore';
 import styles from './ImageSliderContainer.module.css';
-import { PrismicNextImage } from '@prismicio/next';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 type TextContainerProps = {
   as?: React.ElementType;
@@ -18,75 +19,64 @@ export const ImageSliderContainer = ({
 }: TextContainerProps) => {
   const isClicked = (ProjectSlideStore() as any).isClicked;
   const setIsClicked = (ProjectSlideStore() as any).setIsClicked;
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [startX, setStartX] = useState<number>(0);
-  const [scrollLeft, setScrollLeft] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const startDragging = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!sliderRef.current) return;
-    const currentScrollLeft = sliderRef.current.scrollLeft;
-    setIsDragging(true);
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(currentScrollLeft);
-    sliderRef.current.style.cursor = 'grabbing';
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
 
-  const whileDragging = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging || !sliderRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const newWalk = (x - startX) * 2;
-    sliderRef.current.scrollLeft = scrollLeft - newWalk;
-  };
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
-  const stopDragging = () => {
-    if (!sliderRef.current) return;
-    setIsDragging(false);
-    sliderRef.current.style.cursor = 'grab';
-  };
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const revertToDefault = () => {
+  const slides = page.data.project_image_gallery.map((item: any) => ({
+    src: item.project_image.url,
+    alt: item.project_image.alt || '',
+  }));
+
+  useEffect(() => {
+    isClicked ? setIsOpen(true) : setIsOpen(false);
+  }, [isClicked]);
+
+  const handleClose = () => {
+    setIsOpen(false);
     setIsClicked(false);
-    setTimeout(() => {
-      sliderRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
-    }, 200);
   };
 
   return (
-    <>
-      <div>
-        <div
-          className={`${styles.Schliessen} ${isClicked ? styles.CrossVisible : ''}`}
-          onClick={() => revertToDefault()}
-        >
-          <div className={styles.CrossContainer}>
-            <div className={styles.Cross}></div>
-            <div className={styles.Cross}></div>
-          </div>
-        </div>
-      </div>
-      <Container
-        className={`${styles.SlideContainer} ${isClicked ? styles.isVisible : ''}`}
-      >
-        <div className={styles.SumtingContainer} ref={sliderRef}>
-          <div
-            className={styles.ImageSliderContainer}
-            onMouseDown={startDragging}
-            onMouseUp={stopDragging}
-            onMouseLeave={stopDragging}
-            onMouseMove={whileDragging}
-          >
-            {page.data.project_image_gallery.map((item: any, index: number) => (
-              <div key={index} className={styles.ImageSlide}>
-                <PrismicNextImage
-                  field={page.data.project_image_gallery[index].project_image}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </>
+    <Lightbox
+      open={isOpen}
+      close={handleClose}
+      slides={slides}
+      styles={{
+        container: {
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          backdropFilter: 'blur(10px)',
+        },
+        button: {
+          boxShadow: 'none',
+          filter: 'none',
+          '--yarl__color_button_active': 'black',
+        },
+        toolbar: {
+          '--yarl__color_button': 'black',
+          '--yarl__color_button_active': 'black',
+        },
+        navigationNext: {
+          '--yarl__color_button': isMobile ? 'white' : 'black',
+        },
+        navigationPrev: {
+          '--yarl__color_button': isMobile ? 'white' : 'black',
+        },
+      }}
+    />
   );
 };
