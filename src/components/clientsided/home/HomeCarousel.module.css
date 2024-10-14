@@ -2,6 +2,8 @@
     width: 100vw;
     max-width: 100vw;
     overflow-x: hidden;
+    position: relative;
+
 }
 
 .Carousel {
@@ -16,7 +18,6 @@
     overflow: hidden;
     animation: slideAnimation 3s var(--bezier) infinite;
     max-width: 100vw;
-
 }
 
 .Slide {
@@ -60,6 +61,52 @@
     object-position: center;
     transform: translateY(-10vh)
 }
+
+.Overlay {
+    position: absolute;
+    width: 18rem;
+    z-index: 100;
+    right: 0;
+    padding: 1rem;
+    top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.Overlay img {
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.TextOverlay {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    z-index: 10;
+    overflow: hidden;
+    width: 100vw;
+    height: 6rem;
+    line-height: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.TextContainer {
+    height: fit-content;
+}
+
+.TextOverlay h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+
 
 
 
@@ -116,12 +163,24 @@
         object-fit: contain;
         object-position: center;
     }
+
+    .Overlay {
+        position: absolute;
+        width: 14rem;
+        z-index: 100;
+        right: 0;
+        padding: 1rem;
+        top: 14rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 768px) and (max-width: 1120px) {
-
-
     .SlideContainer {
         height: calc(100vh - 6em);
         width: 100%;

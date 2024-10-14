@@ -1,0 +1,19 @@
+{
+  "format": "custom",
+  "id": "logo_layover",
+  "label": "Logo Layover",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo_layover": {
+        "type": "Image",
+        "config": {
+          "label": "Logo layover",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

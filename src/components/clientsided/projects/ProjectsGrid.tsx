@@ -9,8 +9,6 @@ import styles from './Grid.module.css';
 import Link from 'next/link';
 
 export const ProjectsGrid = ({ projects }: { projects: any }) => {
-  console.log(projects);
-
   return (
     <section className={styles.ProjectsGridContainer}>
       <section className={styles.GridContainer}>

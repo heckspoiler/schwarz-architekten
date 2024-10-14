@@ -36,8 +36,6 @@ export const Form = ({ styles }: { styles: any }) => {
     setCheckboxClicked(false);
   };
 
-  console.log(checkboxClicked);
-
   const customerMail = async () => {
     try {
       const formData = {

@@ -824,6 +824,38 @@ export type LinkNotFoundDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for Logo Layover documents
+ */
+interface LogoLayoverDocumentData {
+  /**
+   * Logo layover field in *Logo Layover*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_layover.logo_layover
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_layover: prismic.ImageField<never>;
+}
+
+/**
+ * Logo Layover document from Prismic
+ *
+ * - **API ID**: `logo_layover`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LogoLayoverDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LogoLayoverDocumentData>,
+    "logo_layover",
+    Lang
+  >;
+
+/**
  * Item in *Header → navbar*
  */
 export interface NavbarDocumentDataNavbarItem {
@@ -1123,6 +1155,38 @@ export type NewsarticleDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<NewsarticleDocumentData>,
     "newsarticle",
+    Lang
+  >;
+
+/**
+ * Content for Overlay Text documents
+ */
+interface OverlayTextDocumentData {
+  /**
+   * Overlay Text field in *Overlay Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: overlay_text.overlay_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  overlay_text: prismic.KeyTextField;
+}
+
+/**
+ * Overlay Text document from Prismic
+ *
+ * - **API ID**: `overlay_text`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OverlayTextDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<OverlayTextDocumentData>,
+    "overlay_text",
     Lang
   >;
 
@@ -1772,9 +1836,11 @@ export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | LinkNotFoundDocument
+  | LogoLayoverDocument
   | NavbarDocument
   | NewsDocument
   | NewsarticleDocument
+  | OverlayTextDocument
   | ProjectDocument
   | ProjectsDocument
   | SettingsDocument
@@ -2866,6 +2932,8 @@ declare module "@prismicio/client" {
       LinkNotFoundDocument,
       LinkNotFoundDocumentData,
       LinkNotFoundDocumentDataSlicesSlice,
+      LogoLayoverDocument,
+      LogoLayoverDocumentData,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbarItem,
@@ -2875,6 +2943,8 @@ declare module "@prismicio/client" {
       NewsarticleDocument,
       NewsarticleDocumentData,
       NewsarticleDocumentDataSlicesSlice,
+      OverlayTextDocument,
+      OverlayTextDocumentData,
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataProjectImageLegendItem,

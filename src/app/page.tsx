@@ -5,6 +5,7 @@ import { components } from '@/slices';
 import Bounded from '@/components/containers/Bounded';
 import { Carousel } from '@/components/clientsided/home/HomeCarousel';
 import { ProjectSlideStore } from '@/stores/SliderStore';
+import { ImageFieldImage } from '@prismicio/client';
 
 export interface ProjectData {
   id: string;
@@ -43,9 +44,21 @@ export default async function Page() {
 
   const projects = shuffleArray(fetchedProjects);
 
+  const logoLayover = await client.getByType('logo_layover');
+
+  const overlay = logoLayover.results[0].data.logo_layover;
+
+  const overlayText = await client.getByType('overlay_text');
+
+  const overlayTextData = overlayText.results;
+
   return (
     <Bounded>
-      <Carousel projects={projects as unknown as ProjectData[]} />
+      <Carousel
+        projects={projects as unknown as ProjectData[]}
+        overlay={overlay as ImageFieldImage | null | undefined}
+        overlayText={overlayTextData}
+      />
     </Bounded>
   );
 }

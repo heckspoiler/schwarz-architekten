@@ -16,7 +16,6 @@ export default async function Page() {
   const page = await client.getSingle('news');
   const fetchedArticles = await client.getAllByType('newsarticle');
 
-  console.log('test');
   const articles = fetchedArticles.sort((a, b) => {
     let aIndex = parseInt((a.data.article_index as any)[0].text, 10);
     let bIndex = parseInt((b.data.article_index as any)[0].text, 10);
