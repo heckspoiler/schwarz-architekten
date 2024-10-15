@@ -121,12 +121,12 @@ export const Carousel = ({
         ))}
       </section>
 
-      {/* <div className={styles.TextOverlay}>
+      <div className={styles.TextOverlay}>
         <h1>
           {overlayText &&
             overlayText[currentSlide % overlayText.length]?.data.overlay_text}
         </h1>
-      </div> */}
+      </div>
     </section>
   );
 };
