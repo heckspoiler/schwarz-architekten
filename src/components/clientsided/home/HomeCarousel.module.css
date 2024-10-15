@@ -166,11 +166,11 @@
 
     .Overlay {
         position: absolute;
-        width: 14rem;
+        width: 10rem;
         z-index: 100;
         right: 0;
         padding: 1rem;
-        top: 14rem;
+        top: 10rem;
         display: flex;
         align-items: center;
         justify-content: center;
